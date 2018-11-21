@@ -9,6 +9,10 @@ public class DeathPage extends AbstractPage {
 
     @FindBy(id = "acRegister")
     private WebElement creatNewAct;
+    @FindBy (xpath = "(//span[text() = 'Зберегти'])[1]")
+    private WebElement saveButton;
+    @FindBy (xpath = "//div[@id = 'confirm-message']/following-sibling::div/div/button/span[text() = 'OК']")
+    private WebElement okButton;
 
     private WebElement generalTab;
 
@@ -22,5 +26,9 @@ public class DeathPage extends AbstractPage {
 
     public void creatNewAct(){
         action.clickOnElement(creatNewAct);
+    }
+    public void saveAct(){
+        action.clickOnElement(saveButton);
+        action.clickOnElement(okButton);
     }
 }

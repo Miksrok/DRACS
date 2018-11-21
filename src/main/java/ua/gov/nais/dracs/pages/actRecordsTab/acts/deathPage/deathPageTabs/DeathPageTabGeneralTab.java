@@ -18,6 +18,6 @@ public class DeathPageTabGeneralTab extends AbstractPage {
 
     public void typeActNoteNumber(){
         action.typeText(actNoteNumberField, "1234567890");
-        action.typeText(actNoteDateFideld, "11.11.2012");
+        action.typeText(actNoteDateFideld, "11.11.2018");
     }
 }

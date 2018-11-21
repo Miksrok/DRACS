@@ -1,5 +1,6 @@
 package ua.gov.nais.dracs.util;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,8 +25,9 @@ public class ActionsWithElement {
 
     public void typeText(WebElement element, String text){
 
-       // element.click();
-       // element.clear();
+        element.click();
+        element.clear();
+        element.sendKeys(Keys.HOME);
         element.sendKeys(text);
     }
     public void waitUntilDisappear(WebElement element){
