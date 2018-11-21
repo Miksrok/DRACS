@@ -12,7 +12,7 @@ public class ActionsWithElement {
 
     public ActionsWithElement(WebDriver driver){
         this.driver = driver;
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 10);
     }
 
     public void clickOnElement(WebElement element){
@@ -24,8 +24,8 @@ public class ActionsWithElement {
 
     public void typeText(WebElement element, String text){
 
-        element.click();
-        element.clear();
+       // element.click();
+       // element.clear();
         element.sendKeys(text);
     }
     public void waitUntilDisappear(WebElement element){
