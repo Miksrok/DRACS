@@ -20,7 +20,6 @@ public class DeathPageTabDeadTab extends AbstractPage {
     private WebElement birthdayDate;
     @FindBy (xpath = "(//label[text() = 'Дата смерті'])[1]/following-sibling::div/div[2]/div/div/input")
     private WebElement deathDate;
-
     @FindBy (xpath = "(//label[text() = 'Серія та № / Документ №'])[1]/following-sibling::input")
     private WebElement documentNumber;
     @FindBy (xpath = "(//label[text() = 'Дата видачі'])[1]/following-sibling::div/div/input")

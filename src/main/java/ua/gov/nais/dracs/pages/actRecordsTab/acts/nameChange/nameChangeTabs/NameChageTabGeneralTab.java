@@ -16,6 +16,8 @@ public class NameChageTabGeneralTab extends AbstractPage {
     @FindBy (xpath = "(//label[text() = 'Дата реєстрації зміни імені'])[1]/../div/div[2]/div/div/input")
     private WebElement dateOfRegistrationOfNameChangeField;
 
+
+
     public NameChageTabGeneralTab(WebDriver driver) {
         super(driver);
     }
