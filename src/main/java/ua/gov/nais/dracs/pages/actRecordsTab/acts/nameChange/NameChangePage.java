@@ -13,6 +13,8 @@ public class NameChangePage extends AbstractPage {
     private WebElement saveButton;
     @FindBy (xpath = "//div[@id = 'confirm-message']/following-sibling::div/div/button/span[text() = 'OК']")
     private WebElement okButton;
+    @FindBy (xpath = "//div[@id = 'alert-message-info']/following::span[text() = 'OК']")
+    private WebElement okAlertButton;
 
     public NameChangePage(WebDriver driver) {
         super(driver);
@@ -24,5 +26,6 @@ public class NameChangePage extends AbstractPage {
     public void saveAct() {
         action.clickOnElement(saveButton);
         action.clickOnElement(okButton);
+        action.clickOnElement(okAlertButton);
     }
 }

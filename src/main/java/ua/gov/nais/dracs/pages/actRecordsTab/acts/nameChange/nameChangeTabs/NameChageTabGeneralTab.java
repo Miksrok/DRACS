@@ -3,6 +3,7 @@ package ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.nameChangeTabs;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
 public class NameChageTabGeneralTab extends AbstractPage {
@@ -23,8 +24,9 @@ public class NameChageTabGeneralTab extends AbstractPage {
     }
 
     public void typeActNoteNumber(){
-        action.typeText(actNoteNumberField, "1448567890");
-        action.typeText(actNoteDateField, "04.08.2018");
+        Person person = new Person();
+        action.typeText(actNoteNumberField,person.getActNumber());
+        action.typeText(actNoteDateField,person.getActDate());
     }
 
     public void typeDateOfRegOfNameChange() {
