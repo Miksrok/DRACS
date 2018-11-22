@@ -3,6 +3,7 @@ package ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
 public class DeathPageTabDeadTab extends AbstractPage {
@@ -32,14 +33,15 @@ public class DeathPageTabDeadTab extends AbstractPage {
     }
 
     public void enterInformationAboutDead(){
+        Person person = new Person();
         action.clickOnElement(openDeadTab);
-        action.typeText(name, "Робот");
-        action.typeText(surname, "Атоматов");
-        action.typeText(fatherName, "Роботович");
+        action.typeText(name, person.getName());
+        action.typeText(surname, person.getSurname());
+        action.typeText(fatherName, person.getFatherName());
         action.typeText(birthdayDate, "11.11.1950");
         action.typeText(deathDate, "11.11.2017");
-        action.typeText(documentNumber, "123123");
-        action.typeText(documentDate, "11.11.2017");
-        action.typeText(documentPublisher, "1235");
+        action.typeText(documentNumber, person.getPassport());
+        action.typeText(documentDate, person.getPassportDate());
+        action.typeText(documentPublisher, person.getPassportPublisher());
     }
 }

@@ -3,6 +3,7 @@ package ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
 public class DeathPageTabGeneralTab extends AbstractPage {
@@ -17,7 +18,8 @@ public class DeathPageTabGeneralTab extends AbstractPage {
     }
 
     public void typeActNoteNumber(){
-        action.typeText(actNoteNumberField, "1234567890");
-        action.typeText(actNoteDateFideld, "11.11.2018");
+        Person person = new Person();
+        action.typeText(actNoteNumberField, person.getActNumber());
+        action.typeText(actNoteDateFideld, person.getActDate());
     }
 }
