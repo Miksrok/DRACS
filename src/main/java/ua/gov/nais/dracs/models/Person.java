@@ -24,7 +24,6 @@ public class Person {
 
     public Person(){
         this.name = "Робот";
-        //this.fatherName = "Автоматович";
         this.passportDate = "11.11.2012";
         this.passportPublisher = "1234";
     }
