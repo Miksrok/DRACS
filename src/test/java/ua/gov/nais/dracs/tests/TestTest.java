@@ -8,26 +8,26 @@ import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.DeathPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabDeadTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabGeneralTab;
 
-public class TestTest extends MainTest{
+public class TestTest extends MainTest {
 
     @Test
-    public void test(){
+    public void test() {
         driver.get("https://regdracs.test.nais.gov.ua/");
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login();
-        for (int i = 0; i< 25; i++){
-            MainPage mainPage = new MainPage(driver);
-            mainPage.openActRecordsTab();
-            ActRecordsTab actRecordsTab = new ActRecordsTab(driver);
-            actRecordsTab.selectDeath();
-            DeathPage deathPage = new DeathPage(driver);
-            deathPage.creatNewAct();
-            DeathPageTabGeneralTab generalTab = new DeathPageTabGeneralTab(driver);
-            generalTab.typeActNoteNumber();
-            DeathPageTabDeadTab deadTab = new DeathPageTabDeadTab(driver);
-            deadTab.enterInformationAboutDead();
-            deathPage.saveAct();
-        }
+
+        MainPage mainPage = new MainPage(driver);
+        mainPage.openActRecordsTab();
+        ActRecordsTab actRecordsTab = new ActRecordsTab(driver);
+        actRecordsTab.selectDeath();
+        DeathPage deathPage = new DeathPage(driver);
+        deathPage.creatNewAct();
+        DeathPageTabGeneralTab generalTab = new DeathPageTabGeneralTab(driver);
+        generalTab.typeActNoteNumber();
+        DeathPageTabDeadTab deadTab = new DeathPageTabDeadTab(driver);
+        deadTab.enterInformationAboutDead();
+        deathPage.saveAct();
+
 
     }
 
