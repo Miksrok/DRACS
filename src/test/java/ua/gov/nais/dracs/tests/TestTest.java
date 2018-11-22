@@ -1,13 +1,12 @@
 package ua.gov.nais.dracs.tests;
 
 import org.testng.annotations.Test;
+import ua.gov.nais.dracs.pages.LoginPage;
+import ua.gov.nais.dracs.pages.MainPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.DeathPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabDeadTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabGeneralTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.parenthoodPage.ParenthoodPage;
-import ua.gov.nais.dracs.pages.LoginPage;
-import ua.gov.nais.dracs.pages.MainPage;
 
 public class TestTest extends MainTest{
 
