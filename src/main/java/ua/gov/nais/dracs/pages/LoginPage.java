@@ -31,7 +31,7 @@ public class LoginPage extends AbstractPage {
     @FindBy(id = "selDevName")
     private WebElement deviceNamesList;
 
-    @FindBy(xpath = "//option[text() = 'F:\\']")
+    @FindBy(xpath = "//option[text() = 'J:\\']")
     private WebElement deviceName;
 
     @FindBy(id = "edtPass")
