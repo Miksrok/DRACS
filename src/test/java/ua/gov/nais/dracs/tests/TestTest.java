@@ -1,6 +1,7 @@
 package ua.gov.nais.dracs.tests;
 
 import org.testng.annotations.Test;
+import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.LoginPage;
 import ua.gov.nais.dracs.pages.MainPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
@@ -9,6 +10,10 @@ import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathP
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabGeneralTab;
 
 
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.MarriagePage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.FianceTab;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.FianceeTab;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.MarriagePageTabGeneralTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.NameChangePage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.nameChangeTabs.NameChageTabGeneralTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.nameChangeTabs.NameChangeTabSubjectTab;
@@ -26,32 +31,44 @@ public class TestTest extends MainTest{
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login();
 
-/*
         MainPage mainPage = new MainPage(driver);
-        mainPage.openActRecordsTab();
         ActRecordsTab actRecordsTab = new ActRecordsTab(driver);
-        actRecordsTab.selectDeath();
         DeathPage deathPage = new DeathPage(driver);
-        deathPage.creatNewAct();
         DeathPageTabGeneralTab generalTab = new DeathPageTabGeneralTab(driver);
-        generalTab.typeActNoteNumber();
         DeathPageTabDeadTab deadTab = new DeathPageTabDeadTab(driver);
-        deadTab.enterInformationAboutDead();
-        deathPage.saveAct();*/
-
-
-        MainPage mainPage = new MainPage(driver);
-        mainPage.openActRecordsTab();
-        ActRecordsTab actRecordsTab = new ActRecordsTab(driver);
-        actRecordsTab.selectNameChange();
         NameChangePage nameChangePage = new NameChangePage(driver);
-        nameChangePage.createNewAct();
         NameChageTabGeneralTab nameChageTabGeneralTab = new NameChageTabGeneralTab(driver);
+        NameChangeTabSubjectTab nameChangeTabSubjectTab = new NameChangeTabSubjectTab(driver);
+        MarriagePage marriagePage = new MarriagePage(driver);
+        MarriagePageTabGeneralTab marriagePageTabGeneralTab = new MarriagePageTabGeneralTab(driver);
+        FianceTab fianceTab = new FianceTab(driver);
+        FianceeTab fianceeTab = new FianceeTab(driver);
+
+
+        /*mainPage.openActRecordsTab();
+        actRecordsTab.selectDeath();
+        deathPage.creatNewAct();
+        generalTab.typeActNoteNumber();
+        deadTab.enterInformationAboutDead();
+        deathPage.saveAct();
+
+        mainPage.openActRecordsTab();
+        actRecordsTab.selectNameChange();
+        nameChangePage.createNewAct();
         nameChageTabGeneralTab.typeActNoteNumber();
         nameChageTabGeneralTab.typeDateOfRegOfNameChange();
-        NameChangeTabSubjectTab nameChangeTabSubjectTab = new NameChangeTabSubjectTab(driver);
         nameChangeTabSubjectTab.enterInformationAboutNameChange();
-        nameChangePage.saveAct();
+        nameChangePage.saveAct();*/
+
+        Person boy = new Person();
+        Person girl = new Person();
+        mainPage.openActRecordsTab();
+        actRecordsTab.selectMarriage();
+        marriagePage.createNewAct();
+        marriagePageTabGeneralTab.typeActInformation(boy);
+        fianceTab.addFiance(boy);
+        fianceeTab.addFiancee(girl, boy);
+        marriagePage.saveAct();
 
         
 
