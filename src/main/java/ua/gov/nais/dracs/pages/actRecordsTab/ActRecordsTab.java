@@ -15,6 +15,7 @@ public class ActRecordsTab extends AbstractPage {
 
     private WebElement birth;
 
+    @FindBy(xpath = "//a[text() = 'про розірвання шлюбу']")
     private WebElement divorce;
 
     @FindBy(xpath = "//a[text() = 'про смерть']")
