@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
-public class FianceeTab extends AbstractPage {
+public class MarriagePageTabFianceeTab extends AbstractPage {
 
     @FindBy(xpath = "//a[@href = '#tGirl']")
     private WebElement fianceeTab;
@@ -27,7 +27,7 @@ public class FianceeTab extends AbstractPage {
     @FindBy (xpath = "(//label[text() = 'Ким виданий (орган, що видав)'])[2]/following-sibling::input")
     private WebElement documentPublisher;
 
-    public FianceeTab(WebDriver driver) {
+    public MarriagePageTabFianceeTab(WebDriver driver) {
         super(driver);
     }
 

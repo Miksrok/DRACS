@@ -11,15 +11,12 @@ import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathP
 
 
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.MarriagePage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.FianceTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.FianceeTab;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.MarriagePageTabFianceTab;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.MarriagePageTabFianceeTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.MarriagePageTabGeneralTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.NameChangePage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.nameChangeTabs.NameChageTabGeneralTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.nameChangeTabs.NameChangeTabSubjectTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.parenthoodPage.ParenthoodPage;
-import ua.gov.nais.dracs.pages.LoginPage;
-import ua.gov.nais.dracs.pages.MainPage;
 
 
 public class TestTest extends MainTest{
@@ -41,8 +38,8 @@ public class TestTest extends MainTest{
         NameChangeTabSubjectTab nameChangeTabSubjectTab = new NameChangeTabSubjectTab(driver);
         MarriagePage marriagePage = new MarriagePage(driver);
         MarriagePageTabGeneralTab marriagePageTabGeneralTab = new MarriagePageTabGeneralTab(driver);
-        FianceTab fianceTab = new FianceTab(driver);
-        FianceeTab fianceeTab = new FianceeTab(driver);
+        MarriagePageTabFianceTab marriagePageTabFianceTab = new MarriagePageTabFianceTab(driver);
+        MarriagePageTabFianceeTab marriagePageTabFianceeTab = new MarriagePageTabFianceeTab(driver);
 
 
         /*mainPage.openActRecordsTab();
@@ -66,8 +63,8 @@ public class TestTest extends MainTest{
         actRecordsTab.selectMarriage();
         marriagePage.createNewAct();
         marriagePageTabGeneralTab.typeActInformation(boy);
-        fianceTab.addFiance(boy);
-        fianceeTab.addFiancee(girl, boy);
+        marriagePageTabFianceTab.addFiance(boy);
+        marriagePageTabFianceeTab.addFiancee(girl, boy);
         marriagePage.saveAct();
 
         
