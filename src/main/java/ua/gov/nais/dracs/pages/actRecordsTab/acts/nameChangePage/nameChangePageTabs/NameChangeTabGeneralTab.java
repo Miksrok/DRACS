@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
-public class NameChageTabGeneralTab extends AbstractPage {
+public class NameChangeTabGeneralTab extends AbstractPage {
 
     @FindBy(xpath = "(//label[text() = '№ АЗ']/../input)[1]")
     private WebElement actNoteNumberField;
@@ -19,7 +19,7 @@ public class NameChageTabGeneralTab extends AbstractPage {
 
 
 
-    public NameChageTabGeneralTab(WebDriver driver) {
+    public NameChangeTabGeneralTab(WebDriver driver) {
         super(driver);
     }
 
