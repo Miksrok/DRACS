@@ -1,4 +1,4 @@
-package ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs;
+package ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,20 +6,20 @@ import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
-public class DeathPageTabDeadTab extends AbstractPage {
+public class MarriagePageTabFianceTab extends AbstractPage {
 
-    @FindBy(xpath = "//a[@href = '#tPerson']")
-    private WebElement openDeadTab;
-    @FindBy (xpath = "(//label[text() = 'Прізвище'])[1]/following-sibling::input")
-    private WebElement name;
+    @FindBy(xpath = "//a[@href = '#tBoy']")
+    private WebElement fianceTab;
+    @FindBy (xpath = "(//label[text() = 'Прізвище до реєстрації шлюбу'])[1]/following-sibling::input")
+    private WebElement beoreSurname;
+    @FindBy (xpath = "(//label[text() = 'Прізвище після реєстрації шлюбу'])[1]/following-sibling::input")
+    private WebElement afterSurname;
     @FindBy (xpath = "(//label[text() = 'Власне ім’я'])[1]/following-sibling::input")
-    private WebElement surname;
+    private WebElement name;
     @FindBy (xpath = "(//label[text() = 'По батькові'])[1]/following-sibling::input")
     private WebElement fatherName;
     @FindBy (xpath = "(//label[text() = 'Дата нар-ня'])[1]/following-sibling::div/div[2]/div/div/input")
     private WebElement dateOfBirth;
-    @FindBy (xpath = "(//label[text() = 'Дата смерті'])[1]/following-sibling::div/div[2]/div/div/input")
-    private WebElement deathDate;
     @FindBy (xpath = "(//label[text() = 'Серія та № / Документ №'])[1]/following-sibling::input")
     private WebElement documentNumber;
     @FindBy (xpath = "(//label[text() = 'Дата видачі'])[1]/following-sibling::div/div/input")
@@ -27,17 +27,18 @@ public class DeathPageTabDeadTab extends AbstractPage {
     @FindBy (xpath = "(//label[text() = 'Ким виданий (орган, що видав)'])[1]/following-sibling::input")
     private WebElement documentPublisher;
 
-    public DeathPageTabDeadTab(WebDriver driver) {
+
+    public MarriagePageTabFianceTab(WebDriver driver) {
         super(driver);
     }
 
-    public void enterInformationAboutDead(Person person){
-        action.clickOnElement(openDeadTab);
+    public void addFiance(Person person){
+        action.clickOnElement(fianceTab);
+        action.typeText(beoreSurname, person.getSurname());
+        action.typeText(afterSurname, person.getSurname());
         action.typeText(name, person.getName());
-        action.typeText(surname, person.getSurname());
         action.typeText(fatherName, person.getFatherName());
-        action.typeText(dateOfBirth, "11.11.1950");
-        action.typeText(deathDate, "11.11.2017");
+        action.typeText(dateOfBirth, "12.12.1988");
         action.typeText(documentNumber, person.getPassport());
         action.typeText(documentDate, person.getPassportDate());
         action.typeText(documentPublisher, person.getPassportPublisher());

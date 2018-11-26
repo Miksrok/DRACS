@@ -30,7 +30,7 @@ public class NameChangeTabSubjectTab extends AbstractPage {
     private WebElement afterFatherName;
 
     @FindBy(xpath = "(//label[text() = 'Дата нар-ня'])[1]/following-sibling::div/div[2]/div/div/input")
-    private WebElement birthdayDate;
+    private WebElement dateOfBirth;
 
     @FindBy(xpath = "(//label[text() = 'Серія та № / Документ №'])[1]/following-sibling::input")
     private WebElement documentNumber;
@@ -45,8 +45,7 @@ public class NameChangeTabSubjectTab extends AbstractPage {
         super(driver);
     }
 
-    public void enterInformationAboutNameChange(){
-        Person person = new Person();
+    public void enterInformationAboutNameChange(Person person){
         action.clickOnElement(openSubjectTab);
         action.typeText(beforeName, person.getName());
         action.typeText(beforeSurname, person.getSurname());
@@ -54,7 +53,7 @@ public class NameChangeTabSubjectTab extends AbstractPage {
         action.typeText(afterName, person.getName());
         action.typeText(afterSurname, person.getSurname());
         action.typeText(afterFatherName, person.getFatherName());
-        action.typeText(birthdayDate, "04.04.1988");
+        action.typeText(dateOfBirth, "04.04.1988");
         action.typeText(documentNumber, person.getPassport());
         action.typeText(documentDate, person.getPassportDate());
         action.typeText(documentPublisher, person.getPassportPublisher());

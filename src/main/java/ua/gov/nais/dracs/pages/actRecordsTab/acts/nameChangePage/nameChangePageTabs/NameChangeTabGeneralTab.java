@@ -23,8 +23,7 @@ public class NameChangeTabGeneralTab extends AbstractPage {
         super(driver);
     }
 
-    public void typeActNoteNumber(){
-        Person person = new Person();
+    public void typeActNoteNumber(Person person){
         action.typeText(actNoteNumberField,person.getActNumber());
         action.typeText(actNoteDateField,person.getActDate());
     }
