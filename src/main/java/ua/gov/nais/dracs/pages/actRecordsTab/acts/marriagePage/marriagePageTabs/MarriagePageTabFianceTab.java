@@ -11,7 +11,7 @@ public class MarriagePageTabFianceTab extends AbstractPage {
     @FindBy(xpath = "//a[@href = '#tBoy']")
     private WebElement fianceTab;
     @FindBy (xpath = "(//label[text() = 'Прізвище до реєстрації шлюбу'])[1]/following-sibling::input")
-    private WebElement beoreSurname;
+    private WebElement beforeSurname;
     @FindBy (xpath = "(//label[text() = 'Прізвище після реєстрації шлюбу'])[1]/following-sibling::input")
     private WebElement afterSurname;
     @FindBy (xpath = "(//label[text() = 'Власне ім’я'])[1]/following-sibling::input")
@@ -34,7 +34,7 @@ public class MarriagePageTabFianceTab extends AbstractPage {
 
     public void addFiance(Person person){
         action.clickOnElement(fianceTab);
-        action.typeText(beoreSurname, person.getSurname());
+        action.typeText(beforeSurname, person.getSurname());
         action.typeText(afterSurname, person.getSurname());
         action.typeText(name, person.getName());
         action.typeText(fatherName, person.getFatherName());

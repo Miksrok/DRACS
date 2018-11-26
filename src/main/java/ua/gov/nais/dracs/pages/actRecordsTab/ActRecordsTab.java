@@ -52,4 +52,8 @@ public class ActRecordsTab extends AbstractPage {
         action.clickOnElement(marriage);
     }
 
+    public void selectDivorce() {
+        action.clickOnElement(divorce);
+    }
+
 }
