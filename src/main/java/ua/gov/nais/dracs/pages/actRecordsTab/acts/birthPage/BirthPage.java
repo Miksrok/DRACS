@@ -1,11 +1,11 @@
-package ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange;
+package ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
-public class NameChangePage extends AbstractPage {
+public class BirthPage extends AbstractPage {
 
     @FindBy(id = "acRegister")
     private WebElement createNewAct;
@@ -16,9 +16,7 @@ public class NameChangePage extends AbstractPage {
     @FindBy (xpath = "//div[@id = 'alert-message-info']/following::span[text() = 'OК']")
     private WebElement okAlertButton;
 
-    public NameChangePage(WebDriver driver) {
-        super(driver);
-    }
+    public BirthPage(WebDriver driver) {super(driver);}
 
     public void createNewAct(){
         action.clickOnElement(createNewAct);
@@ -29,3 +27,4 @@ public class NameChangePage extends AbstractPage {
         action.clickOnElement(okAlertButton);
     }
 }
+

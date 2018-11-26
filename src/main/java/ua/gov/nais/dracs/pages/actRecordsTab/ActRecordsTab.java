@@ -13,6 +13,7 @@ public class ActRecordsTab extends AbstractPage {
     @FindBy(xpath = "//a[text() = 'про зміну імені']")
     private WebElement nameChange;
 
+    @FindBy(xpath = "//a[text() = 'про народження']")
     private WebElement birth;
 
     private WebElement divorce;
@@ -29,9 +30,9 @@ public class ActRecordsTab extends AbstractPage {
         super(driver);
     }
 
-    public void selectNameChange() {
-        action.clickOnElement(nameChange);
-    }
+    public void selectNameChange() { action.clickOnElement(nameChange); }
+
+    public void selectBirth() { action.clickOnElement(birth); }
 
     public void selectParenthood() {
         action.clickOnElement(parenthood);

@@ -1,4 +1,4 @@
-package ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.nameChangeTabs;
+package ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePageTabs;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

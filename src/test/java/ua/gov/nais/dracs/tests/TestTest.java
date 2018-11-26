@@ -2,13 +2,9 @@ package ua.gov.nais.dracs.tests;
 
 import org.testng.annotations.Test;
 import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.DeathPage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabDeadTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabGeneralTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.NameChangePage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.nameChangeTabs.NameChageTabGeneralTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.nameChangeTabs.NameChangeTabSubjectTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.parenthoodPage.ParenthoodPage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.NameChangePage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePageTabs.NameChageTabGeneralTab;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePageTabs.NameChangeTabSubjectTab;
 import ua.gov.nais.dracs.pages.LoginPage;
 import ua.gov.nais.dracs.pages.MainPage;
 
