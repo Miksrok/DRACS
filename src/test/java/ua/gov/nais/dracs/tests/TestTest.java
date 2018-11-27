@@ -14,9 +14,9 @@ import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.MarriagePage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.MarriagePageTabFianceTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.MarriagePageTabFianceeTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.MarriagePageTabGeneralTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.NameChangePage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.nameChangeTabs.NameChageTabGeneralTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.nameChangeTabs.NameChangeTabSubjectTab;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.NameChangePage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePageTabs.NameChangeTabGeneralTab;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePageTabs.NameChangeTabSubjectTab;
 
 
 public class TestTest extends MainTest{
@@ -34,7 +34,7 @@ public class TestTest extends MainTest{
         DeathPageTabGeneralTab generalTab = new DeathPageTabGeneralTab(driver);
         DeathPageTabDeadTab deadTab = new DeathPageTabDeadTab(driver);
         NameChangePage nameChangePage = new NameChangePage(driver);
-        NameChageTabGeneralTab nameChageTabGeneralTab = new NameChageTabGeneralTab(driver);
+        NameChangeTabGeneralTab nameChangeTabGeneralTab = new NameChangeTabGeneralTab(driver);
         NameChangeTabSubjectTab nameChangeTabSubjectTab = new NameChangeTabSubjectTab(driver);
         MarriagePage marriagePage = new MarriagePage(driver);
         MarriagePageTabGeneralTab marriagePageTabGeneralTab = new MarriagePageTabGeneralTab(driver);
