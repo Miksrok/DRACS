@@ -3,7 +3,9 @@ package ua.gov.nais.dracs.pages.applicationsTab;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import ua.gov.nais.dracs.models.Person;
+
 import ua.gov.nais.dracs.pages.AbstractPage;
 
 public class ApplicationsTab extends AbstractPage {
