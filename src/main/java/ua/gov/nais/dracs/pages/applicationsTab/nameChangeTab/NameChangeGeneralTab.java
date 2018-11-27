@@ -1,9 +1,9 @@
-package ua.gov.nais.dracs.pages.applicationsTab.nameChange;
+package ua.gov.nais.dracs.pages.applicationsTab.nameChangeTab;
 
 import org.openqa.selenium.WebDriver;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
-public class NameChangeTab extends AbstractPage {
+public class NameChangeGeneralTab extends AbstractPage {
 
-    public NameChangeTab(WebDriver driver) {super(driver);}
+    public NameChangeGeneralTab(WebDriver driver) {super(driver);}
 }
