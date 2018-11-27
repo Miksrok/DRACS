@@ -5,22 +5,10 @@ import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.LoginPage;
 import ua.gov.nais.dracs.pages.MainPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.DeathPage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabDeadTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabGeneralTab;
-
-
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.DivorcePage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabGeneralTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabHusbandTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabWifeTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.MarriagePage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.MarriagePageTabFianceTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.MarriagePageTabFianceeTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.MarriagePageTabGeneralTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.NameChangePage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.nameChangeTabs.NameChageTabGeneralTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChange.nameChangeTabs.NameChangeTabSubjectTab;
 
 
 public class TestTest extends MainTest{
