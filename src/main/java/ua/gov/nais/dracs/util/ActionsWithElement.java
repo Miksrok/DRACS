@@ -25,6 +25,7 @@ public class ActionsWithElement {
 
     public void typeText(WebElement element, String text){
 
+        wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
         element.clear();
         element.sendKeys(Keys.HOME);
