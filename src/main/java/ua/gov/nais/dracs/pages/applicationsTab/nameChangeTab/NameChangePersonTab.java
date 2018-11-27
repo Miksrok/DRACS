@@ -1,4 +1,4 @@
-package ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePageTabs;
+package ua.gov.nais.dracs.pages.applicationsTab.nameChangeTab;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
-public class NameChangeTabSubjectTab extends AbstractPage {
+public class NameChangePersonTab extends AbstractPage {
 
-    @FindBy(xpath = "//a[@href = '#tPerson']")
-    private WebElement openSubjectTab;
+    @FindBy(xpath = "//b[text()= 'Особа, яка змінює ПІБ']")
+    private WebElement openPersonTab;
 
     @FindBy(xpath = "(//label[text() = 'Власне ім’я'])[1]/following-sibling::input")
     private WebElement beforeName;
@@ -41,12 +41,11 @@ public class NameChangeTabSubjectTab extends AbstractPage {
     @FindBy(xpath = "(//label[text() = 'Ким виданий (орган, що видав)'])[1]/following-sibling::input")
     private WebElement documentPublisher;
 
-    public NameChangeTabSubjectTab(WebDriver driver) {
-        super(driver);
-    }
+
+    public NameChangePersonTab(WebDriver driver) {super(driver);}
 
     public void enterInformationAboutNameChange(Person person){
-        action.clickOnElement(openSubjectTab);
+        action.clickOnElement(openPersonTab);
         action.typeText(beforeName, person.getName());
         action.typeText(beforeSurname, person.getSurname());
         action.typeText(beforeFatherName, person.getFatherName());
