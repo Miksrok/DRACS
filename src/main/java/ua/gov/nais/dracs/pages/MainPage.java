@@ -8,6 +8,8 @@ public class MainPage extends AbstractPage{
 
     @FindBy (xpath = "//span[text() = 'Актові записи']")
     private WebElement actRecordsTab;
+    @FindBy (xpath = "//span[text() = 'Заяви']")
+    private WebElement apllicationsTab;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -15,6 +17,10 @@ public class MainPage extends AbstractPage{
 
     public void openActRecordsTab(){
         action.clickOnElement(actRecordsTab);
+    }
+
+    public void openApplicationTab(){
+        action.clickOnElement(apllicationsTab);
     }
 
 }
