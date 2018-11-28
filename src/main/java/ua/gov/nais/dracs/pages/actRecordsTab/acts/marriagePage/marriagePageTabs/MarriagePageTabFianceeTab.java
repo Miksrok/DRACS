@@ -18,7 +18,7 @@ public class MarriagePageTabFianceeTab extends AbstractPage {
     private WebElement name;
     @FindBy (xpath = "(//label[text() = 'По батькові'])[2]/following-sibling::input")
     private WebElement fatherName;
-    @FindBy (xpath = "(//label[text() = 'Дата нар-ня'])[2]/following-sibling::div/div[2]/div/div/input")
+    @FindBy (xpath = "(//label[text() = 'Дата нар-ня'])[1]/following-sibling::div/div[2]/div/div/input")
     private WebElement dateOfBirth;
     @FindBy (xpath = "(//label[text() = 'Серія та № / Документ №'])[2]/following-sibling::input")
     private WebElement documentNumber;
