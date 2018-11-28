@@ -9,6 +9,8 @@ public class BirthPage extends AbstractPage {
 
     @FindBy(id = "acRegister")
     private WebElement createNewAct;
+    @FindBy (xpath = "//span[text() = 'Зберегти та друкувати']/parent::button")
+    private WebElement saveAndPrintButton;
     @FindBy (xpath = "(//span[text() = 'Зберегти'])[1]")
     private WebElement saveButton;
     @FindBy (xpath = "//div[@id = 'confirm-message']/following-sibling::div/div/button/span[text() = 'OК']")
@@ -23,6 +25,11 @@ public class BirthPage extends AbstractPage {
     }
     public void saveAct() {
         action.clickOnElement(saveButton);
+        action.clickOnElement(okButton);
+        action.clickOnElement(okAlertButton);
+    }
+    public void saveAndPrint(){
+        action.clickOnElement(saveAndPrintButton);
         action.clickOnElement(okButton);
         action.clickOnElement(okAlertButton);
     }

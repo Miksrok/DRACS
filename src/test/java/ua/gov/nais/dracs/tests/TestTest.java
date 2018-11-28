@@ -6,6 +6,7 @@ import ua.gov.nais.dracs.pages.LoginPage;
 import ua.gov.nais.dracs.pages.MainPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabFatherTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabGeneralTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.DivorcePage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabGeneralTab;
@@ -16,6 +17,7 @@ import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.Chil
 import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.FatherTab;
 import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.MotherTab;
 import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.ReasonTab;
+import ua.gov.nais.dracs.pages.modalWindows.ActRecordPrint;
 
 
 public class TestTest extends MainTest{
@@ -69,6 +71,13 @@ public class TestTest extends MainTest{
         BirthTabGeneralTab birthTabGeneralTab = new BirthTabGeneralTab(driver);
         birthTabGeneralTab.typeActNoteNumber(mother);
         birthTabGeneralTab.clickSearchAppButton(num);
+        BirthTabFatherTab birthTabFatherTab = new BirthTabFatherTab(driver);
+        birthTabFatherTab.openFatherTab();
+        birthTabFatherTab.typeReason();
+        birthPage.saveAndPrint();
+        ActRecordPrint actRecordPrint = new ActRecordPrint(driver);
+        actRecordPrint.printActRecord();
+       // birthPage.saveAct();
 
 
 
