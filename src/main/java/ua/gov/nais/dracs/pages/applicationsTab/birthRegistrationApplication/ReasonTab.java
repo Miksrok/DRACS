@@ -15,6 +15,15 @@ public class ReasonTab extends AbstractPage {
     @FindBy (xpath = "//label[text() = 'Дата складання АЗ']/following-sibling::div/descendant::input[1]")
     private WebElement actRecordDate;
 
+    @FindBy (xpath = "(//label[text() = 'Регіон органу ДРАЦС'])[1]/following-sibling::select")
+    private WebElement organizationRregionList;
+    @FindBy (xpath = "(//label[text() = 'Регіон органу ДРАЦС'])[1]/following-sibling::select/option[text() = 'Волинська обл.']")
+    private WebElement regionVolin;
+    @FindBy (xpath = "(//label[text() = 'Орган ДРАЦС'])[1]/following-sibling::select")
+    private WebElement organizationList;
+    @FindBy (xpath = "//option[@value = '52079']")
+    private WebElement organizationGorohivDracs;
+
     public ReasonTab(WebDriver driver) {
         super(driver);
     }
@@ -24,6 +33,10 @@ public class ReasonTab extends AbstractPage {
         action.clickOnElement(reasonTab);
         action.typeText(actRecordNumber, person.getActNumber());
         action.typeText(actRecordDate, person.getActDate());
+        action.clickOnElement(organizationRregionList);
+        action.clickOnElement(regionVolin);
+        action.clickOnElement(organizationRregionList);
+        action.clickOnElement(organizationGorohivDracs);
 
     }
 }
