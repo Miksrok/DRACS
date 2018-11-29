@@ -1,4 +1,4 @@
-package ua.gov.nais.dracs.pages.applicationsTab.DeathTab;
+package ua.gov.nais.dracs.pages.applicationsTab.deathRegistrationApplication;
 
 import org.openqa.selenium.WebDriver;
 import ua.gov.nais.dracs.pages.AbstractPage;

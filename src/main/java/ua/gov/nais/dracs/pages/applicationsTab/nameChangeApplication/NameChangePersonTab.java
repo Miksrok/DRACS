@@ -1,4 +1,4 @@
-package ua.gov.nais.dracs.pages.applicationsTab.nameChangeTab;
+package ua.gov.nais.dracs.pages.applicationsTab.nameChangeApplication;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
