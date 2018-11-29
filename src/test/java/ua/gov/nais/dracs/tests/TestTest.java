@@ -17,6 +17,7 @@ import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.Chil
 import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.FatherTab;
 import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.MotherTab;
 import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.ReasonTab;
+import ua.gov.nais.dracs.pages.certificateTab.CertificatePage;
 import ua.gov.nais.dracs.pages.modalWindows.ActRecordPrint;
 
 
@@ -76,7 +77,9 @@ public class TestTest extends MainTest{
         birthTabFatherTab.typeReason();
         birthPage.saveAndPrint();
         ActRecordPrint actRecordPrint = new ActRecordPrint(driver);
-        actRecordPrint.printActRecord();
+        actRecordPrint.printActRecord(num);
+        CertificatePage certificatePage = new CertificatePage(driver);
+        certificatePage.createCertificate(num);
        // birthPage.saveAct();
 
 
