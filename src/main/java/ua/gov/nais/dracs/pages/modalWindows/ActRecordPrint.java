@@ -18,6 +18,12 @@ public class ActRecordPrint extends AbstractPage {
     @FindBy (xpath = "//td[@id = 'ActRecordToolbar_Menu_DXI0_I']")
     private WebElement printButton;
 
+    @FindBy (xpath = "//b[contains(text(), 'Підтвердження')]")
+    private WebElement printConfirmation;
+
+    @FindBy (xpath = "//span[text() = 'Підтвердити']")
+    private WebElement acceptButton;
+
     @FindBy (xpath = "//button[@class = 'destination-settings-change-button']")
     private WebElement destination;
 
@@ -25,23 +31,25 @@ public class ActRecordPrint extends AbstractPage {
         super(driver);
     }
 
-    public void printActRecord(){
+    public void printActRecord(String saveNumber){
         action.typeText(series, "ФФ");
         action.typeText(number, "123456");
         action.clickOnElement(generateButton);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wait5Sec();
         action.clickOnElement(printButton);
+        wait5Sec();
+        RobotForPrintBox robot = new RobotForPrintBox();
+        robot.enterInfo(saveNumber);
+        wait5Sec();
+        action.clickOnElement(printConfirmation);
+        action.clickOnElement(acceptButton);
+    }
+    private void wait5Sec(){
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        RobotForPrintBox robot = new RobotForPrintBox();
-        robot.enterInfo();
     }
 
 }
