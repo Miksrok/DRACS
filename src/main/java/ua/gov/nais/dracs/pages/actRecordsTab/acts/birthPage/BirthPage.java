@@ -1,5 +1,6 @@
 package ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,10 @@ public class BirthPage extends AbstractPage {
     private WebElement okButton;
     @FindBy (xpath = "//div[@id = 'alert-message-info']/following::span[text() = 'OК']")
     private WebElement okAlertButton;
+    @FindBy (xpath = "//a[@id = 'searchbox-open']")
+    private WebElement extendSearchLink;
+    @FindBy (xpath = "//a[@id = 'acCreateExt']")
+    private WebElement createExtract;
 
     public BirthPage(WebDriver driver) {super(driver);}
 
@@ -32,6 +37,16 @@ public class BirthPage extends AbstractPage {
         action.clickOnElement(saveAndPrintButton);
         action.clickOnElement(okButton);
         action.clickOnElement(okAlertButton);
+    }
+    public void openExtendSearchModalWindow(){
+        action.clickOnElement(extendSearchLink);
+    }
+    public void selectSearchResult(String surname, String name, String fatherName){
+        WebElement element = driver.findElement(By.xpath("//td[text() = '"+ surname + " " + name + " " + fatherName+"']"));
+        action.clickOnElement(element);
+    }
+    public void clickCreateExtract(){
+        action.clickOnElement(createExtract);
     }
 }
 

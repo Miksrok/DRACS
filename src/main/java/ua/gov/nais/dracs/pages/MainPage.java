@@ -3,6 +3,7 @@ package ua.gov.nais.dracs.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Reporter;
 
 public class MainPage extends AbstractPage{
 
@@ -21,6 +22,7 @@ public class MainPage extends AbstractPage{
 
     public void openApplicationTab(){
         action.clickOnElement(apllicationsTab);
+        Reporter.log("open app tab");
     }
 
 }

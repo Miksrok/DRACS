@@ -3,6 +3,7 @@ package ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Reporter;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
@@ -35,6 +36,7 @@ public class ChildTab extends AbstractPage {
         action.typeText(birthDate, person.getActDate());
         action.clickOnElement(genderList);
         action.clickOnElement(genderBoy);
+        Reporter.log("enter info about child");
     }
 
 

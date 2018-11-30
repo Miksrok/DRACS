@@ -22,7 +22,7 @@
      </test>-->
    <test name="Second long test">
         <classes>
-            <class name="ua.gov.nais.dracs.tests.TestTest"/>
+            <class name="ua.gov.nais.dracs.tests.NotarTest"/>
         </classes>
     </test>
 </suite>

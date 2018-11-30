@@ -3,6 +3,7 @@ package ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Reporter;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
@@ -37,6 +38,7 @@ public class ReasonTab extends AbstractPage {
         action.clickOnElement(regionVolin);
         action.clickOnElement(organizationRregionList);
         action.clickOnElement(organizationGorohivDracs);
+        Reporter.log("about reason"+"<br>");
 
     }
 }

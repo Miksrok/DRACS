@@ -47,7 +47,7 @@ public class LoginPage extends AbstractPage {
 
     public void login() {
         action.waitUntilDisappear(loadingAnimation);
-        action.typeText(loginField, "testreg");
+        action.typeText(loginField, "testnot");
         action.typeText(passwordField, "123456789");
         action.clickOnElement(selectAcskList);
         action.clickOnElement(acskListItem);

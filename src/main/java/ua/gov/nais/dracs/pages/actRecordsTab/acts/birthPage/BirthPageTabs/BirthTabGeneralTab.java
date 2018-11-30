@@ -18,11 +18,21 @@ public class BirthTabGeneralTab extends AbstractPage {
     @FindBy (xpath = "(//span[text() = 'Пошук'])[1]")
     private WebElement searchApplication;
 
+    @FindBy (xpath = "//label[text() = 'Реєстрація народження проводиться']/following-sibling::select")
+    private WebElement birthRegistrationReasonList;
+
+    @FindBy (xpath = "//label[text() = 'Реєстрація народження проводиться']" +
+            "/following-sibling::select" +
+            "/option[@value = '2']")
+    private WebElement articleOfLaw133;
+
     public BirthTabGeneralTab(WebDriver driver) {super(driver);}
 
     public void typeActNoteNumber(Person person){
         action.typeText(actNoteNumberField,person.getActNumber());
         action.typeText(actNoteDateField,person.getActDate());
+        action.clickOnElement(birthRegistrationReasonList);
+        action.clickOnElement(articleOfLaw133);
     }
     public void clickSearchAppButton(String number){
         action.clickOnElement(searchApplication);

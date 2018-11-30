@@ -59,7 +59,7 @@ public class TestTest extends MainTest{
         FatherTab fatherTab = new FatherTab(driver);
         fatherTab.enterInformationAboutFather(father);
         MotherTab motherTab = new MotherTab(driver);
-        motherTab.enterInformationAboutFather(mother);
+        motherTab.enterInformationAboutMother(mother);
         ReasonTab reasonTab = new ReasonTab(driver);
         reasonTab.enterInformationAboutReason(child);
         applicationsTab.saveApllication();

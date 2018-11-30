@@ -3,6 +3,7 @@ package ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Reporter;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 import ua.gov.nais.dracs.pages.modalWindows.Address;
@@ -44,6 +45,7 @@ public class FatherTab extends AbstractPage {
         action.clickOnElement(addressButton);
         Address address = new Address(driver);
         address.enterAddress();
+        Reporter.log("info about father");
 
     }
 

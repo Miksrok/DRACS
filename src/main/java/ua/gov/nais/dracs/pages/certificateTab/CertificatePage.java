@@ -14,6 +14,9 @@ public class CertificatePage extends AbstractPage {
     @FindBy (xpath = "//span[text() = 'Так']")
     private WebElement yesButton;
 
+    @FindBy (xpath = "//div[@id = 'alert-message-info']/following::span[text() = 'OК']")
+    private WebElement okAlertButton;
+
     public CertificatePage(WebDriver driver) {
         super(driver);
     }
@@ -25,6 +28,7 @@ public class CertificatePage extends AbstractPage {
         robot.saveCertificate(number);
         wait5Sec();
         action.clickOnElement(yesButton);
+        action.clickOnElement(okAlertButton);
 
     }
     private void wait5Sec(){

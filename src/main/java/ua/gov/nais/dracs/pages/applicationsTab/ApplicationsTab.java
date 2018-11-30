@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import org.testng.Reporter;
 import ua.gov.nais.dracs.models.Person;
 
 import ua.gov.nais.dracs.pages.AbstractPage;
@@ -34,6 +35,7 @@ public class ApplicationsTab extends AbstractPage {
 
     public void creatNewApplication(){
         action.clickOnElement(creatNewApplication);
+        Reporter.log("creat new app");
     }
     public String selectApplicationAndEnterMainInfo(){
         Person person = new Person();
@@ -43,9 +45,11 @@ public class ApplicationsTab extends AbstractPage {
         action.typeText(applicationNumber, person.getActNumber());
         return person.getActNumber();
     }
+
     public void saveApllication(){
         action.clickOnElement(saveButton);
         //action.clickOnElement(okButton);
         action.clickOnElement(okAlertButton);
+        Reporter.log("save app"+"<br>");
     }
 }
