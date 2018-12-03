@@ -12,10 +12,6 @@ public class Person {
 
     private String fatherName;
 
-    private String actNumber;
-
-    private String actDate;
-
     private String passport;
 
     private String passportDate;
@@ -30,11 +26,7 @@ public class Person {
 
     {
         Date date = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("MMddHHmmss");
-        SimpleDateFormat formatEightNumbers = new SimpleDateFormat("ddMMYYYY");
         SimpleDateFormat formatEightNumbersSeconds = new SimpleDateFormat("ddHHmmss");
-        this.actNumber = format.format(date);
-        this.actDate = formatEightNumbers.format(date);
         this.passport = "9" + formatEightNumbersSeconds.format(date);
     }
 
@@ -63,14 +55,6 @@ public class Person {
 
     public String getFatherName() {
         return fatherName;
-    }
-
-    public String getActNumber() {
-        return actNumber;
-    }
-
-    public String getActDate() {
-        return actDate;
     }
 
     public String getPassport() {

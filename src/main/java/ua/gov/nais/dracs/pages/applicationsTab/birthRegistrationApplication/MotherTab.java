@@ -3,6 +3,7 @@ package ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Reporter;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 import ua.gov.nais.dracs.pages.modalWindows.Address;
@@ -32,7 +33,7 @@ public class MotherTab extends AbstractPage {
         super(driver);
     }
 
-    public void enterInformationAboutFather(Person person){
+    public void enterInformationAboutMother(Person person){
         action.clickOnElement(openMotherTab);
         action.typeText(surname, person.getSurname());
         action.typeText(name, person.getName());
@@ -42,6 +43,7 @@ public class MotherTab extends AbstractPage {
         action.typeText(documentDate, person.getPassportDate());
         action.typeText(documentPublisher, person.getPassportPublisher());
         action.clickOnElement(copyAddress);
+        Reporter.log("about mother"+"<br>");
     }
 
 }
