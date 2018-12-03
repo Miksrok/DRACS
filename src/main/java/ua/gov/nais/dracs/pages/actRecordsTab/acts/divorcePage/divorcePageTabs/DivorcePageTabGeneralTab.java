@@ -3,6 +3,7 @@ package ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
@@ -25,10 +26,10 @@ public class DivorcePageTabGeneralTab extends AbstractPage {
         super(driver);
     }
 
-    public void typeActInformation(Person person){
-        action.typeText(actNoteNumberField, person.getActNumber());
-        action.typeText(actNoteDateField, person.getActDate());
-        action.typeText(dateOfDivorceRegistration, person.getActDate());
+    public void typeActInformation(ActRecord act){
+        action.typeText(actNoteNumberField, act.getActNumber());
+        action.typeText(actNoteDateField, act.getActDate());
+        action.typeText(dateOfDivorceRegistration, act.getActDate());
         action.typeText(reason, "Прошла лубофф, зав'яли помідорки");
         action.clickOnElement(amountOfChildrenList);
         action.clickOnElement(amountOfChildrenIsNone);

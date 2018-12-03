@@ -4,8 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPage;
 
 public class ActRecordsTab extends AbstractPage {
+
 
     @FindBy(xpath = "//a[text() = 'про встановлення батьківства']")
     private WebElement parenthood;
@@ -28,13 +30,23 @@ public class ActRecordsTab extends AbstractPage {
     @FindBy(xpath = "//a[text() = 'про шлюб']")
     private WebElement marriage;
 
+    // assert element
+    @FindBy(xpath = "//h3")
+    private WebElement actRecordTitle;
+
+
     public ActRecordsTab(WebDriver driver) {
         super(driver);
     }
 
-    public void selectNameChange() { action.clickOnElement(nameChange); }
+    public void selectNameChange() {
+        action.clickOnElement(nameChange);
+    }
 
-    public void selectBirth() { action.clickOnElement(birth); }
+    public BirthPage selectBirth() {
+        action.clickOnElement(birth);
+        return new BirthPage(driver);
+    }
 
     public void selectParenthood() {
         action.clickOnElement(parenthood);
@@ -54,6 +66,10 @@ public class ActRecordsTab extends AbstractPage {
 
     public void selectDivorce() {
         action.clickOnElement(divorce);
+    }
+
+    public String getActRecordTitle() {
+        return action.getText(actRecordTitle);
     }
 
 }

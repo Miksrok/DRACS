@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Reporter;
+import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
@@ -28,12 +29,12 @@ public class ChildTab extends AbstractPage {
         super(driver);
     }
 
-    public void enterInformationAboutChild(Person person){
+    public void enterInformationAboutChild(Person person, ActRecord act){
         action.clickOnElement(openChildTab);
         action.typeText(surname, person.getSurname());
         action.typeText(name, person.getName());
         action.typeText(fatherName, person.getFatherName());
-        action.typeText(birthDate, person.getActDate());
+        action.typeText(birthDate, act.getActDate());
         action.clickOnElement(genderList);
         action.clickOnElement(genderBoy);
         Reporter.log("enter info about child");

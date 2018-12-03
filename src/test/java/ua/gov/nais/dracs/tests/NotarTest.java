@@ -1,6 +1,6 @@
 package ua.gov.nais.dracs.tests;
 
-import org.testng.Reporter;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import ua.gov.nais.dracs.pages.LoginPage;
 import ua.gov.nais.dracs.pages.MainPage;
@@ -14,22 +14,21 @@ import ua.gov.nais.dracs.util.CustomReporter;
 
 public class NotarTest extends MainTest {
 
+    private final String ACT_RECORD_TITLE = "АЗ про народження";
+
     @Test
     public void notarTest(){
         CustomReporter.log("open page");
-        driver.get("https://regdracs.test.nais.gov.ua/");
         CustomReporter.log("start to enter login");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login();
-        CustomReporter.log("login completed");
-        CustomReporter.log("Open main page and act record tab");
-        MainPage mainPage = new MainPage(driver);
-        mainPage.openActRecordsTab();
-        ActRecordsTab actRecordsTab = new ActRecordsTab(driver);
-        actRecordsTab.selectBirth();
-        BirthPage birthPage = new BirthPage(driver);
-        birthPage.openExtendSearchModalWindow();
-        ExtendSearch extendSearch = new ExtendSearch(driver);
+        MainPage mainPage = loginPage.login();
+        /*ExtractPage extractPage = mainPage.openExtractTab();
+        extractPage.selectActRecordType();
+        extractPage.selectExtractType();*/
+        ActRecordsTab actRecordsTab = mainPage.openActRecordsTab();
+        BirthPage birthPage = actRecordsTab.selectBirth();
+        Assert.assertEquals(ACT_RECORD_TITLE, actRecordsTab.getActRecordTitle());
+        ExtendSearch extendSearch =  birthPage.openExtendSearchModalWindow();
         SearchByPersonRibbon searchByPersonRibbon = extendSearch.openPersonRibbon();
         searchByPersonRibbon.enterChildInformation();
         extendSearch.clickFindButton();

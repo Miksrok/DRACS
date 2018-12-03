@@ -3,6 +3,7 @@ package ua.gov.nais.dracs.pages.modalWindows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 import ua.gov.nais.dracs.util.RobotForPrintBox;
@@ -21,12 +22,12 @@ public class ExtractPrint extends AbstractPage {
     }
 
     public void printExtract(){
-        Person person = new Person();
+        ActRecord act = new ActRecord();
         action.clickOnElement(printButton);
         action.clickOnElement(okButton);
         wait10Sec();
         RobotForPrintBox robot = new RobotForPrintBox();
-        robot.saveExtract(person.getActNumber());
+        robot.saveExtract(act.getActNumber());
     }
     private void wait10Sec(){
         try {

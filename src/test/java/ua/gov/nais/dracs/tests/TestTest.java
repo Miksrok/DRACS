@@ -47,7 +47,7 @@ public class TestTest extends MainTest{
         DivorcePageTabHusbandTab divorcePageTabHusbandTab = new DivorcePageTabHusbandTab(driver);
         DivorcePageTabWifeTab divorcePageTabWifeTab = new DivorcePageTabWifeTab(driver);*/
 
-        Person child = new Person();
+        /*Person child = new Person();
         Person father = new Person();
         Person mother = new Person();
         mainPage.openApplicationTab();
@@ -79,7 +79,7 @@ public class TestTest extends MainTest{
         ActRecordPrint actRecordPrint = new ActRecordPrint(driver);
         actRecordPrint.printActRecord(num);
         CertificatePage certificatePage = new CertificatePage(driver);
-        certificatePage.createCertificate(num);
+        certificatePage.createCertificate(num);*/
        // birthPage.saveAct();
 
 

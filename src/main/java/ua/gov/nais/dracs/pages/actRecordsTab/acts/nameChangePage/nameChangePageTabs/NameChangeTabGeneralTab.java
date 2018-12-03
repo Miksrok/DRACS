@@ -3,6 +3,7 @@ package ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePage
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
@@ -23,9 +24,9 @@ public class NameChangeTabGeneralTab extends AbstractPage {
         super(driver);
     }
 
-    public void typeActNoteNumber(Person person){
-        action.typeText(actNoteNumberField,person.getActNumber());
-        action.typeText(actNoteDateField,person.getActDate());
+    public void typeActNoteNumber(ActRecord act){
+        action.typeText(actNoteNumberField,act.getActNumber());
+        action.typeText(actNoteDateField,act.getActDate());
     }
 
     public void typeDateOfRegOfNameChange() {

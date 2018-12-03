@@ -3,6 +3,7 @@ package ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
@@ -19,10 +20,10 @@ public class MarriagePageTabGeneralTab extends AbstractPage {
         super(driver);
     }
 
-    public void typeActInformation(Person person){
-        action.typeText(actNoteNumberField, person.getActNumber());
-        action.typeText(actNoteDateField, person.getActDate());
-        action.typeText(dateOfMarriageRegistration, person.getActDate());
+    public void typeActInformation(ActRecord act){
+        action.typeText(actNoteNumberField, act.getActNumber());
+        action.typeText(actNoteDateField, act.getActDate());
+        action.typeText(dateOfMarriageRegistration, act.getActDate());
     }
 
 }

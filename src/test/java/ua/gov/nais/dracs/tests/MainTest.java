@@ -26,6 +26,8 @@ public abstract class MainTest {
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
+        driver.get("https://regdracs.test.nais.gov.ua/");
+
     }
    /* @AfterClass
     public void tearDown(){

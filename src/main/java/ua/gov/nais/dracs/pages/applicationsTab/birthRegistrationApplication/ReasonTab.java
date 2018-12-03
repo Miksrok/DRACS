@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Reporter;
+import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
@@ -29,11 +30,11 @@ public class ReasonTab extends AbstractPage {
         super(driver);
     }
 
-    public void enterInformationAboutReason(Person person){
+    public void enterInformationAboutReason(ActRecord act){
 
         action.clickOnElement(reasonTab);
-        action.typeText(actRecordNumber, person.getActNumber());
-        action.typeText(actRecordDate, person.getActDate());
+        action.typeText(actRecordNumber, act.getActNumber());
+        action.typeText(actRecordDate, act.getActDate());
         action.clickOnElement(organizationRregionList);
         action.clickOnElement(regionVolin);
         action.clickOnElement(organizationRregionList);

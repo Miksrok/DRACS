@@ -10,6 +10,16 @@ import java.util.Set;
 
 public class ExtractPage extends AbstractPage {
 
+    @FindBy(id = "acRegister")
+    private WebElement creatNewExtract;
+
+    @FindBy(id = "ActRecordTypeSelect")
+    private WebElement actRecordsTypeList;
+
+    @FindBy (id = "ExtractTypeSelect")
+    private WebElement extractTypeList;
+
+
     @FindBy(xpath = "//label[contains(text(), 'Норми закону та реквізити справи')]" +
             "/following-sibling::input")
     private WebElement reason;
@@ -55,4 +65,14 @@ public class ExtractPage extends AbstractPage {
         action.clickOnElement(confirmMessageOkButton);
         action.clickOnElement(okAlertButton);
     }
+
+    public void selectActRecordType() {
+        action.clickOnElement(creatNewExtract);
+        action.selectElementFromListByValue(actRecordsTypeList, "1");
+    }
+
+    public void selectExtractType(){
+        action.selectElementFromListByText(extractTypeList, "Повний витяг щодо актового запису про усиновлення");
+    }
+
 }
