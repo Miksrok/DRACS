@@ -30,7 +30,7 @@ public abstract class MainTest {
 
         driver.get("https://regdracs.test.nais.gov.ua/");
         LoginPage loginPage = new LoginPage(driver);
-        mainPage = loginPage.login();
+        mainPage = loginPage.login("testnot", "123456789", "KJ146apb");
 
     }
    /* @AfterClass

@@ -33,6 +33,8 @@ public class LoginPage extends AbstractPage {
 
     @FindBy(xpath = "//option[text() = 'J:\\']")
     private WebElement deviceName;
+    @FindBy(xpath = "//option[text() = 'I:\\']")
+    private WebElement deviceNameI;
 
     @FindBy(id = "edtPass")
     private WebElement keyPasswordField;
@@ -45,10 +47,10 @@ public class LoginPage extends AbstractPage {
         super(driver);
     }
 
-    public MainPage login() {
+    public MainPage login(String login, String password, String key) {
         action.waitUntilDisappear(loadingAnimation);
-        action.typeText(loginField, "testnot");
-        action.typeText(passwordField, "123456789");
+        action.typeText(loginField, login);
+        action.typeText(passwordField, password);
         action.clickOnElement(selectAcskList);
         action.clickOnElement(acskListItem);
         action.clickOnElement(selectAcskList);
@@ -58,7 +60,7 @@ public class LoginPage extends AbstractPage {
         action.clickOnElement(deviceNamesList);
         action.clickOnElement(deviceName);
         action.clickOnElement(deviceNamesList);
-        action.typeText(keyPasswordField, "KJ146apb");
+        action.typeText(keyPasswordField, key);
         action.clickOnElement(enterButton);
         return new MainPage(driver);
     }

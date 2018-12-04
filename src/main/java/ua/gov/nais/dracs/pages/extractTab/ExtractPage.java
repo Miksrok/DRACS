@@ -69,13 +69,13 @@ public class ExtractPage extends AbstractPage {
         action.clickOnElement(okAlertButton);
     }
 
-    public void selectActRecordType() {
+    public void selectActRecordType(String value) {
         action.clickOnElement(creatNewExtract);
-        action.selectElementFromListByValue(actRecordsTypeList, "3");
+        action.selectElementFromListByValue(actRecordsTypeList, value);
     }
 
     public void selectExtractType() {
-        action.selectElementFromListByText(extractTypeList, "Повний витяг щодо актового запису про народження");
+        action.selectElementFromListByText(extractTypeList, "Повний витяг щодо актового запису про смерть");
     }
     public ExtendSearch clickSearchButton(){
         action.clickOnElement(searchActRecordButton);

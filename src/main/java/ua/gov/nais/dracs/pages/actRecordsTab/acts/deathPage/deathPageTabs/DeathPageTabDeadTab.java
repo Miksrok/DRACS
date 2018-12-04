@@ -11,9 +11,9 @@ public class DeathPageTabDeadTab extends AbstractPage {
     @FindBy(xpath = "//a[@href = '#tPerson']")
     private WebElement openDeadTab;
     @FindBy (xpath = "(//label[text() = 'Прізвище'])[1]/following-sibling::input")
-    private WebElement name;
-    @FindBy (xpath = "(//label[text() = 'Власне ім’я'])[1]/following-sibling::input")
     private WebElement surname;
+    @FindBy (xpath = "(//label[text() = 'Власне ім’я'])[1]/following-sibling::input")
+    private WebElement name;
     @FindBy (xpath = "(//label[text() = 'По батькові'])[1]/following-sibling::input")
     private WebElement fatherName;
     @FindBy (xpath = "(//label[text() = 'Дата нар-ня'])[1]/following-sibling::div/div[2]/div/div/input")
@@ -33,8 +33,8 @@ public class DeathPageTabDeadTab extends AbstractPage {
 
     public void enterInformationAboutDead(Person person){
         action.clickOnElement(openDeadTab);
-        action.typeText(name, person.getName());
         action.typeText(surname, person.getSurname());
+        action.typeText(name, person.getName()+person.getSurname());
         action.typeText(fatherName, person.getFatherName());
         action.typeText(dateOfBirth, "11.11.1950");
         action.typeText(deathDate, "11.11.2017");

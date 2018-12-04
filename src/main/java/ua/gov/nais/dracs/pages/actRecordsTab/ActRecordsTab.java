@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.DeathPage;
 
 public class ActRecordsTab extends AbstractPage {
 
@@ -52,8 +53,9 @@ public class ActRecordsTab extends AbstractPage {
         action.clickOnElement(parenthood);
     }
 
-    public void selectDeath() {
+    public DeathPage selectDeath() {
         action.clickOnElement(death);
+        return new DeathPage(driver);
     }
 
     public void selectAdoption() {

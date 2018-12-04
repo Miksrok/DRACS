@@ -25,10 +25,12 @@ public class SearchByPersonRibbon extends AbstractPage {
 
     public void enterChildInformation(){
        // action.clickOnElement(rolesList);
-        action.selectElementFromListByText(rolesList, "Дитина");
+        //action.selectElementFromListByText(rolesList, "Дитина");
+        action.selectElementFromListByText(rolesList, "Померлий");
         //action.clickOnElement(roleChild);
-        action.typeText(surname, "Яяжішсикиатпч");
-        action.typeText(name, "Робот");
-        action.typeText(fatherName, "Ймнхфабцзщац");
+        action.typeText(surname, "Яакйцфдотжтфх");
+        action.typeText(name, "РоботЯакйцфдотжтфх");
+        action.typeText(fatherName, "Пбфзятнююиив");
+
     }
 }
