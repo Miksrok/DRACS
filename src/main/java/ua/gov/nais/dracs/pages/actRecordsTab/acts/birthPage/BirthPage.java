@@ -9,8 +9,6 @@ import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 
 public class BirthPage extends AbstractPage {
 
-
-
     @FindBy(id = "acRegister")
     private WebElement createNewAct;
     @FindBy (xpath = "//span[text() = 'Зберегти та друкувати']/parent::button")

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
 import ua.gov.nais.dracs.pages.modalWindows.PreviewExtractModal;
+import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 
 import java.util.Set;
 
@@ -16,9 +17,11 @@ public class ExtractPage extends AbstractPage {
     @FindBy(id = "ActRecordTypeSelect")
     private WebElement actRecordsTypeList;
 
-    @FindBy (id = "ExtractTypeSelect")
+    @FindBy(id = "ExtractTypeSelect")
     private WebElement extractTypeList;
 
+    @FindBy(xpath = "(//span[text() = 'Пошук']/parent::button)[2]")
+    private WebElement searchActRecordButton;
 
     @FindBy(xpath = "//label[contains(text(), 'Норми закону та реквізити справи')]" +
             "/following-sibling::input")
@@ -68,11 +71,15 @@ public class ExtractPage extends AbstractPage {
 
     public void selectActRecordType() {
         action.clickOnElement(creatNewExtract);
-        action.selectElementFromListByValue(actRecordsTypeList, "1");
+        action.selectElementFromListByValue(actRecordsTypeList, "3");
     }
 
-    public void selectExtractType(){
-        action.selectElementFromListByText(extractTypeList, "Повний витяг щодо актового запису про усиновлення");
+    public void selectExtractType() {
+        action.selectElementFromListByText(extractTypeList, "Повний витяг щодо актового запису про народження");
+    }
+    public ExtendSearch clickSearchButton(){
+        action.clickOnElement(searchActRecordButton);
+        return new ExtendSearch(driver);
     }
 
 }
