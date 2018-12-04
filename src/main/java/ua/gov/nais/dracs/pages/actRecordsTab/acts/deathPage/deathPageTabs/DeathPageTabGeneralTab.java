@@ -18,8 +18,9 @@ public class DeathPageTabGeneralTab extends AbstractPage {
         super(driver);
     }
 
-    public void typeActNoteNumber(ActRecord act){
+    public DeathPageTabDeadTab typeActNoteNumber(ActRecord act){
         action.typeText(actNoteNumberField, act.getActNumber());
         action.typeText(actNoteDateField, act.getActDate());
+        return new DeathPageTabDeadTab(driver);
     }
 }

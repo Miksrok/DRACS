@@ -13,6 +13,8 @@ import ua.gov.nais.dracs.util.CustomReporter;
 public class NotarTest extends MainTest {
 
     private final String ACT_RECORD_TITLE = "АЗ про народження";
+    private final String BIRTH = "3";
+    private final String DEATH = "5";
 
     ExtractPage extractPage;
     ExtendSearch extendSearch;
@@ -21,10 +23,10 @@ public class NotarTest extends MainTest {
     ActRecordsTab actRecordsTab;
     BirthPage birthPage;
 
-    @Test
+    //@Test
     public void notarTest() {
         extractPage = mainPage.openExtractTab();
-        extractPage.selectActRecordType();
+        extractPage.selectActRecordType(BIRTH);
         extractPage.selectExtractType();
         extendSearch = extractPage.clickSearchButton();
         searchByPersonRibbon = extendSearch.openPersonRibbon();
@@ -50,6 +52,22 @@ public class NotarTest extends MainTest {
         birthPage.selectSearchResult("Яяжішсикиатпч", "Робот", "Ймнхфабцзщац");
         birthPage.clickCreateExtract();
         extractPage = new ExtractPage(driver);
+        extractPage.typeReason();
+        extractPage.generatePreview();
+        extractPage.generateExtract();
+        extractPrint = new ExtractPrint(driver);
+        extractPrint.printExtract();
+    }
+    @Test
+    public void thirdTest(){
+        extractPage = mainPage.openExtractTab();
+        extractPage.selectActRecordType(DEATH);
+        extractPage.selectExtractType();
+        extendSearch = extractPage.clickSearchButton();
+        searchByPersonRibbon = extendSearch.openPersonRibbon();
+        searchByPersonRibbon.enterChildInformation();
+        extendSearch.clickFindButton();
+        extendSearch.clickAcceptButton();
         extractPage.typeReason();
         extractPage.generatePreview();
         extractPage.generateExtract();
