@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import ua.gov.nais.dracs.pages.LoginPage;
+import ua.gov.nais.dracs.pages.MainPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +14,7 @@ public abstract class MainTest {
 
     private final String CHROME_PATH = "src\\main\\resources\\chromedriver.exe";
     protected WebDriver driver;
-
+    protected MainPage mainPage;
 
     @BeforeClass
     public void setUp() {
@@ -27,6 +29,8 @@ public abstract class MainTest {
         driver.manage().window().maximize();
 
         driver.get("https://regdracs.test.nais.gov.ua/");
+        LoginPage loginPage = new LoginPage(driver);
+        mainPage = loginPage.login();
 
     }
    /* @AfterClass

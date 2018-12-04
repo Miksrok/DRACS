@@ -18,16 +18,17 @@ public class SearchByPersonRibbon extends AbstractPage {
     @FindBy (xpath = "//input[@id = 'HU_PATRONYMIC']")
     private WebElement fatherName;
 
+
     public SearchByPersonRibbon(WebDriver driver) {
         super(driver);
     }
 
     public void enterChildInformation(){
-        action.clickOnElement(rolesList);
-        action.clickOnElement(roleChild);
+       // action.clickOnElement(rolesList);
+        action.selectElementFromListByText(rolesList, "Дитина");
+        //action.clickOnElement(roleChild);
         action.typeText(surname, "Яяжішсикиатпч");
         action.typeText(name, "Робот");
         action.typeText(fatherName, "Ймнхфабцзщац");
     }
-
 }
