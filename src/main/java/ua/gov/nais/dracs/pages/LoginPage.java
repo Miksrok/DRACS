@@ -45,9 +45,9 @@ public class LoginPage extends AbstractPage {
         super(driver);
     }
 
-    public void login() {
+    public MainPage login() {
         action.waitUntilDisappear(loadingAnimation);
-        action.typeText(loginField, "testreg");
+        action.typeText(loginField, "testnot");
         action.typeText(passwordField, "123456789");
         action.clickOnElement(selectAcskList);
         action.clickOnElement(acskListItem);
@@ -60,6 +60,7 @@ public class LoginPage extends AbstractPage {
         action.clickOnElement(deviceNamesList);
         action.typeText(keyPasswordField, "KJ146apb");
         action.clickOnElement(enterButton);
+        return new MainPage(driver);
     }
 
 }
