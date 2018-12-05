@@ -3,9 +3,17 @@ package ua.gov.nais.dracs.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
+/**
+ * this class describe login page
+ * page link  "https://regdracs.test.nais.gov.ua/"
+ */
 public class LoginPage extends AbstractPage {
+
+    private final String ACSK = "ca.informjust.ua";
+    private final String DEVICE_TYPE_USB_DRIVE = "з'ємний диск";
+    private final String I_DEVICE_NAME = "I:\\";
+    private final String J_DEVICE_NAME = "J:\\";
 
     @FindBy(id = "loading_animation_all")
     private WebElement loadingAnimation;
@@ -19,22 +27,11 @@ public class LoginPage extends AbstractPage {
     @FindBy(id = "selACSK")
     private WebElement selectAcskList;
 
-    @FindBy(xpath = "//option[@value = 'ca.informjust.ua']")
-    private WebElement acskListItem;
-
     @FindBy(id = "selDevType")
     private WebElement selectKeyDeviceList;
 
-    @FindBy(xpath = "//option[@value = '1']")
-    private WebElement keyDevice;
-
     @FindBy(id = "selDevName")
     private WebElement deviceNamesList;
-
-    @FindBy(xpath = "//option[text() = 'J:\\']")
-    private WebElement deviceName;
-    @FindBy(xpath = "//option[text() = 'I:\\']")
-    private WebElement deviceNameI;
 
     @FindBy(id = "edtPass")
     private WebElement keyPasswordField;
@@ -42,27 +39,47 @@ public class LoginPage extends AbstractPage {
     @FindBy(xpath = "//button[contains(text(), 'Увійти')]")
     private WebElement enterButton;
 
-
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
+    /**
+     * this method enters login and password, selects ACSK and device type,
+     * enters e-key password.
+     *
+     * user authorization
+     *
+     * @param login - login
+     * @param password - password
+     * @param key - password for e-key
+     * @return - MainPage.class object
+     */
     public MainPage login(String login, String password, String key) {
         action.waitUntilDisappear(loadingAnimation);
         action.typeText(loginField, login);
         action.typeText(passwordField, password);
-        action.clickOnElement(selectAcskList);
-        action.clickOnElement(acskListItem);
-        action.clickOnElement(selectAcskList);
-        action.clickOnElement(selectKeyDeviceList);
-        action.clickOnElement(keyDevice);
-        action.clickOnElement(selectKeyDeviceList);
+        action.selectElementFromListByValue(selectAcskList, ACSK);
+        action.selectElementFromListByText(selectKeyDeviceList, DEVICE_TYPE_USB_DRIVE);
         action.clickOnElement(deviceNamesList);
-        action.clickOnElement(deviceName);
-        action.clickOnElement(deviceNamesList);
+        if (login.equals("testreg")) {
+            action.selectElementFromListByText(deviceNamesList, I_DEVICE_NAME);
+        } else if (login.equals("testnot")) {
+            action.selectElementFromListByText(deviceNamesList, J_DEVICE_NAME);
+        }
         action.typeText(keyPasswordField, key);
         action.clickOnElement(enterButton);
         return new MainPage(driver);
     }
+
+    /*
+    @FindBy(xpath = "//option[@value = 'ca.informjust.ua']")
+    private WebElement acskListItem;
+    @FindBy(xpath = "//option[@value = '1']")
+    private WebElement keyDevice;
+    @FindBy(xpath = "//option[text() = 'J:\\']")
+    private WebElement deviceNameJ;
+    @FindBy(xpath = "//option[text() = 'I:\\']")
+    private WebElement deviceNameI;
+    */
 
 }
