@@ -25,7 +25,7 @@ public class NotarTest extends MainTest {
 
     //@Test
     public void notarTest() {
-        extractPage = mainPage.openExtractTab();
+       /* extractPage = mainPage.openExtractTab();
         extractPage.selectActRecordType(BIRTH);
         extractPage.selectExtractType();
         extendSearch = extractPage.clickSearchButton();
@@ -37,12 +37,12 @@ public class NotarTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract();*/
     }
 
    // @Test
     public void secondTest() {
-        actRecordsTab = mainPage.openActRecordsTab();
+       /* actRecordsTab = mainPage.openActRecordsTab();
         birthPage = actRecordsTab.selectBirth();
         Assert.assertEquals(ACT_RECORD_TITLE, actRecordsTab.getActRecordTitle());
         extendSearch = birthPage.openExtendSearchModalWindow();
@@ -56,11 +56,11 @@ public class NotarTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract();*/
     }
     @Test
     public void thirdTest(){
-        extractPage = mainPage.openExtractTab();
+       /* extractPage = mainPage.openExtractTab();
         extractPage.selectActRecordType(DEATH);
         extractPage.selectExtractType();
         extendSearch = extractPage.clickSearchButton();
@@ -72,7 +72,7 @@ public class NotarTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract();*/
     }
 
 }

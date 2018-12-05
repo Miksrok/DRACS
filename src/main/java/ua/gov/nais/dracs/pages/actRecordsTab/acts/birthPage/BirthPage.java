@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
+import ua.gov.nais.dracs.pages.MainPage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabGeneralTab;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 
 public class BirthPage extends AbstractPage {
@@ -26,14 +28,21 @@ public class BirthPage extends AbstractPage {
 
     public BirthPage(WebDriver driver) {super(driver);}
 
-    public void createNewAct(){
+    public BirthTabGeneralTab createNewAct(){
         action.clickOnElement(createNewAct);
+        return new BirthTabGeneralTab(driver);
     }
     public void saveAct() {
         action.clickOnElement(saveButton);
         action.clickOnElement(okButton);
         action.clickOnElement(okAlertButton);
     }
+   /* public MainPage saveAct() {
+        action.clickOnElement(saveButton);
+        action.clickOnElement(okButton);
+        action.clickOnElement(okAlertButton);
+        return new MainPage(driver);
+    }*/
     public void saveAndPrint(){
         action.clickOnElement(saveAndPrintButton);
         action.clickOnElement(okButton);

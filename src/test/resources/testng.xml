@@ -5,24 +5,13 @@
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>-->
-    <!-- <test name="First long test">
-         <classes>
-             <class name="ua.gov.nais.tests.NewApplicationOwnership"/>
-         </classes>
-     </test >
-      <test name="Second long test">
-         <classes>
-             <class name="ua.gov.nais.tests.NewApplicationOtherOwnership"/>
-         </classes>
-     </test>
-     <test name="Third long test">
-         <classes>
-             <class name="ua.gov.nais.tests.NewApplicationArrest"/>
-         </classes>
-     </test>-->
-   <test name="Second long test">
+   <test name="Acts_Creation_Test">
+       <parameter name="login" value="testreg"/>
+       <parameter name="password" value="123456789"/>
+       <parameter name="key" value="KJ146apb"/>
         <classes>
-            <class name="ua.gov.nais.dracs.tests.NotarTest"/>
+            <class name="ua.gov.nais.dracs.tests.createActRecords.DeathARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createActRecords.BirthARTest"/>
         </classes>
     </test>
 </suite>

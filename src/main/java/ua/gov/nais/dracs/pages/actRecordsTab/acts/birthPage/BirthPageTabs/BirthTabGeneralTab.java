@@ -29,11 +29,12 @@ public class BirthTabGeneralTab extends AbstractPage {
 
     public BirthTabGeneralTab(WebDriver driver) {super(driver);}
 
-    public void typeActNoteNumber(ActRecord act){
+    public BirthTabChildTab typeActNoteNumber(ActRecord act){
         action.typeText(actNoteNumberField,act.getActNumber());
         action.typeText(actNoteDateField,act.getActDate());
         action.clickOnElement(birthRegistrationReasonList);
         action.clickOnElement(articleOfLaw133);
+        return new BirthTabChildTab(driver);
     }
     public void clickSearchAppButton(String number){
         action.clickOnElement(searchApplication);

@@ -23,25 +23,27 @@ public class BirthTabFatherTab extends AbstractPage {
     @FindBy(xpath = "(//label[text() = 'Дата нар-ня'])[2]/following-sibling::div/div/div/div/input")
     private WebElement birthdayDate;
 
-    @FindBy (xpath = "//label[text() = 'Підстава запису відомостей про батька']/following-sibling::textarea")
+    @FindBy(xpath = "//label[text() = 'Підстава запису відомостей про батька']/following-sibling::textarea")
     private WebElement reasonAboutFather;
 
-    public BirthTabFatherTab(WebDriver driver) {super(driver);
+    public BirthTabFatherTab(WebDriver driver) {
+        super(driver);
     }
 
     public void enterInformationAboutFather(Person person) {
-        action.clickOnElement(openFatherTab);
         action.typeText(name, person.getName());
         action.typeText(surname, person.getSurname());
         action.typeText(fatherName, person.getFatherName());
         action.typeText(birthdayDate, "04.04.1988");
-
     }
-    public void openFatherTab(){
+
+    public void openFatherTab() {
         action.clickOnElement(openFatherTab);
     }
-    public void typeReason(){
+
+    public BirthTabMotherTab typeReason() {
         action.typeText(reasonAboutFather, "Заява матері");
+        return new BirthTabMotherTab(driver);
     }
 }
 
