@@ -20,10 +20,11 @@ public class MarriagePageTabGeneralTab extends AbstractPage {
         super(driver);
     }
 
-    public void typeActInformation(ActRecord act){
+    public MarriagePageTabFianceTab typeActInformation(ActRecord act){
         action.typeText(actNoteNumberField, act.getActNumber());
         action.typeText(actNoteDateField, act.getActDate());
         action.typeText(dateOfMarriageRegistration, act.getActDate());
+        return new MarriagePageTabFianceTab(driver);
     }
 
 }
