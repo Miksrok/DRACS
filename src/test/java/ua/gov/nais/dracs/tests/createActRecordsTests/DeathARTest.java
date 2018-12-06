@@ -1,9 +1,8 @@
-package ua.gov.nais.dracs.tests.createActRecords;
+package ua.gov.nais.dracs.tests.createActRecordsTests;
 
 import org.testng.annotations.Test;
 import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.models.Person;
-import ua.gov.nais.dracs.pages.MainPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.DeathPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabDeadTab;
