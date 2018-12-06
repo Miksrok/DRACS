@@ -23,9 +23,9 @@ public class NotarTest extends MainTest {
     ActRecordsTab actRecordsTab;
     BirthPage birthPage;
 
-    //@Test
+    @Test
     public void notarTest() {
-       /* extractPage = mainPage.openExtractTab();
+        extractPage = mainPage.openExtractTab();
         extractPage.selectActRecordType(BIRTH);
         extractPage.selectExtractType();
         extendSearch = extractPage.clickSearchButton();
@@ -37,7 +37,7 @@ public class NotarTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();*/
+        extractPrint.printExtract();
     }
 
    // @Test

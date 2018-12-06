@@ -5,13 +5,25 @@
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>-->
-   <test name="Acts_Creation_Test">
-       <parameter name="login" value="testreg"/>
-       <parameter name="password" value="123456789"/>
-       <parameter name="key" value="KJ146apb"/>
+   <!--<test name="Acts_Creation_Test">
+        <parameter name="login" value="testreg"/>
+        <parameter name="password" value="123456789"/>
+        <parameter name="key" value="KJ146apb"/>
         <classes>
             <class name="ua.gov.nais.dracs.tests.createActRecords.DeathARTest"/>
             <class name="ua.gov.nais.dracs.tests.createActRecords.BirthARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createActRecords.MarriageARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createActRecords.DivorceARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createActRecords.ChangeNameARTest"/>
+        </classes>
+    </test>-->
+    <test name="Extracts_Creation_Test">
+        <parameter name="login" value="testnot"/>
+        <parameter name="password" value="123456789"/>
+        <parameter name="key" value="KJ146apb"/>
+        <classes>
+            <class name="ua.gov.nais.dracs.tests.NotarTest"/>
+
         </classes>
     </test>
 </suite>

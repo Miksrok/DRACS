@@ -31,15 +31,16 @@ public class DivorcePageTabHusbandTab extends AbstractPage {
         super(driver);
     }
 
-    public void addHusband(Person person){
+    public DivorcePageTabWifeTab addHusband(Person person){
         action.clickOnElement(fianceTab);
         action.typeText(beforeSurname, person.getSurname());
         action.typeText(afterSurname, person.getSurname());
-        action.typeText(name, person.getName());
         action.typeText(fatherName, person.getFatherName());
+        action.typeText(name, person.getName()+person.getSurname());
         action.typeText(dateOfBirth, "12.12.1988");
         action.typeText(documentNumber, person.getPassport());
         action.typeText(documentDate, person.getPassportDate());
         action.typeText(documentPublisher, person.getPassportPublisher());
+        return new DivorcePageTabWifeTab(driver);
     }
 }

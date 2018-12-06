@@ -26,13 +26,14 @@ public class DivorcePageTabGeneralTab extends AbstractPage {
         super(driver);
     }
 
-    public void typeActInformation(ActRecord act){
+    public DivorcePageTabHusbandTab typeActInformation(ActRecord act){
         action.typeText(actNoteNumberField, act.getActNumber());
         action.typeText(actNoteDateField, act.getActDate());
         action.typeText(dateOfDivorceRegistration, act.getActDate());
         action.typeText(reason, "Прошла лубофф, зав'яли помідорки");
         action.clickOnElement(amountOfChildrenList);
         action.clickOnElement(amountOfChildrenIsNone);
+        return new DivorcePageTabHusbandTab(driver);
     }
 
 }

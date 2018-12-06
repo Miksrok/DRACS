@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 public class LoginPage extends AbstractPage {
 
     private final String ACSK = "ca.informjust.ua";
-    private final String DEVICE_TYPE_USB_DRIVE = "з'ємний диск";
+    private final String DEVICE_TYPE_USB_DRIVE = "1";
     private final String I_DEVICE_NAME = "I:\\";
     private final String J_DEVICE_NAME = "J:\\";
 
@@ -36,7 +36,7 @@ public class LoginPage extends AbstractPage {
     @FindBy(id = "edtPass")
     private WebElement keyPasswordField;
 
-    @FindBy(xpath = "//button[contains(text(), 'Увійти')]")
+    @FindBy(xpath = "//button[@class = 'btn-green']")
     private WebElement enterButton;
 
     public LoginPage(WebDriver driver) {
@@ -59,7 +59,7 @@ public class LoginPage extends AbstractPage {
         action.typeText(loginField, login);
         action.typeText(passwordField, password);
         action.selectElementFromListByValue(selectAcskList, ACSK);
-        action.selectElementFromListByText(selectKeyDeviceList, DEVICE_TYPE_USB_DRIVE);
+        action.selectElementFromListByValue(selectKeyDeviceList, DEVICE_TYPE_USB_DRIVE);
         action.clickOnElement(deviceNamesList);
         if (login.equals("testreg")) {
             action.selectElementFromListByText(deviceNamesList, I_DEVICE_NAME);

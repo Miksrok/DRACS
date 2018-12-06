@@ -75,7 +75,7 @@ public class ExtractPage extends AbstractPage {
     }
 
     public void selectExtractType() {
-        action.selectElementFromListByText(extractTypeList, "Повний витяг щодо актового запису про смерть");
+        action.selectElementFromListByText(extractTypeList, "Повний витяг щодо актового запису про народження");
     }
     public ExtendSearch clickSearchButton(){
         action.clickOnElement(searchActRecordButton);
