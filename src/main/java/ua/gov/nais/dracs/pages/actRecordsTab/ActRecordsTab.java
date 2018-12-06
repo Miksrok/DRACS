@@ -17,25 +17,25 @@ import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.NameChangePage;
 public class ActRecordsTab extends AbstractPage {
 
 
-    @FindBy(xpath = "//a[text() = 'про встановлення батьківства']")
+    @FindBy(xpath = "//a[@href = '/ActRecord/Index?RC_AR_TYPE=2&RC_MENU=1']")
     private WebElement parenthood;
 
-    @FindBy(xpath = "//a[text() = 'про зміну імені']")
+    @FindBy(xpath = "//a[@href = '/ActRecord/Index?RC_AR_TYPE=4&RC_MENU=1']")
     private WebElement nameChange;
 
-    @FindBy(xpath = "//a[text() = 'про народження']")
+    @FindBy(xpath = "//a[@href = '/ActRecord/Index?RC_AR_TYPE=3&RC_MENU=1']")
     private WebElement birth;
 
-    @FindBy(xpath = "//a[text() = 'про розірвання шлюбу']")
+    @FindBy(xpath = "//a[@href = '/ActRecord/Index?RC_AR_TYPE=6&RC_MENU=1']")
     private WebElement divorce;
 
-    @FindBy(xpath = "//a[text() = 'про смерть']")
+    @FindBy(xpath = "//a[@href = '/ActRecord/Index?RC_AR_TYPE=5&RC_MENU=1']")
     private WebElement death;
 
-    @FindBy(xpath = "//a[text() = 'про усиновлення']")
+    @FindBy(xpath = "//a[@href = '/ActRecord/Index?RC_AR_TYPE=1&RC_MENU=1']")
     private WebElement adoption;
 
-    @FindBy(xpath = "//a[text() = 'про шлюб']")
+    @FindBy(xpath = "//a[@href = '/ActRecord/Index?RC_AR_TYPE=7&RC_MENU=1']")
     private WebElement marriage;
 
     // assert element

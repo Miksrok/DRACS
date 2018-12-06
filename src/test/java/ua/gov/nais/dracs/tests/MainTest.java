@@ -7,6 +7,9 @@ import org.testng.annotations.*;
 import ua.gov.nais.dracs.pages.LoginPage;
 import ua.gov.nais.dracs.pages.MainPage;
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public abstract class MainTest {
@@ -33,7 +36,17 @@ public abstract class MainTest {
     @AfterClass
     public void tearDown(){
         if(driver != null){
-            driver.close();
+            driver.quit();
+        }
+    }
+    @AfterSuite
+    public void openReports(){
+        try {
+            Desktop.getDesktop().open(new File("C:\\Users\\d.huhushkin\\IdeaProjects" +
+                    "\\DracsTests\\target\\surefire-reports" +
+                    "\\index.html"));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

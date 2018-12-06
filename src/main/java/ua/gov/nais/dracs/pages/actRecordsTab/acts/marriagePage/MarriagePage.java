@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.MarriagePageTabGeneralTab;
 
 public class MarriagePage extends AbstractPage {
 
@@ -20,8 +21,9 @@ public class MarriagePage extends AbstractPage {
         super(driver);
     }
 
-    public void createNewAct(){
+    public MarriagePageTabGeneralTab createNewAct(){
         action.clickOnElement(creatNewAct);
+        return new MarriagePageTabGeneralTab(driver);
     }
     public void saveAct(){
         action.clickOnElement(saveButton);

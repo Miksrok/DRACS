@@ -24,9 +24,12 @@ public class NameChangeTabGeneralTab extends AbstractPage {
         super(driver);
     }
 
-    public void typeActNoteNumber(ActRecord act){
+    public NameChangeTabSubjectTab typeActNoteNumber(ActRecord act){
         action.typeText(actNoteNumberField,act.getActNumber());
         action.typeText(actNoteDateField,act.getActDate());
+        action.typeText(dateOfRegistrationOfNameChangeField,"08.04.2018");
+        return new NameChangeTabSubjectTab(driver);
+
     }
 
     public void typeDateOfRegOfNameChange() {
