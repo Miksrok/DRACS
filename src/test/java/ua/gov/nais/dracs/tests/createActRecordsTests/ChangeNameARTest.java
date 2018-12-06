@@ -1,4 +1,4 @@
-package ua.gov.nais.dracs.tests.createActRecords;
+package ua.gov.nais.dracs.tests.createActRecordsTests;
 
 import org.testng.annotations.Test;
 import ua.gov.nais.dracs.models.ActRecord;
@@ -7,7 +7,6 @@ import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.NameChangePage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePageTabs.NameChangeTabGeneralTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePageTabs.NameChangeTabSubjectTab;
-import ua.gov.nais.dracs.pages.applicationsTab.nameChangeApplication.NameChangeGeneralTab;
 import ua.gov.nais.dracs.tests.MainTest;
 
 public class ChangeNameARTest extends MainTest {

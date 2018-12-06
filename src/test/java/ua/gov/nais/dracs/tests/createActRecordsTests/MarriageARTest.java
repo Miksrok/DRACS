@@ -1,4 +1,4 @@
-package ua.gov.nais.dracs.tests.createActRecords;
+package ua.gov.nais.dracs.tests.createActRecordsTests;
 
 import org.testng.annotations.Test;
 import ua.gov.nais.dracs.models.ActRecord;
