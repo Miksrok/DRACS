@@ -39,7 +39,7 @@ public class ExtractPage extends AbstractPage {
         super(driver);
     }
 
-    public void typeReason() {
+    public void typeReason(String text) {
 
         Set<String> handles = driver.getWindowHandles();
         String currentHandle = driver.getWindowHandle();
@@ -49,7 +49,7 @@ public class ExtractPage extends AbstractPage {
                 driver.switchTo().window(handle);
             }
         }
-        action.typeText(reason, "авіаіваівавіа");
+        action.typeText(reason, text);
     }
 
     public void generatePreview() {
@@ -68,16 +68,17 @@ public class ExtractPage extends AbstractPage {
         action.clickOnElement(confirmMessageOkButton);
         action.clickOnElement(okAlertButton);
     }
-
-    public void selectActRecordType(String value) {
+    public void createNewExtract(){
         action.clickOnElement(creatNewExtract);
-        action.selectElementFromListByValue(actRecordsTypeList, value);
+    }
+    public void selectActRecordType(String value) {
+        action.selectElementFromListByText(actRecordsTypeList, value);
+    }
+    public void selectExtractType(String value) {
+        action.selectElementFromListByText(extractTypeList, value);
     }
 
-    public void selectExtractType() {
-        action.selectElementFromListByText(extractTypeList, "Повний витяг щодо актового запису про народження");
-    }
-    public ExtendSearch clickSearchButton(){
+    public ExtendSearch clickSearchButton() {
         action.clickOnElement(searchActRecordButton);
         return new ExtendSearch(driver);
     }
