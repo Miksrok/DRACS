@@ -68,14 +68,17 @@ public class ExtractPage extends AbstractPage {
         action.clickOnElement(confirmMessageOkButton);
         action.clickOnElement(okAlertButton);
     }
-    public void createNewExtract(){
+
+    public void createNewExtract() {
         action.clickOnElement(creatNewExtract);
     }
+
     public void selectActRecordType(String value) {
-        action.selectElementFromListByText(actRecordsTypeList, value);
+        action.selectElementFromListByValue(actRecordsTypeList, value);
     }
+
     public void selectExtractType(String value) {
-        action.selectElementFromListByText(extractTypeList, value);
+        action.selectElementFromListByValue(extractTypeList, value);
     }
 
     public ExtendSearch clickSearchButton() {

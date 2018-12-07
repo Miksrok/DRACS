@@ -3,20 +3,19 @@ package ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.extendSearch
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import ua.gov.nais.dracs.models.Person;
 import ua.gov.nais.dracs.pages.AbstractPage;
 
 public class SearchByPersonRibbon extends AbstractPage {
 
-    @FindBy (xpath = "//label[text() = 'Роль:']/following-sibling::select")
+    @FindBy(xpath = "//label[text() = 'Роль:']/following-sibling::select")
     private WebElement rolesList;
-    @FindBy (xpath = "//label[text() = 'Роль:']/following-sibling::select/option[text() = 'Дитина']")
+    @FindBy(xpath = "//label[text() = 'Роль:']/following-sibling::select/option[text() = 'Дитина']")
     private WebElement roleChild;
-    @FindBy (xpath = "//input[@id = 'HU_SURNAME']")
+    @FindBy(xpath = "//input[@id = 'HU_SURNAME']")
     private WebElement surname;
-    @FindBy (xpath = "//input[@id = 'HU_NAME']")
+    @FindBy(xpath = "//input[@id = 'HU_NAME']")
     private WebElement name;
-    @FindBy (xpath = "//input[@id = 'HU_PATRONYMIC']")
+    @FindBy(xpath = "//input[@id = 'HU_PATRONYMIC']")
     private WebElement fatherName;
 
 
@@ -24,17 +23,14 @@ public class SearchByPersonRibbon extends AbstractPage {
         super(driver);
     }
 
-    public void selectPersonRole(String role){
+    public void selectPersonRole(String role) {
         action.selectElementFromListByText(rolesList, role);
     }
-    public void enterPersonInformation(String surnameText, String nameText, String fatherNameText){
-       // action.clickOnElement(rolesList);
-        //action.selectElementFromListByText(rolesList, "Дитина");
-        //action.selectElementFromListByText(rolesList, "Померлий");
-        //action.clickOnElement(roleChild);
-        action.typeText(surname, "Яакйцфдотжтфх");
-        action.typeText(name, "РоботЯакйцфдотжтфх");
-        action.typeText(fatherName, "Пбфзятнююиив");
+
+    public void enterPersonInformation(String surnameText, String nameText, String fatherNameText) {
+        action.typeText(surname, surnameText);
+        action.typeText(name, nameText);
+        action.typeText(fatherName, fatherNameText);
 
     }
 }
