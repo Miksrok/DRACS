@@ -22,8 +22,11 @@
         <parameter name="password" value="123456789"/>
         <parameter name="key" value="KJ146apb"/>
         <classes>
-            <class name="ua.gov.nais.dracs.tests.createExtractsTests.First"/>
-
+            <class name="ua.gov.nais.dracs.tests.createExtractsTests.BirthExtractTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsTests.DeathExtractTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsTests.MarriageExtractTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsTests.ChangeNameExtractTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsTests.DivorceExtractTest"/>
         </classes>
     </test>
 </suite>

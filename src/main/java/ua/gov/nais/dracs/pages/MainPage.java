@@ -17,7 +17,7 @@ public class MainPage extends AbstractPage{
     private WebElement actRecordsTab;
     @FindBy (xpath = "//span[text() = 'Заяви']")
     private WebElement apllicationsTab;
-    @FindBy (xpath = "//span[text() = 'Витяги']")
+    @FindBy (xpath = "//li[@id = 'ExtractFolder']")
     private WebElement extractTab;
 
     public MainPage(WebDriver driver) {
