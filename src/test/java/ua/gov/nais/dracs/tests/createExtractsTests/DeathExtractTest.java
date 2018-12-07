@@ -26,7 +26,7 @@ public class DeathExtractTest extends MainTest {
         extractPage.typeReason("випадково вийшло");
         search = extractPage.clickSearchButton();
         searchByPersonRibbon = search.openPersonRibbon();
-        searchByPersonRibbon.selectPersonRole("Дитина");
+        searchByPersonRibbon.selectPersonRole("Померлий");
         searchByPersonRibbon.enterPersonInformation("Ячсакяєйрркло", "РоботЯчсакяєйрркло", "Смьбкжчтнукк");
         search.clickFindButton();
         search.clickAcceptButton();
