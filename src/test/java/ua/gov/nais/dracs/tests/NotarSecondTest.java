@@ -18,7 +18,7 @@ public class NotarSecondTest extends MainTest {
     @Test
     public void secondTest(){
 
-        MainPage mainPage = new MainPage(driver);
+        /*MainPage mainPage = new MainPage(driver);
         ActRecordsTab actRecordsTab = mainPage.openActRecordsTab();
         BirthPage birthPage = actRecordsTab.selectBirth();
         Assert.assertEquals(ACT_RECORD_TITLE, actRecordsTab.getActRecordTitle());
@@ -33,7 +33,7 @@ public class NotarSecondTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         ExtractPrint extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract();*/
     }
 
 

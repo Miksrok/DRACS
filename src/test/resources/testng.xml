@@ -1,28 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite"><!--parallel="tests" thread-count="1"--><!-- verbose="0" configfailurepolicy="skip"-->
+    <parameter name="login" value="testnot"/>
+    <parameter name="password" value="123456789"/>
+    <parameter name="key" value="KJ146apb"/>
    <!-- <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>-->
-    <!-- <test name="First long test">
-         <classes>
-             <class name="ua.gov.nais.tests.NewApplicationOwnership"/>
-         </classes>
-     </test >
-      <test name="Second long test">
-         <classes>
-             <class name="ua.gov.nais.tests.NewApplicationOtherOwnership"/>
-         </classes>
-     </test>
-     <test name="Third long test">
-         <classes>
-             <class name="ua.gov.nais.tests.NewApplicationArrest"/>
-         </classes>
-     </test>-->
-   <test name="Second long test">
+   <!--<test name="Acts_Creation_Test">
+        <parameter name="login" value="testreg"/>
+        <parameter name="password" value="123456789"/>
+        <parameter name="key" value="KJ146apb"/>
         <classes>
-            <class name="ua.gov.nais.dracs.tests.NotarTest"/>
+            <class name="ua.gov.nais.dracs.tests.createActRecordsTestsTests.DeathARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createActRecordsTestsTests.BirthARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createActRecordsTestsTests.MarriageARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createActRecordsTestsTests.DivorceARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createActRecordsTestsTests.ChangeNameARTest"/>
+        </classes>
+    </test>-->
+
+    <test name="Birth_Extract_Creation_Test">
+        <classes>
+            <class name="ua.gov.nais.dracs.tests.createExtractsTests.BirthExtractTest"/>
+        </classes>
+    </test>
+    <test name="Death_Extract_Creation_Test">
+        <classes>
+            <class name="ua.gov.nais.dracs.tests.createExtractsTests.DeathExtractTest"/>
+        </classes>
+    </test>
+    <test name="Marriage_Extract_Creation_Test">
+        <classes>
+            <class name="ua.gov.nais.dracs.tests.createExtractsTests.MarriageExtractTest"/>
+        </classes>
+    </test>
+    <test name="Change_Name_Extract_Creation_Test">
+        <classes>
+            <class name="ua.gov.nais.dracs.tests.createExtractsTests.ChangeNameExtractTest"/>
+        </classes>
+    </test>
+    <test name="Divorce_Extract_Creation_Test">
+        <classes>
+            <class name="ua.gov.nais.dracs.tests.createExtractsTests.DivorceExtractTest"/>
         </classes>
     </test>
 </suite>

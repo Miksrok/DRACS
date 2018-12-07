@@ -36,8 +36,8 @@ public class DivorcePageTabWifeTab extends AbstractPage {
         action.clickOnElement(fianceeTab);
         action.typeText(beforeSurname, boy.getSurname());
         action.typeText(afterSurname, boy.getSurname());
-        action.typeText(name, person.getName());
         action.typeText(fatherName, person.getFatherName());
+        action.typeText(name, person.getName()+person.getSurname());
         action.typeText(dateOfBirth, "12.12.1988");
         action.typeText(documentNumber, person.getPassport().replace('9','0'));
         action.typeText(documentDate, person.getPassportDate());

@@ -51,7 +51,7 @@ public class NameChangeTabSubjectTab extends AbstractPage {
         action.typeText(beforeSurname, person.getSurname());
         action.typeText(beforeFatherName, person.getFatherName());
         action.typeText(afterName, person.getName());
-        action.typeText(afterSurname, person.getSurname());
+        action.typeText(afterSurname, person.getFatherName());
         action.typeText(afterFatherName, person.getFatherName());
         action.typeText(dateOfBirth, "04.04.1988");
         action.typeText(documentNumber, person.getPassport());

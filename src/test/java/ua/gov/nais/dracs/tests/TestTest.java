@@ -1,36 +1,36 @@
 package ua.gov.nais.dracs.tests;
 
 import org.testng.annotations.Test;
+import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.models.Person;
-import ua.gov.nais.dracs.pages.LoginPage;
-import ua.gov.nais.dracs.pages.MainPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabFatherTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabGeneralTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.DivorcePage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabGeneralTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabHusbandTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabWifeTab;
-import ua.gov.nais.dracs.pages.applicationsTab.ApplicationsTab;
-import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.ChildTab;
-import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.FatherTab;
-import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.MotherTab;
-import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.ReasonTab;
-import ua.gov.nais.dracs.pages.certificateTab.CertificatePage;
-import ua.gov.nais.dracs.pages.modalWindows.ActRecordPrint;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.DeathPage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabDeadTab;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabGeneralTab;
 
 
 public class TestTest extends MainTest{
 
-
+    DeathPage deathPage;
+    DeathPageTabDeadTab deadTab;
+    DeathPageTabGeneralTab generalTab;
+    ActRecordsTab actRecordsTab;
     @Test
     public void test() {
-        driver.get("https://regdracs.test.nais.gov.ua/");
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login();
+       /* ActRecord act = new ActRecord();
+        Person person = new Person();
+        actRecordsTab = mainPage.openActRecordsTab();
+        deathPage = actRecordsTab.selectDeath();
+        generalTab = deathPage.createNewAct();
+        deadTab = generalTab.typeActNoteNumber(act);
+        deadTab.enterInformationAboutDead(person);
+        deathPage.saveAct();*/
 
-        MainPage mainPage = new MainPage(driver);
+        /*driver.get("https://regdracs.test.nais.gov.ua/");
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login();*/
+
+        //MainPage mainPage = new MainPage(driver);
         //ActRecordsTab actRecordsTab = new ActRecordsTab(driver);
         /*DeathPage deathPage = new DeathPage(driver);
         DeathPageTabGeneralTab generalTab = new DeathPageTabGeneralTab(driver);
@@ -87,7 +87,7 @@ public class TestTest extends MainTest{
 
         /*mainPage.openActRecordsTab();
         actRecordsTab.selectDeath();
-        deathPage.creatNewAct();
+        deathPage.createNewAct();
         generalTab.typeActNoteNumber();
         deadTab.enterInformationAboutDead();
         deathPage.saveAct();

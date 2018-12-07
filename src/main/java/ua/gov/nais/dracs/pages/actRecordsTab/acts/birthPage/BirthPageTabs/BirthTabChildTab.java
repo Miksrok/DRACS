@@ -27,11 +27,12 @@ public class BirthTabChildTab extends AbstractPage {
         super(driver);
     }
 
-    public void enterInformationAboutChild(Person person) {
+    public BirthTabFatherTab enterInformationAboutChild(Person person) {
         action.clickOnElement(openChildTab);
         action.typeText(name, person.getName());
         action.typeText(surname, person.getSurname());
         action.typeText(fatherName, person.getFatherName());
-        action.typeText(birthdayDate, "04.04.1988");
+        action.typeText(birthdayDate, "04.04.2018");
+        return new BirthTabFatherTab(driver);
     }
 }

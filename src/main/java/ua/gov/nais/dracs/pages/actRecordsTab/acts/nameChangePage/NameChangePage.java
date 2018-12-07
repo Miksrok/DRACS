@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePageTabs.NameChangeTabGeneralTab;
 
 public class NameChangePage extends AbstractPage {
 
@@ -20,8 +21,9 @@ public class NameChangePage extends AbstractPage {
         super(driver);
     }
 
-    public void createNewAct(){
+    public NameChangeTabGeneralTab createNewAct(){
         action.clickOnElement(createNewAct);
+        return new NameChangeTabGeneralTab(driver);
     }
     public void saveAct() {
         action.clickOnElement(saveButton);
