@@ -6,6 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.extendSearchRibbons.SearchByPersonRibbon;
 
+/**
+ *extend search modal window
+ */
 public class ExtendSearch extends AbstractPage {
 
     @FindBy(xpath = "//fieldset[@id = 'extFilterPerson']")
@@ -29,17 +32,32 @@ public class ExtendSearch extends AbstractPage {
         super(driver);
     }
 
+    /**
+     * open ribbon "search by person data"
+     * @return - SearchByPersonRibbon object
+     */
     public SearchByPersonRibbon openPersonRibbon() {
         action.clickOnElement(openPersonRibbon);
         return new SearchByPersonRibbon(driver);
     }
 
+    /**
+     * method clicks the "find" button in the "open AR" window
+     */
     public void clickFindButton() {
         action.clickOnElement(findButton);
     }
+
+    /**
+     *method clicks the "find" button in the "extend search AR" window
+     */
     public void clickExtFindButton(){
         action.clickOnElement(extfindButton);
     }
+
+    /**
+     * method clicks button "Accept"
+     */
     public void clickAcceptButton(){
         action.clickOnElement(searchResult);
         action.clickOnElement(acceptButton);
