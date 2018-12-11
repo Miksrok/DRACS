@@ -11,6 +11,7 @@ public class DeathExtractTest extends MainTest {
 
     private final String DEATH_ACT_RECORD = "5";
     private final String EXTRACT_TYPE = "18";
+    private final String ROLE_DEAD = "5";
 
     ExtractPage extractPage;
     ExtendSearch search;
@@ -26,7 +27,7 @@ public class DeathExtractTest extends MainTest {
         extractPage.typeReason("випадково вийшло");
         search = extractPage.clickSearchButton();
         searchByPersonRibbon = search.openPersonRibbon();
-        searchByPersonRibbon.selectPersonRole("Померлий");
+        searchByPersonRibbon.selectPersonRole(ROLE_DEAD);
         searchByPersonRibbon.enterPersonInformation("Ячсакяєйрркло", "РоботЯчсакяєйрркло", "Смьбкжчтнукк");
         search.clickFindButton();
         search.clickAcceptButton();

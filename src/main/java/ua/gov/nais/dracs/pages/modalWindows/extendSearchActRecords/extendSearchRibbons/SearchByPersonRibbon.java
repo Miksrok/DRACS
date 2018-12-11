@@ -24,7 +24,7 @@ public class SearchByPersonRibbon extends AbstractPage {
     }
 
     public void selectPersonRole(String role) {
-        action.selectElementFromListByText(rolesList, role);
+        action.selectElementFromListByValue(rolesList, role);
     }
 
     public void enterPersonInformation(String surnameText, String nameText, String fatherNameText) {

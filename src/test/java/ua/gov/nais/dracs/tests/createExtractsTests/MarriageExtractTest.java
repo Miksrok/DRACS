@@ -11,6 +11,7 @@ public class MarriageExtractTest extends MainTest {
 
     private final String MARRIAGE_ACT_RECORD = "7";
     private final String EXTRACT_TYPE = "19";
+    private final String ROLE_FEANCE = "10";
 
     ExtractPage extractPage;
     ExtendSearch search;
@@ -26,7 +27,7 @@ public class MarriageExtractTest extends MainTest {
         extractPage.typeReason("випадково вийшло");
         search = extractPage.clickSearchButton();
         searchByPersonRibbon = search.openPersonRibbon();
-        searchByPersonRibbon.selectPersonRole("Наречений");
+        searchByPersonRibbon.selectPersonRole(ROLE_FEANCE);
         searchByPersonRibbon.enterPersonInformation("Яїдгмтшйжщєтз", "РоботЯїдгмтшйжщєтз", "Шршзфжоідачх");
         search.clickFindButton();
         search.clickAcceptButton();

@@ -21,7 +21,7 @@
         </classes>
     </test>-->
 
-    <test name="Birth_Extract_Creation_Test">
+   <!-- <test name="Birth_Extract_Creation_Test">
         <classes>
             <class name="ua.gov.nais.dracs.tests.createExtractsTests.BirthExtractTest"/>
         </classes>
@@ -45,5 +45,12 @@
         <classes>
             <class name="ua.gov.nais.dracs.tests.createExtractsTests.DivorceExtractTest"/>
         </classes>
+    </test>-->
+
+    <test name="All_Extracts">
+            <classes>
+                <class name="ua.gov.nais.dracs.tests.AllExtractsTest"/>
+            </classes>
     </test>
+
 </suite>

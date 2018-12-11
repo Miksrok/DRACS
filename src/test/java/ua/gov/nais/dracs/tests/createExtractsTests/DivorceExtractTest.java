@@ -11,6 +11,7 @@ public class DivorceExtractTest extends MainTest {
 
     private final String DIVORCE_ACT_RECORD = "6";
     private final String EXTRACT_TYPE = "20";
+    private final String ROLE_HUSBAND = "10";
 
     ExtractPage extractPage;
     ExtendSearch search;
@@ -26,7 +27,7 @@ public class DivorceExtractTest extends MainTest {
         extractPage.typeReason("випадково вийшло");
         search = extractPage.clickSearchButton();
         searchByPersonRibbon = search.openPersonRibbon();
-        searchByPersonRibbon.selectPersonRole("Чоловік");
+        searchByPersonRibbon.selectPersonRole(ROLE_HUSBAND);
         searchByPersonRibbon.enterPersonInformation("Яидлчсвуґеуоі", "РоботЯидлчсвуґеуоі", "Оокщсьїяуптг");
         search.clickFindButton();
         search.clickAcceptButton();

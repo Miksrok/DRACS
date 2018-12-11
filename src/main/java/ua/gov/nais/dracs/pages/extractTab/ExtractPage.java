@@ -20,11 +20,13 @@ public class ExtractPage extends AbstractPage {
     @FindBy(id = "ExtractTypeSelect")
     private WebElement extractTypeList;
 
-    @FindBy(xpath = "(//span[text() = 'Пошук']/parent::button)[2]")
+    //@FindBy(xpath = "(//span[text() = 'Пошук']/parent::button)[2]")
+    @FindBy (xpath = "(//span/parent::button[contains(@class, 'btn-search')])[2]")
     private WebElement searchActRecordButton;
 
-    @FindBy(xpath = "//label[contains(text(), 'Норми закону та реквізити справи')]" +
-            "/following-sibling::input")
+    /*@FindBy(xpath = "//label[contains(text(), 'Норми закону та реквізити справи')]" +
+            "/following-sibling::input")*/
+    @FindBy(xpath = "//input[@data-bind = 'value: JURIDICAL_NAME']")
     private WebElement reason;
     @FindBy(xpath = "//button[text() = 'Попередній перегляд витягу']")
     private WebElement previewButton;
