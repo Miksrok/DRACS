@@ -20,6 +20,9 @@ public class ExtractPage extends AbstractPage {
     @FindBy(id = "ExtractTypeSelect")
     private WebElement extractTypeList;
 
+    @FindBy(id = "acCreateExt")
+    private WebElement generateExt;
+
     //@FindBy(xpath = "(//span[text() = 'Пошук']/parent::button)[2]")
     @FindBy (xpath = "(//span/parent::button[contains(@class, 'btn-search')])[2]")
     private WebElement searchActRecordButton;
@@ -39,6 +42,10 @@ public class ExtractPage extends AbstractPage {
 
     public ExtractPage(WebDriver driver) {
         super(driver);
+    }
+
+    public void clickGenerateExt(){
+        action.clickOnElement(generateExt);
     }
 
     public void typeReason(String text) {

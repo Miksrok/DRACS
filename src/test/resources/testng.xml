@@ -2,7 +2,7 @@
         <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 
-    <test name="Extracts_Creation_Test">
+    <!--<test name="Extracts_Creation_Test">
         <parameter name="login" value="testnot"/>
         <parameter name="password" value="123456789"/>
         <parameter name="key" value="KJ146apb"/>
@@ -13,8 +13,16 @@
             <class name="ua.gov.nais.dracs.tests.createExtractsTests.ChangeNameExtractTest"/>
             <class name="ua.gov.nais.dracs.tests.createExtractsTests.DivorceExtractTest"/>
         </classes>
+    </test>-->
+    <test name="Extracts_Creation_Test">
+        <parameter name="login" value="testnot"/>
+        <parameter name="password" value="123456789"/>
+        <parameter name="key" value="KJ146apb"/>
+        <classes>
+            <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.DeathExtractFromARTest"/>
+        </classes>
     </test>
-    <test name="Acts_Creation_Test">
+   <!-- <test name="Acts_Creation_Test">
         <parameter name="login" value="testreg"/>
         <parameter name="password" value="123456789"/>
         <parameter name="key" value="KJ146apb"/>
@@ -25,6 +33,6 @@
             <class name="ua.gov.nais.dracs.tests.createActRecordsTests.DivorceARTest"/>
             <class name="ua.gov.nais.dracs.tests.createActRecordsTests.ChangeNameARTest"/>
         </classes>
-    </test>
+    </test>-->
 
 </suite>

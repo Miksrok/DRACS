@@ -29,7 +29,7 @@ public class BirthExtractTest extends MainTest {
         search = extractPage.clickSearchButton();
         searchByPersonRibbon = search.openPersonRibbon();
         searchByPersonRibbon.selectPersonRole(ROLE_CHILD);
-        searchByPersonRibbon.enterPersonInformation("Ячрюкцезґтузо ", "Робот", "Шжшдйевкжлью");
+        searchByPersonRibbon.enterPersonInformation("Ячрюкцезґтузо", "Робот", "Шжшдйевкжлью");
         search.clickFindButton();
         search.clickAcceptButton();
         extractPage.generatePreview();
@@ -37,5 +37,4 @@ public class BirthExtractTest extends MainTest {
         extractPrint = new ExtractPrint(driver);
         extractPrint.printExtract();
     }
-
 }

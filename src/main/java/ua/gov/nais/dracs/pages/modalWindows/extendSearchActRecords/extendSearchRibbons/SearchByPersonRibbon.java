@@ -7,8 +7,8 @@ import ua.gov.nais.dracs.pages.AbstractPage;
 
 public class SearchByPersonRibbon extends AbstractPage {
 
-    //@FindBy(xpath = "//label[text() = 'Роль:']/following-sibling::select")
-    @FindBy(xpath = "//select[@id = 'HU_RC_HU_ROLE_ar']")
+    @FindBy(xpath = "//label[text() = 'Роль:']/following-sibling::select")
+    //@FindBy(xpath = "//select[@id = 'HU_RC_HU_ROLE_ar']")
     private WebElement rolesList;
     @FindBy(xpath = "//input[@id = 'HU_SURNAME']")
     private WebElement surname;
