@@ -8,9 +8,8 @@ import ua.gov.nais.dracs.pages.AbstractPage;
 public class SearchByPersonRibbon extends AbstractPage {
 
     @FindBy(xpath = "//label[text() = 'Роль:']/following-sibling::select")
+    //@FindBy(xpath = "//select[@id = 'HU_RC_HU_ROLE_ar']")
     private WebElement rolesList;
-    @FindBy(xpath = "//label[text() = 'Роль:']/following-sibling::select/option[text() = 'Дитина']")
-    private WebElement roleChild;
     @FindBy(xpath = "//input[@id = 'HU_SURNAME']")
     private WebElement surname;
     @FindBy(xpath = "//input[@id = 'HU_NAME']")
@@ -24,7 +23,7 @@ public class SearchByPersonRibbon extends AbstractPage {
     }
 
     public void selectPersonRole(String role) {
-        action.selectElementFromListByText(rolesList, role);
+        action.selectElementFromListByValue(rolesList, role);
     }
 
     public void enterPersonInformation(String surnameText, String nameText, String fatherNameText) {

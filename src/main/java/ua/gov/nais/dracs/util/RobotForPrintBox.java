@@ -56,6 +56,7 @@ public class RobotForPrintBox {
             robot.keyRelease(VK_ENTER);
             Thread.sleep(5000);
             enterNumber(robot, number);
+            System.out.println(number);
             robot.keyPress(VK_E);
             robot.keyRelease(VK_E);
             robot.keyPress(VK_X);
@@ -65,6 +66,7 @@ public class RobotForPrintBox {
             robot.keyPress(VK_R);
             robot.keyRelease(VK_R);
             robot.keyPress(VK_ENTER);
+            System.out.println(VK_ENTER);
             robot.keyRelease(VK_ENTER);
         } catch (AWTException | InterruptedException e) {
             e.printStackTrace();
@@ -88,6 +90,7 @@ public class RobotForPrintBox {
             }
             robot.keyPress(keyCode);
             robot.keyRelease(keyCode);
+            System.out.println(keyCode);
         }
     }
 

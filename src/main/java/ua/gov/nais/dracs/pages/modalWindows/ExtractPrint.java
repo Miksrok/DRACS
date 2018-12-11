@@ -28,10 +28,18 @@ public class ExtractPrint extends AbstractPage {
         wait10Sec();
         RobotForPrintBox robot = new RobotForPrintBox();
         robot.saveExtract(act.getActNumber());
+        wait3Sec();
     }
     private void wait10Sec(){
         try {
             Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    private void wait3Sec(){
+        try {
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
