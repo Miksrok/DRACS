@@ -35,6 +35,7 @@ public class DeathExtractTest extends MainTest {
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
         extractPrint.printExtract();
+
     }
 
 }

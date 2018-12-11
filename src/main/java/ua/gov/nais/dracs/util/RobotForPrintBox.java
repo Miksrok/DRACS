@@ -90,11 +90,6 @@ public class RobotForPrintBox {
             }
             robot.keyPress(keyCode);
             robot.keyRelease(keyCode);
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             System.out.println(keyCode);
         }
     }

@@ -16,10 +16,10 @@ public abstract class MainTest {
 
     private final String CHROME_PATH = "src\\main\\resources\\chromedriver.exe";
     private final String URL = "https://regdracs.test.nais.gov.ua/";
-    protected WebDriver driver;
+    public static WebDriver driver;
     protected MainPage mainPage;
 
-    @BeforeClass
+    @BeforeTest
     @Parameters ({"login", "password", "key"})
     public void setUp(String login, String password, String key){
         System.setProperty("webdriver.chrome.driver", CHROME_PATH);
@@ -31,9 +31,15 @@ public abstract class MainTest {
         driver.manage().window().maximize();
         driver.get(URL);
         LoginPage loginPage = new LoginPage(driver);
-        mainPage = loginPage.login(login, password, key);
+        loginPage.login(login, password, key);
     }
-    @AfterClass
+
+    @BeforeClass
+    public void setMainPage(){
+       mainPage = new MainPage(driver);
+    }
+
+    @AfterTest
     public void tearDown(){
         if(driver != null){
             driver.quit();
@@ -49,4 +55,5 @@ public abstract class MainTest {
             e.printStackTrace();
         }
     }
+
 }

@@ -1,6 +1,7 @@
 package ua.gov.nais.dracs.tests.createExtractsTests;
 
 import org.testng.annotations.Test;
+import ua.gov.nais.dracs.pages.MainPage;
 import ua.gov.nais.dracs.pages.extractTab.ExtractPage;
 import ua.gov.nais.dracs.pages.modalWindows.ExtractPrint;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
@@ -35,11 +36,6 @@ public class BirthExtractTest extends MainTest {
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
         extractPrint.printExtract();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
 }

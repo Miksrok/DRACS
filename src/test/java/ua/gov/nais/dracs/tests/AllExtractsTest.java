@@ -6,6 +6,8 @@ import ua.gov.nais.dracs.pages.modalWindows.ExtractPrint;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.extendSearchRibbons.SearchByPersonRibbon;
 
+import java.io.UnsupportedEncodingException;
+
 public class AllExtractsTest extends MainTest {
 
     private final String CHILD_ACT_RECORD = "3";
@@ -36,7 +38,11 @@ public class AllExtractsTest extends MainTest {
         extractPage.createNewExtract();
         extractPage.selectActRecordType(CHILD_ACT_RECORD);
         extractPage.selectExtractType(EXTRACT_TYPE_CHILD);
-        extractPage.typeReason("випадково вийшло");
+        try {
+            extractPage.typeReason(new String("випадково вийшло".getBytes("UTF-8")));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         search = extractPage.clickSearchButton();
         searchByPersonRibbon = search.openPersonRibbon();
         searchByPersonRibbon.selectPersonRole(ROLE_CHILD);
