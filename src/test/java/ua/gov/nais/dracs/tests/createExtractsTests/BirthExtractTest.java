@@ -12,7 +12,7 @@ public class BirthExtractTest extends MainTest {
 
     private final String CHILD_ACT_RECORD = "3";
     private final String EXTRACT_TYPE = "12";
-    private final String ROLE_CHILD = "1";
+    private final String ROLE_CHILD = "Дитина";
 
     ExtractPage extractPage;
     ExtendSearch search;
@@ -35,6 +35,6 @@ public class BirthExtractTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract("birth");
     }
 }

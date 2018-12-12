@@ -11,7 +11,7 @@ public class DivorceExtractTest extends MainTest {
 
     private final String DIVORCE_ACT_RECORD = "6";
     private final String EXTRACT_TYPE = "20";
-    private final String ROLE_HUSBAND = "10";
+    private final String ROLE_HUSBAND = "Чоловік";
 
     ExtractPage extractPage;
     ExtendSearch search;
@@ -34,7 +34,7 @@ public class DivorceExtractTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract("divorce");
     }
 
 }

@@ -11,7 +11,7 @@ import ua.gov.nais.dracs.tests.MainTest;
 
 public class BirthExtractFromARTest  extends MainTest {
 
-    private final String ROLE_CHILD = "1";
+    private final String ROLE_CHILD = "Дитина";
 
     private ActRecordsTab actRecordsTab;
     private BirthPage birthPage;
@@ -35,6 +35,6 @@ public class BirthExtractFromARTest  extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract("birthar");
     }
 }

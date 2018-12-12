@@ -11,7 +11,7 @@ public class MarriageExtractTest extends MainTest {
 
     private final String MARRIAGE_ACT_RECORD = "7";
     private final String EXTRACT_TYPE = "19";
-    private final String ROLE_FEANCE = "10";
+    private final String ROLE_FEANCE = "Наречений";
 
     ExtractPage extractPage;
     ExtendSearch search;
@@ -34,7 +34,7 @@ public class MarriageExtractTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract("marriage");
     }
 
 }

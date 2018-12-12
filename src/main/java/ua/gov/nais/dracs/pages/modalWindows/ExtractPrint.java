@@ -21,13 +21,13 @@ public class ExtractPrint extends AbstractPage {
         super(driver);
     }
 
-    public void printExtract(){
+    public void printExtract(String name){
         ActRecord act = new ActRecord();
         action.clickOnElement(printButton);
         action.clickOnElement(okButton);
         wait10Sec();
         RobotForPrintBox robot = new RobotForPrintBox();
-        robot.saveExtract(act.getActNumber());
+        robot.saveExtract(PATH, act.getActNumber(), name);
         wait3Sec();
     }
     private void wait10Sec(){

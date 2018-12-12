@@ -11,7 +11,7 @@ public class DeathExtractTest extends MainTest {
 
     private final String DEATH_ACT_RECORD = "5";
     private final String EXTRACT_TYPE = "18";
-    private final String ROLE_DEAD = "5";
+    private final String ROLE_DEAD = "Померлий";
 
     ExtractPage extractPage;
     ExtendSearch search;
@@ -34,7 +34,7 @@ public class DeathExtractTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract("death");
 
     }
 
