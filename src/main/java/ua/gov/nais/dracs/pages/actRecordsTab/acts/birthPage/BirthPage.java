@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
 import ua.gov.nais.dracs.pages.MainPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabGeneralTab;
+import ua.gov.nais.dracs.pages.extractTab.ExtractPage;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 
 public class BirthPage extends AbstractPage {
@@ -56,8 +57,9 @@ public class BirthPage extends AbstractPage {
         WebElement element = driver.findElement(By.xpath("//td[text() = '"+ surname + " " + name + " " + fatherName+"']"));
         action.clickOnElement(element);
     }
-    public void clickCreateExtract(){
+    public ExtractPage clickCreateExtract(){
         action.clickOnElement(createExtract);
+        return new ExtractPage(driver);
     }
 
 

@@ -11,6 +11,7 @@ public class ChangeNameExtractTest extends MainTest {
 
     private final String CHANGE_NAME_ACT_RECORD = "4";
     private final String EXTRACT_TYPE = "21";
+    private final String ROLE_SUBJ_AR = "Суб'єкт АЗ";
 
     ExtractPage extractPage;
     ExtendSearch search;
@@ -26,14 +27,14 @@ public class ChangeNameExtractTest extends MainTest {
         extractPage.typeReason("випадково вийшло");
         search = extractPage.clickSearchButton();
         searchByPersonRibbon = search.openPersonRibbon();
-        searchByPersonRibbon.selectPersonRole("Суб'єкт АЗ");
+        searchByPersonRibbon.selectPersonRole(ROLE_SUBJ_AR);
         searchByPersonRibbon.enterPersonInformation("Ямфжрбьувохия", "Робот", "Вхкщїизебфєв");
         search.clickFindButton();
         search.clickAcceptButton();
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract("namechange");
     }
 
 }
