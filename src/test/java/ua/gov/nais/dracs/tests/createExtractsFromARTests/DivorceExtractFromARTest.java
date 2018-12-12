@@ -2,20 +2,20 @@ package ua.gov.nais.dracs.tests.createExtractsFromARTests;
 
 import org.testng.annotations.Test;
 import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.DeathPage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.DivorcePage;
 import ua.gov.nais.dracs.pages.extractTab.ExtractPage;
 import ua.gov.nais.dracs.pages.modalWindows.ExtractPrint;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.extendSearchRibbons.SearchByPersonRibbon;
 import ua.gov.nais.dracs.tests.MainTest;
 
-public class DeathExtractFromARTest extends MainTest {
+public class DivorceExtractFromARTest extends MainTest {
 
-    private final String ROLE_DEAD = "Померлий";
+    private final String ROLE_DIVORCE = "Чоловік";
 
     private ActRecordsTab actRecordsTab;
-    private DeathPage deathPage;
+    private DivorcePage divorcePage;
     private ExtendSearch extendSearch;
     private SearchByPersonRibbon searchByPersonRibbon;
     private ExtractPage extractPage;
@@ -24,14 +24,14 @@ public class DeathExtractFromARTest extends MainTest {
     @Test
     public void deathExtractFromARTest(){
         actRecordsTab = mainPage.openActRecordsTab();
-        deathPage = actRecordsTab.selectDeath();
-        extendSearch = deathPage.openExtendSearchModalWindow();
+        divorcePage = actRecordsTab.selectDivorce();
+        extendSearch = divorcePage.openExtendSearchModalWindow();
         searchByPersonRibbon = extendSearch.openPersonRibbon();
-        searchByPersonRibbon.selectPersonRole(ROLE_DEAD);
-        searchByPersonRibbon.enterPersonInformation("Ячсакяєйрркло", "РоботЯчсакяєйрркло", "Смьбкжчтнукк");
+        searchByPersonRibbon.selectPersonRole(ROLE_DIVORCE);
+        searchByPersonRibbon.enterPersonInformation("Яидлчсвуґеуоі", "РоботЯидлчсвуґеуоі", "Оокщсьїяуптг");
         extendSearch.clickExtFindButton();
-        deathPage.selectSearchResult("Ячсакяєйрркло", "РоботЯчсакяєйрркло", "Смьбкжчтнукк");
-        extractPage = deathPage.clickCreateExtract();
+        divorcePage.selectSearchResult("Яидлчсвуґеуоі", "РоботЯидлчсвуґеуоі", "Оокщсьїяуптг");
+        extractPage = divorcePage.clickCreateExtract();
         extractPage.typeReason("само вийшло");
         extractPage.generatePreview();
         extractPage.generateExtract();

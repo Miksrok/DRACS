@@ -11,7 +11,7 @@ public class ChangeNameExtractTest extends MainTest {
 
     private final String CHANGE_NAME_ACT_RECORD = "4";
     private final String EXTRACT_TYPE = "21";
-    private final String ROLE_SUBJ_AR = "9";
+    private final String ROLE_SUBJ_AR = "Суб'єкт АЗ";
 
     ExtractPage extractPage;
     ExtendSearch search;

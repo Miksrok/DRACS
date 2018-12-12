@@ -1,10 +1,13 @@
 package ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePageTabs.NameChangeTabGeneralTab;
+import ua.gov.nais.dracs.pages.extractTab.ExtractPage;
+import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 
 public class NameChangePage extends AbstractPage {
 
@@ -16,6 +19,10 @@ public class NameChangePage extends AbstractPage {
     private WebElement okButton;
     @FindBy (xpath = "//div[@id = 'alert-message-info']/following::span[text() = 'OК']")
     private WebElement okAlertButton;
+    @FindBy (xpath = "//a[@id = 'searchbox-open']")
+    private WebElement extendSearchLink;
+    @FindBy (xpath = "//a[@id = 'acCreateExt']")
+    private WebElement createExtract;
 
     public NameChangePage(WebDriver driver) {
         super(driver);
@@ -29,5 +36,17 @@ public class NameChangePage extends AbstractPage {
         action.clickOnElement(saveButton);
         action.clickOnElement(okButton);
         action.clickOnElement(okAlertButton);
+    }
+    public ExtendSearch openExtendSearchModalWindow(){
+        action.clickOnElement(extendSearchLink);
+        return new ExtendSearch(driver);
+    }
+    public void selectSearchResult(String surname, String name, String fatherName){
+        WebElement element = driver.findElement(By.xpath("//td[text() = '"+ surname + " " + name + " " + fatherName+"']"));
+        action.clickOnElement(element);
+    }
+    public ExtractPage clickCreateExtract(){
+        action.clickOnElement(createExtract);
+        return new ExtractPage(driver);
     }
 }

@@ -33,8 +33,10 @@
         <classes>
             <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.DeathExtractFromARTest"/>
             <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.BirthExtractFromARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.DivorceExtractFromARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.MarriageExtractFromARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.NameChangeExtractFromARTest"/>
         </classes>
     </test>
-
 
 </suite>
