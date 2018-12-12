@@ -32,7 +32,7 @@ public class AllExtractsTest extends MainTest {
     ExtendSearch search;
     SearchByPersonRibbon searchByPersonRibbon;
     ExtractPrint extractPrint;
-    @Test
+    /*@Test
     public void birth(){
         extractPage = mainPage.openExtractTab();
         extractPage.createNewExtract();
@@ -130,6 +130,6 @@ public class AllExtractsTest extends MainTest {
         extractPrint = new ExtractPrint(driver);
         extractPrint.printExtract();
 
-    }
+    }*/
 
 }

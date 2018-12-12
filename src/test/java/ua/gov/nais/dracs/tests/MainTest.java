@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 import ua.gov.nais.dracs.pages.LoginPage;
 import ua.gov.nais.dracs.pages.MainPage;
+import ua.gov.nais.dracs.util.CustomReporter;
 
 import java.awt.*;
 import java.io.File;
@@ -16,9 +17,14 @@ public abstract class MainTest {
 
     private final String CHROME_PATH = "src\\main\\resources\\chromedriver.exe";
     private final String URL = "https://regdracs.test.nais.gov.ua/";
+    private final String DIR_PATH = "c:\\users\\d.huhushkin\\ideaprojects\\dracstests\\target\\surefire-reports\\extracts\\";
     public static WebDriver driver;
     protected MainPage mainPage;
 
+    @BeforeSuite
+    public void prepareDir(){
+        new File(DIR_PATH).mkdir();
+    }
     @BeforeTest
     @Parameters ({"login", "password", "key"})
     public void setUp(String login, String password, String key){
@@ -44,6 +50,9 @@ public abstract class MainTest {
         if(driver != null){
             driver.quit();
         }
+        CustomReporter.log("===================");
+        CustomReporter.log("=====NEXT TEST=====");
+        CustomReporter.log("===================");
     }
     @AfterSuite
     public void openReports(){

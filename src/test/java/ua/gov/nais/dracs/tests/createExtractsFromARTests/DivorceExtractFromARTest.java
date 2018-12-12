@@ -36,7 +36,7 @@ public class DivorceExtractFromARTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract("divorcear");
     }
 
 }

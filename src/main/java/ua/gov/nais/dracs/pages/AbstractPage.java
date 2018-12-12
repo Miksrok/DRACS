@@ -8,6 +8,7 @@ public abstract class AbstractPage {
 
     public WebDriver driver;
     public ActionsWithElement action;
+    public final String PATH = "c:\\users\\d.huhushkin\\ideaprojects\\dracstests\\target\\surefire-reports\\extracts\\";
 
     public AbstractPage(WebDriver driver) {
         this.driver = driver;

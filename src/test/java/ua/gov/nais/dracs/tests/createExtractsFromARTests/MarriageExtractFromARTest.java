@@ -36,7 +36,7 @@ public class MarriageExtractFromARTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract("marriagear");
     }
 
 }

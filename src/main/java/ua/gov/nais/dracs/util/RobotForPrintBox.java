@@ -47,7 +47,7 @@ public class RobotForPrintBox {
         }
     }
 
-    public void saveExtract(String number){
+    public void saveExtract(String path, String number, String name){
         try {
             robot = new Robot();
             robot.keyPress(VK_DOWN);
@@ -55,16 +55,17 @@ public class RobotForPrintBox {
             robot.keyPress(VK_ENTER);
             robot.keyRelease(VK_ENTER);
             Thread.sleep(5000);
+            enterPath(robot, path);
             enterNumber(robot, number);
-            System.out.println(number);
+            enterPath(robot, name);
+            robot.keyPress(VK_MINUS);
+            robot.keyRelease(VK_MINUS);
             robot.keyPress(VK_E);
             robot.keyRelease(VK_E);
             robot.keyPress(VK_X);
             robot.keyRelease(VK_X);
             robot.keyPress(VK_T);
             robot.keyRelease(VK_T);
-            robot.keyPress(VK_R);
-            robot.keyRelease(VK_R);
             robot.keyPress(VK_ENTER);
             System.out.println(VK_ENTER);
             robot.keyRelease(VK_ENTER);
@@ -91,6 +92,54 @@ public class RobotForPrintBox {
             robot.keyPress(keyCode);
             robot.keyRelease(keyCode);
             System.out.println(keyCode);
+        }
+    }
+    private void enterPath(Robot robot, String path){
+        for (int i = 0; i<path.length(); i++){
+            int keyCode = 0;
+            System.out.println(path.charAt(i));
+            switch (path.charAt(i)){
+                case 'a': keyCode = 0x41; break;
+                case 'b': keyCode = 0x42; break;
+                case 'c': keyCode = 0x43; break;
+                case 'd': keyCode = 0x44; break;
+                case 'e': keyCode = 0x45; break;
+                case 'f': keyCode = 0x46; break;
+                case 'g': keyCode = 0x47; break;
+                case 'h': keyCode = 0x48; break;
+                case 'i': keyCode = 0x49; break;
+                case 'j': keyCode = 0x4A; break;
+                case 'k': keyCode = 0x4B; break;
+                case 'l': keyCode = 0x4C; break;
+                case 'm': keyCode = 0x4D; break;
+                case 'n': keyCode = 0x4E; break;
+                case 'o': keyCode = 0x4F; break;
+                case 'p': keyCode = 0x50; break;
+                case 'q': keyCode = 0x51; break;
+                case 'r': keyCode = 0x52; break;
+                case 's': keyCode = 0x53; break;
+                case 't': keyCode = 0x54; break;
+                case 'u': keyCode = 0x55; break;
+                case 'v': keyCode = 0x56; break;
+                case 'w': keyCode = 0x57; break;
+                case 'x': keyCode = 0x58; break;
+                case 'y': keyCode = 0x59; break;
+                case 'z': keyCode = 0x5A; break;
+                case ':': robot.keyPress(VK_SHIFT);
+                    robot.keyPress(VK_SEMICOLON);
+                    robot.keyRelease(VK_SEMICOLON);
+                    robot.keyRelease(VK_SHIFT); break;
+                case '.': keyCode = 0x2E; break;
+                case '-': keyCode = 0x2D; break;
+                case '\\': keyCode = 0x5C; break;
+            }
+            if (path.charAt(i) != ':'){
+                System.out.println(keyCode);
+                robot.keyPress(keyCode);
+                robot.keyRelease(keyCode);
+            }
+
+
         }
     }
 

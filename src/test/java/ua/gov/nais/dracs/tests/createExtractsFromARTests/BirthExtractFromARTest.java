@@ -35,6 +35,6 @@ public class BirthExtractFromARTest  extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract();
+        extractPrint.printExtract("birthar");
     }
 }
