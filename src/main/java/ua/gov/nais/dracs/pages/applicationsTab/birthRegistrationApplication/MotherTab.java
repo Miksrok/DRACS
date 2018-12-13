@@ -36,7 +36,7 @@ public class MotherTab extends AbstractPage {
     public void enterInformationAboutMother(Person person){
         action.clickOnElement(openMotherTab);
         action.typeText(surname, person.getSurname());
-        action.typeText(name, person.getName());
+        action.typeText(name, person.getName() + person.getSurname());
         action.typeText(fatherName, person.getFatherName());
         action.typeText(birthDate, "28.11.1988");
         action.typeText(documentNumber, person.getPassport().replace('9', '0'));

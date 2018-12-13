@@ -32,7 +32,7 @@ public class ChildTab extends AbstractPage {
     public void enterInformationAboutChild(Person person, ActRecord act){
         action.clickOnElement(openChildTab);
         action.typeText(surname, person.getSurname());
-        action.typeText(name, person.getName());
+        action.typeText(name, person.getName() + person.getSurname());
         action.typeText(fatherName, person.getFatherName());
         action.typeText(birthDate, act.getActDate());
         action.clickOnElement(genderList);

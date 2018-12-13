@@ -36,7 +36,7 @@ public class FatherTab extends AbstractPage {
     public void enterInformationAboutFather(Person person){
         action.clickOnElement(openFatherTab);
         action.typeText(surname, person.getSurname());
-        action.typeText(name, person.getName());
+        action.typeText(name, person.getName() + person.getSurname());
         action.typeText(fatherName, person.getFatherName());
         action.typeText(birthDate, "28.11.1988");
         action.typeText(documentNumber, person.getPassport());
