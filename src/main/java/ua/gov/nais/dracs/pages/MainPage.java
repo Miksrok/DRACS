@@ -15,7 +15,7 @@ public class MainPage extends AbstractPage{
 
     @FindBy (xpath = "//li[@id = 'ActRecordFolder']")
     private WebElement actRecordsTab;
-    @FindBy (xpath = "//span[text() = 'Заяви']")
+    @FindBy (xpath = "//a[@href = '/Petition/Index']")
     private WebElement apllicationsTab;
     @FindBy (xpath = "//li[@id = 'ExtractFolder']")
     private WebElement extractTab;
