@@ -22,12 +22,13 @@ public abstract class MainTest {
     protected MainPage mainPage;
 
     @BeforeSuite
-    public void prepareDir(){
-        new File(DIR_PATH).mkdir();
+    public void prepareDir() {
+        new File(DIR_PATH).mkdirs();
     }
+
     @BeforeTest
-    @Parameters ({"login", "password", "key"})
-    public void setUp(String login, String password, String key){
+    @Parameters({"login", "password", "key"})
+    public void setUp(String login, String password, String key) {
         System.setProperty("webdriver.chrome.driver", CHROME_PATH);
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-print-preview");
@@ -41,21 +42,19 @@ public abstract class MainTest {
     }
 
     @BeforeClass
-    public void setMainPage(){
-       mainPage = new MainPage(driver);
+    public void setMainPage() {
+        mainPage = new MainPage(driver);
     }
 
     @AfterTest
-    public void tearDown(){
-        if(driver != null){
+    public void tearDown() {
+        /*if (driver != null) {
             driver.quit();
-        }
-        CustomReporter.log("===================");
-        CustomReporter.log("=====NEXT TEST=====");
-        CustomReporter.log("===================");
+        }*/
     }
+
     @AfterSuite
-    public void openReports(){
+    public void openReports() {
         try {
             Desktop.getDesktop().open(new File("C:\\Users\\d.huhushkin\\IdeaProjects" +
                     "\\DracsTests\\target\\surefire-reports" +
