@@ -39,8 +39,9 @@ public class ApplicationsTab extends AbstractPage {
         Reporter.log("creat new app");
     }
     public String selectApplicationAndEnterMainInfo(ActRecord act){
-        action.clickOnElement(applicationTypeList);
-        action.clickOnElement(birthRegistrationApplicationType);
+        action.selectElementFromListByValue(applicationTypeList, "32");
+        //action.clickOnElement(applicationTypeList);
+       //action.clickOnElement(birthRegistrationApplicationType);
         action.clickOnElement(applicationForPrint);
         action.typeText(applicationNumber, act.getActNumber());
         return act.getActNumber();
