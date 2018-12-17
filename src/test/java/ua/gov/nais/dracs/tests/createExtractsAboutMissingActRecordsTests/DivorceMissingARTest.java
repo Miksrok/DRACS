@@ -34,7 +34,7 @@ public class DivorceMissingARTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract("divorce-miss");
+        //extractPrint.printExtract("divorce-miss");
     }
 
 }

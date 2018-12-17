@@ -35,7 +35,7 @@ public class BirthMissingARTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract("birth-miss");
+        //printExtract("birth-miss");
     }
 
 }

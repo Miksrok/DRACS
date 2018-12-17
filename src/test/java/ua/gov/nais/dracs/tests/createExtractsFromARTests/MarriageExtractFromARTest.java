@@ -22,7 +22,7 @@ public class MarriageExtractFromARTest extends MainTest {
     private ExtractPrint extractPrint;
 
     @Test
-    public void deathExtractFromARTest(){
+    public void marriageExtractFromARTest(){
         actRecordsTab = mainPage.openActRecordsTab();
         marriagePage = actRecordsTab.selectMarriage();
         extendSearch = marriagePage.openExtendSearchModalWindow();
@@ -36,7 +36,7 @@ public class MarriageExtractFromARTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract("marriagear");
+        //extractPrint.printExtract("marriage-from-ar");
     }
 
 }

@@ -34,7 +34,7 @@ public class DeathMissingARTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract("death-miss");
+        //extractPrint.printExtract("death-miss");
 
     }
 

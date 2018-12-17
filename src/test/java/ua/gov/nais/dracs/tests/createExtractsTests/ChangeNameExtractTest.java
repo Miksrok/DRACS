@@ -34,7 +34,7 @@ public class ChangeNameExtractTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract("namechange");
+        //extractPrint.printExtract("namechange");
     }
 
 }
