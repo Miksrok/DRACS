@@ -28,6 +28,9 @@ public class ExtendSearch extends AbstractPage {
     @FindBy(xpath = "(//span[text() = 'Прийняти']/parent::button)[5]")
     private WebElement acceptButton;
 
+    @FindBy(xpath = "//span[@id = 'ui-id-21']/parent::div/following-sibling::div[2]/div/button[1]")
+    private WebElement noResultYesButton;
+
     public ExtendSearch(WebDriver driver) {
         super(driver);
     }
@@ -61,5 +64,12 @@ public class ExtendSearch extends AbstractPage {
     public void clickAcceptButton(){
         action.clickOnElement(searchResult);
         action.clickOnElement(acceptButton);
+    }
+
+    /**
+     * method click button "Yes" in "Question" box if result not found
+     */
+    public void clickNoResultYesButton(){
+        action.clickOnElement(noResultYesButton);
     }
 }

@@ -2,14 +2,14 @@
         <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 
-    <test name="Applications_Creation_Test">
+   <!-- <test name="Applications_Creation_Test">
         <parameter name="login" value="testreg"/>
         <parameter name="password" value="123456789"/>
         <parameter name="key" value="KJ146apb"/>
         <classes>
             <class name="ua.gov.nais.dracs.tests.createApplicationsTests.BirhApplicationTest"/>
         </classes>
-    </test>
+    </test>-->
     <!--<test name="Acts_Creation_Test">
         <parameter name="login" value="testreg"/>
         <parameter name="password" value="123456789"/>
@@ -22,18 +22,18 @@
             <class name="ua.gov.nais.dracs.tests.createActRecordsTests.ChangeNameARTest"/>
         </classes>
     </test>-->
-   <!-- <test name="Extracts_Creation_Test">
-        <parameter name="login" value="testnot"/>
-        <parameter name="password" value="123456789"/>
-        <parameter name="key" value="KJ146apb"/>
-        <classes>
-            <class name="ua.gov.nais.dracs.tests.createExtractsTests.BirthExtractTest"/>
-            <class name="ua.gov.nais.dracs.tests.createExtractsTests.DeathExtractTest"/>
-            <class name="ua.gov.nais.dracs.tests.createExtractsTests.MarriageExtractTest"/>
-            <class name="ua.gov.nais.dracs.tests.createExtractsTests.ChangeNameExtractTest"/>
-            <class name="ua.gov.nais.dracs.tests.createExtractsTests.DivorceExtractTest"/>
-        </classes>
-    </test>-->
+    <!--<test name="Extracts_Creation_Test">
+    <parameter name="login" value="testnot"/>
+    <parameter name="password" value="123456789"/>
+    <parameter name="key" value="KJ146apb"/>
+    <classes>
+        <class name="ua.gov.nais.dracs.tests.createExtractsTests.BirthExtractTest"/>
+        <class name="ua.gov.nais.dracs.tests.createExtractsTests.DeathExtractTest"/>
+        <class name="ua.gov.nais.dracs.tests.createExtractsTests.MarriageExtractTest"/>
+        <class name="ua.gov.nais.dracs.tests.createExtractsTests.ChangeNameExtractTest"/>
+        <class name="ua.gov.nais.dracs.tests.createExtractsTests.DivorceExtractTest"/>
+    </classes>
+</test>-->
     <!--<test name="Extracts_From_Acts_Creation_Test">
         <parameter name="login" value="testnot"/>
         <parameter name="password" value="123456789"/>
@@ -46,5 +46,17 @@
             <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.NameChangeExtractFromARTest"/>
         </classes>
     </test>-->
+    <test name="Extracts_With_Missing_AR_Creation_Test">
+        <parameter name="login" value="testnot"/>
+        <parameter name="password" value="123456789"/>
+        <parameter name="key" value="KJ146apb"/>
+        <classes>
+            <class name="ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests.BirthMissingARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests.DeathMissingARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests.MarriageMissingARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests.DivorceMissingARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests.NameChangeMissingARTest"/>
+        </classes>
+    </test>
 
 </suite>

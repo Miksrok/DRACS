@@ -7,6 +7,7 @@ import ua.gov.nais.dracs.pages.AbstractPage;
 import ua.gov.nais.dracs.pages.modalWindows.PreviewExtractModal;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Set;
 
 public class ExtractPage extends AbstractPage {
@@ -93,6 +94,13 @@ public class ExtractPage extends AbstractPage {
     public ExtendSearch clickSearchButton() {
         action.clickOnElement(searchActRecordButton);
         return new ExtendSearch(driver);
+    }
+    public void getExtractTypeName(){
+        try {
+            System.out.println(new String(action.getText(extractTypeList).getBytes("UTF-8")));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
 }

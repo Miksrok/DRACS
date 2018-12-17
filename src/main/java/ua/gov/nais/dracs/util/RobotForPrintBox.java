@@ -67,7 +67,6 @@ public class RobotForPrintBox {
             robot.keyPress(VK_T);
             robot.keyRelease(VK_T);
             robot.keyPress(VK_ENTER);
-            System.out.println(VK_ENTER);
             robot.keyRelease(VK_ENTER);
         } catch (AWTException | InterruptedException e) {
             e.printStackTrace();
@@ -91,13 +90,11 @@ public class RobotForPrintBox {
             }
             robot.keyPress(keyCode);
             robot.keyRelease(keyCode);
-            System.out.println(keyCode);
         }
     }
     private void enterPath(Robot robot, String path){
         for (int i = 0; i<path.length(); i++){
             int keyCode = 0;
-            System.out.println(path.charAt(i));
             switch (path.charAt(i)){
                 case 'a': keyCode = 0x41; break;
                 case 'b': keyCode = 0x42; break;
@@ -134,7 +131,6 @@ public class RobotForPrintBox {
                 case '\\': keyCode = 0x5C; break;
             }
             if (path.charAt(i) != ':'){
-                System.out.println(keyCode);
                 robot.keyPress(keyCode);
                 robot.keyRelease(keyCode);
             }
