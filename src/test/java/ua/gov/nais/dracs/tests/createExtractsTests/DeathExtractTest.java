@@ -13,7 +13,9 @@ import ua.gov.nais.dracs.util.PropertiesFileReader;
 import java.io.IOException;
 
 public class DeathExtractTest extends MainTest {
-
+    /**
+     * test data for input
+     */
     private final String DEATH_ACT_RECORD = PropertiesFileReader.getPropValues("death-act-record");
     private final String EXTRACT_TYPE = PropertiesFileReader.getPropValues("extract-type-death");
     private final String ROLE_DEAD = PropertiesFileReader.getPropValues("dead");
@@ -21,7 +23,9 @@ public class DeathExtractTest extends MainTest {
     private final String DEAD_SURNAME = PropertiesFileReader.getPropValues("dead-surname");
     private final String DEAD_NAME = PropertiesFileReader.getPropValues("dead-name");
     private final String DEAD_FATHER_NAME = PropertiesFileReader.getPropValues("dead-father-name");
-
+    /**
+     * variables
+     */
     private ExtractPage extractPage;
     private ExtendSearch search;
     private SearchByPersonRibbon searchByPersonRibbon;

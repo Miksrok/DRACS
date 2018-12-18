@@ -13,8 +13,9 @@ import ua.gov.nais.dracs.util.PropertiesFileReader;
 import java.io.IOException;
 
 public class BirthExtractTest extends MainTest {
-
-
+    /**
+     * test data for input
+     */
     private final String CHILD_ACT_RECORD = PropertiesFileReader.getPropValues("birth-act-record");
     private final String EXTRACT_TYPE = PropertiesFileReader.getPropValues("extract-type-birth");
     private final String ROLE_CHILD = PropertiesFileReader.getPropValues("child");
@@ -22,7 +23,9 @@ public class BirthExtractTest extends MainTest {
     private final String CHILD_SURNAME = PropertiesFileReader.getPropValues("child-surname");
     private final String CHILD_NAME = PropertiesFileReader.getPropValues("child-name");
     private final String CHILD_FATHER_NAME = PropertiesFileReader.getPropValues("child-father-name");
-
+    /**
+     * variables
+     */
     private ExtractPage extractPage;
     private ExtendSearch search;
     private SearchByPersonRibbon searchByPersonRibbon;
