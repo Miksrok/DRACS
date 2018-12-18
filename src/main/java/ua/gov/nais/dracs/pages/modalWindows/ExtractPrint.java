@@ -9,6 +9,7 @@ import ua.gov.nais.dracs.pages.AbstractPage;
 import ua.gov.nais.dracs.util.RobotForPrintBox;
 
 import java.awt.*;
+import java.io.File;
 
 public class ExtractPrint extends AbstractPage {
 
@@ -21,14 +22,15 @@ public class ExtractPrint extends AbstractPage {
         super(driver);
     }
 
-    public void printExtract(String name){
-        ActRecord act = new ActRecord();
+    public boolean printExtract(String name, String actNumber){
+
         action.clickOnElement(printButton);
         action.clickOnElement(okButton);
         wait10Sec();
         RobotForPrintBox robot = new RobotForPrintBox();
-        robot.saveExtract(PATH, act.getActNumber(), name);
+        robot.saveExtract(PATH, actNumber, name);
         wait3Sec();
+        return isFilePresent(actNumber, name);
     }
     private void wait10Sec(){
         try {
@@ -43,5 +45,9 @@ public class ExtractPrint extends AbstractPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+    private boolean isFilePresent(String actNumber, String name){
+        System.out.println(PATH+actNumber+name+"-ext.pdf");
+        return new File(PATH+actNumber+name+"-ext.pdf").isFile();
     }
 }

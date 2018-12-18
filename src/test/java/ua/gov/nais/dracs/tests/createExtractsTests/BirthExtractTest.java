@@ -1,26 +1,39 @@
 package ua.gov.nais.dracs.tests.createExtractsTests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import ua.gov.nais.dracs.pages.MainPage;
+import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.pages.extractTab.ExtractPage;
 import ua.gov.nais.dracs.pages.modalWindows.ExtractPrint;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.extendSearchRibbons.SearchByPersonRibbon;
 import ua.gov.nais.dracs.tests.MainTest;
+import ua.gov.nais.dracs.util.PropertiesFileReader;
+
+import java.io.IOException;
 
 public class BirthExtractTest extends MainTest {
 
-    private final String CHILD_ACT_RECORD = "3";
-    private final String EXTRACT_TYPE = "12";
-    private final String ROLE_CHILD = "Дитина";
 
-    ExtractPage extractPage;
-    ExtendSearch search;
-    SearchByPersonRibbon searchByPersonRibbon;
-    ExtractPrint extractPrint;
+    private final String CHILD_ACT_RECORD = PropertiesFileReader.getPropValues("birth-act-record");
+    private final String EXTRACT_TYPE = PropertiesFileReader.getPropValues("extract-type-birth");
+    private final String ROLE_CHILD = PropertiesFileReader.getPropValues("child");
+
+    private final String CHILD_SURNAME = PropertiesFileReader.getPropValues("child-surname");
+    private final String CHILD_NAME = PropertiesFileReader.getPropValues("child-name");
+    private final String CHILD_FATHER_NAME = PropertiesFileReader.getPropValues("child-father-name");
+
+    private ExtractPage extractPage;
+    private ExtendSearch search;
+    private SearchByPersonRibbon searchByPersonRibbon;
+    private ExtractPrint extractPrint;
+
+    public BirthExtractTest() throws IOException {
+    }
 
     @Test
-    public void birthExtractTest(){
+    public void birthExtractTest() {
+        ActRecord act = new ActRecord();
         extractPage = mainPage.openExtractTab();
         extractPage.createNewExtract();
         extractPage.selectActRecordType(CHILD_ACT_RECORD);
@@ -29,12 +42,15 @@ public class BirthExtractTest extends MainTest {
         search = extractPage.clickSearchButton();
         searchByPersonRibbon = search.openPersonRibbon();
         searchByPersonRibbon.selectPersonRole(ROLE_CHILD);
-        searchByPersonRibbon.enterPersonInformation("Ячрюкцезґтузо", "Робот", "Шжшдйевкжлью");
+        searchByPersonRibbon.enterPersonInformation(
+                CHILD_SURNAME,
+                CHILD_NAME,
+                CHILD_FATHER_NAME
+        );
         search.clickFindButton();
         search.clickAcceptButton();
         extractPage.generatePreview();
-        extractPage.generateExtract();
-        extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract("birth");
+        extractPrint = extractPage.generateExtract();
+        Assert.assertTrue(extractPrint.printExtract("birth", act.getActNumber()));
     }
 }

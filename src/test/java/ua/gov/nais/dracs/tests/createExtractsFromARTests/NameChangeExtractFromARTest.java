@@ -22,7 +22,7 @@ public class NameChangeExtractFromARTest extends MainTest {
     private ExtractPrint extractPrint;
 
     @Test
-    public void deathExtractFromARTest(){
+    public void nameChangeExtractFromARTest(){
         actRecordsTab = mainPage.openActRecordsTab();
         nameChangePage = actRecordsTab.selectNameChange();
         extendSearch = nameChangePage.openExtendSearchModalWindow();
@@ -36,7 +36,7 @@ public class NameChangeExtractFromARTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract("namechangear");
+        //extractPrint.printExtract("namechange-from-ar");
     }
 
 }

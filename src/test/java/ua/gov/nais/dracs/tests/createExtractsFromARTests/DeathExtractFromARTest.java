@@ -36,7 +36,7 @@ public class DeathExtractFromARTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract("deathar");
+       //extractPrint.printExtract("death-from-ar");
     }
 
 }

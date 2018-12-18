@@ -22,7 +22,7 @@ public class DivorceExtractFromARTest extends MainTest {
     private ExtractPrint extractPrint;
 
     @Test
-    public void deathExtractFromARTest(){
+    public void divorceExtractFromARTest(){
         actRecordsTab = mainPage.openActRecordsTab();
         divorcePage = actRecordsTab.selectDivorce();
         extendSearch = divorcePage.openExtendSearchModalWindow();
@@ -36,7 +36,7 @@ public class DivorceExtractFromARTest extends MainTest {
         extractPage.generatePreview();
         extractPage.generateExtract();
         extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract("divorcear");
+        //extractPrint.printExtract("divorce-from-ar");
     }
 
 }

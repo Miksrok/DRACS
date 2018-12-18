@@ -1,25 +1,38 @@
 package ua.gov.nais.dracs.tests.createExtractsTests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.pages.extractTab.ExtractPage;
 import ua.gov.nais.dracs.pages.modalWindows.ExtractPrint;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.extendSearchRibbons.SearchByPersonRibbon;
 import ua.gov.nais.dracs.tests.MainTest;
+import ua.gov.nais.dracs.util.PropertiesFileReader;
+
+import java.io.IOException;
 
 public class MarriageExtractTest extends MainTest {
 
-    private final String MARRIAGE_ACT_RECORD = "7";
-    private final String EXTRACT_TYPE = "19";
-    private final String ROLE_FEANCE = "Наречений";
+    private final String MARRIAGE_ACT_RECORD =  PropertiesFileReader.getPropValues("marriage-act-record");
+    private final String EXTRACT_TYPE = PropertiesFileReader.getPropValues("extract-type-marriage");
+    private final String ROLE_FIANCE = PropertiesFileReader.getPropValues("fiance");
 
-    ExtractPage extractPage;
-    ExtendSearch search;
-    SearchByPersonRibbon searchByPersonRibbon;
-    ExtractPrint extractPrint;
+    private final String FIANCE_SURNAME = PropertiesFileReader.getPropValues("fiance-surname");
+    private final String FIANCE_NAME = PropertiesFileReader.getPropValues("fiance-name");
+    private final String FIANCE_FATHER_NAME = PropertiesFileReader.getPropValues("fiance-father-name");
+
+    private ExtractPage extractPage;
+    private ExtendSearch search;
+    private SearchByPersonRibbon searchByPersonRibbon;
+    private ExtractPrint extractPrint;
+
+    public MarriageExtractTest() throws IOException {
+    }
 
     @Test
     public void marriageExtractTest(){
+        ActRecord act = new ActRecord();
         extractPage = mainPage.openExtractTab();
         extractPage.createNewExtract();
         extractPage.selectActRecordType(MARRIAGE_ACT_RECORD);
@@ -27,14 +40,17 @@ public class MarriageExtractTest extends MainTest {
         extractPage.typeReason("випадково вийшло");
         search = extractPage.clickSearchButton();
         searchByPersonRibbon = search.openPersonRibbon();
-        searchByPersonRibbon.selectPersonRole(ROLE_FEANCE);
-        searchByPersonRibbon.enterPersonInformation("Яїдгмтшйжщєтз", "РоботЯїдгмтшйжщєтз", "Шршзфжоідачх");
+        searchByPersonRibbon.selectPersonRole(ROLE_FIANCE);
+        searchByPersonRibbon.enterPersonInformation(
+                FIANCE_SURNAME,
+                FIANCE_NAME,
+                FIANCE_FATHER_NAME
+        );
         search.clickFindButton();
         search.clickAcceptButton();
         extractPage.generatePreview();
-        extractPage.generateExtract();
-        extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract("marriage");
+        extractPrint = extractPage.generateExtract();
+        Assert.assertTrue(extractPrint.printExtract("marriage", act.getActNumber()));
     }
 
 }

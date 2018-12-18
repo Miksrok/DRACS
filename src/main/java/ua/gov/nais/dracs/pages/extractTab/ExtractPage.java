@@ -4,9 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
+import ua.gov.nais.dracs.pages.modalWindows.ExtractPrint;
 import ua.gov.nais.dracs.pages.modalWindows.PreviewExtractModal;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Set;
 
 public class ExtractPage extends AbstractPage {
@@ -72,10 +74,11 @@ public class ExtractPage extends AbstractPage {
         previewExtractModal.closePreviewWindow();
     }
 
-    public void generateExtract() {
+    public ExtractPrint generateExtract() {
         action.clickOnElement(generateExtractButton);
         action.clickOnElement(confirmMessageOkButton);
         action.clickOnElement(okAlertButton);
+        return new ExtractPrint(driver);
     }
 
     public void createNewExtract() {
@@ -93,6 +96,13 @@ public class ExtractPage extends AbstractPage {
     public ExtendSearch clickSearchButton() {
         action.clickOnElement(searchActRecordButton);
         return new ExtendSearch(driver);
+    }
+    public void getExtractTypeName(){
+        try {
+            System.out.println(new String(action.getText(extractTypeList).getBytes("UTF-8")));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
 }
