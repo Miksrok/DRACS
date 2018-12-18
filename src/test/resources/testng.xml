@@ -28,10 +28,10 @@
     <parameter name="key" value="KJ146apb"/>
     <classes>
         <class name="ua.gov.nais.dracs.tests.createExtractsTests.BirthExtractTest"/>
-        <!--<class name="ua.gov.nais.dracs.tests.createExtractsTests.DeathExtractTest"/>
+        <class name="ua.gov.nais.dracs.tests.createExtractsTests.DeathExtractTest"/>
         <class name="ua.gov.nais.dracs.tests.createExtractsTests.MarriageExtractTest"/>
         <class name="ua.gov.nais.dracs.tests.createExtractsTests.ChangeNameExtractTest"/>
-        <class name="ua.gov.nais.dracs.tests.createExtractsTests.DivorceExtractTest"/>-->
+        <class name="ua.gov.nais.dracs.tests.createExtractsTests.DivorceExtractTest"/>
     </classes>
     </test>
     <!--<test name="Extracts_From_Acts_Creation_Test">
