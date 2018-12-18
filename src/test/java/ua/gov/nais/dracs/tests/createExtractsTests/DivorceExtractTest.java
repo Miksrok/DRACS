@@ -13,7 +13,9 @@ import ua.gov.nais.dracs.util.PropertiesFileReader;
 import java.io.IOException;
 
 public class DivorceExtractTest extends MainTest {
-
+    /**
+     * test data for input
+     */
     private final String DIVORCE_ACT_RECORD = PropertiesFileReader.getPropValues("divorce-act-record");
     private final String EXTRACT_TYPE = PropertiesFileReader.getPropValues("extract-type-divorce");
     private final String ROLE_HUSBAND = PropertiesFileReader.getPropValues("husband");
@@ -21,7 +23,9 @@ public class DivorceExtractTest extends MainTest {
     private final String HUSBAND_SURNAME = PropertiesFileReader.getPropValues("husband-surname");
     private final String HUSBAND_NAME = PropertiesFileReader.getPropValues("husband-name");
     private final String HUSBAND_FATHER_NAME = PropertiesFileReader.getPropValues("husband-father-name");
-
+    /**
+     * variables
+     */
     private ExtractPage extractPage;
     private ExtendSearch search;
     private SearchByPersonRibbon searchByPersonRibbon;
