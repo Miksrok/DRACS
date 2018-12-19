@@ -1,25 +1,44 @@
 package ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.pages.extractTab.ExtractPage;
 import ua.gov.nais.dracs.pages.modalWindows.ExtractPrint;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.extendSearchRibbons.SearchByPersonRibbon;
 import ua.gov.nais.dracs.tests.MainTest;
+import ua.gov.nais.dracs.util.PropertiesFileReader;
+
+import java.io.IOException;
 
 public class MarriageMissingARTest extends MainTest {
 
-    private final String MARRIAGE_ACT_RECORD = "7";
-    private final String EXTRACT_TYPE = "19";
-    private final String ROLE_FEANCE = "Наречений";
+    /*
+     * test data for input
+     */
+    private final String MARRIAGE_ACT_RECORD = PropertiesFileReader.getPropValues("marriage-act-record");
+    private final String EXTRACT_TYPE = PropertiesFileReader.getPropValues("extract-type-marriage");
+    private final String ROLE_FIANCE = PropertiesFileReader.getPropValues("fiance");
 
-    ExtractPage extractPage;
-    ExtendSearch search;
-    SearchByPersonRibbon searchByPersonRibbon;
-    ExtractPrint extractPrint;
+    private final String UNKNOWN_SURNAME = PropertiesFileReader.getPropValues("unknown-surname");
+    private final String UNKNOWN_NAME = PropertiesFileReader.getPropValues("unknown-name");
+    private final String UNKNOWN_FATHER_NAME = PropertiesFileReader.getPropValues("unknown-father-name");
+    /*
+     * variables
+     */
+
+    private ExtractPage extractPage;
+    private ExtendSearch search;
+    private SearchByPersonRibbon searchByPersonRibbon;
+    private ExtractPrint extractPrint;
+
+    public MarriageMissingARTest() throws IOException {
+    }
 
     @Test
-    public void marriageMissingARTest(){
+    public void marriageMissingARTest() {
+        ActRecord act = new ActRecord();
         extractPage = mainPage.openExtractTab();
         extractPage.createNewExtract();
         extractPage.selectActRecordType(MARRIAGE_ACT_RECORD);
@@ -27,14 +46,17 @@ public class MarriageMissingARTest extends MainTest {
         extractPage.typeReason("випадково вийшло");
         search = extractPage.clickSearchButton();
         searchByPersonRibbon = search.openPersonRibbon();
-        searchByPersonRibbon.selectPersonRole(ROLE_FEANCE);
-        searchByPersonRibbon.enterPersonInformation("Нема", "Такого", "Нареченого");
+        searchByPersonRibbon.selectPersonRole(ROLE_FIANCE);
+        searchByPersonRibbon.enterPersonInformation(
+                UNKNOWN_SURNAME,
+                UNKNOWN_NAME,
+                UNKNOWN_FATHER_NAME
+        );
         search.clickFindButton();
         search.clickNoResultYesButton();
         extractPage.generatePreview();
-        extractPage.generateExtract();
-        extractPrint = new ExtractPrint(driver);
-        //extractPrint.printExtract("marriage-miss");
+        extractPrint = extractPage.generateExtract();
+        Assert.assertTrue(extractPrint.printExtract("marriage-miss", act.getActNumber()));
     }
 
 }

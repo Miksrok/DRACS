@@ -48,6 +48,7 @@ public class ActionsWithElement {
     public void selectElementFromListByValue(WebElement element, String value){
         Select select = new Select(element);
         select.selectByValue(value);
+
         ScreenShotsMaker.screenShot(driver);
     }
     public void selectElementFromListByText(WebElement element, String text){

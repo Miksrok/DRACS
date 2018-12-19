@@ -33,7 +33,7 @@
         <class name="ua.gov.nais.dracs.tests.createExtractsTests.ChangeNameExtractTest"/>
         <class name="ua.gov.nais.dracs.tests.createExtractsTests.DivorceExtractTest"/>
     </classes>
-    </test>-->
+    </test>
     <test name="Extracts_From_Acts_Creation_Test">
         <parameter name="login" value="testnot"/>
         <parameter name="password" value="123456789"/>
@@ -42,21 +42,21 @@
             <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.BirthExtractFromARTest"/>
             <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.DeathExtractFromARTest"/>
             <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.DivorceExtractFromARTest"/>
-            <!--<class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.MarriageExtractFromARTest"/>
-            <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.NameChangeExtractFromARTest"/>-->
+            <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.MarriageExtractFromARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.NameChangeExtractFromARTest"/>
         </classes>
-    </test>
-    <!--<test name="Extracts_With_Missing_AR_Creation_Test">
+    </test>-->
+    <test name="Extracts_With_Missing_AR_Creation_Test">
         <parameter name="login" value="testnot"/>
         <parameter name="password" value="123456789"/>
         <parameter name="key" value="KJ146apb"/>
         <classes>
             <class name="ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests.BirthMissingARTest"/>
-            <class name="ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests.DeathMissingARTest"/>
+            <!--<class name="ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests.DeathMissingARTest"/>
             <class name="ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests.MarriageMissingARTest"/>
             <class name="ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests.DivorceMissingARTest"/>
-            <class name="ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests.NameChangeMissingARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsAboutMissingActRecordsTests.NameChangeMissingARTest"/>-->
         </classes>
-    </test>-->
+    </test>
 
 </suite>
