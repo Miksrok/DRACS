@@ -13,7 +13,6 @@ import ua.gov.nais.dracs.tests.MainTest;
 
 public class BirthARTest extends MainTest {
 
-    //private MainPage mainPage;
     private ActRecordsTab actRecordsTab;
     private BirthPage birthPage;
     private BirthTabGeneralTab generalTab;
@@ -21,14 +20,13 @@ public class BirthARTest extends MainTest {
     private BirthTabFatherTab fatherTab;
     private BirthTabMotherTab motherTab;
 
+
     @Test
     public void creatBirthActTest(){
         ActRecord act = new ActRecord();
         Person child = new Person();
         Person father = new Person();
         Person mother = new Person();
-        //mainPage = new MainPage(driver);
-        System.out.println(mainPage.toString());
         actRecordsTab = mainPage.openActRecordsTab();
         birthPage = actRecordsTab.selectBirth();
         generalTab = birthPage.createNewAct();

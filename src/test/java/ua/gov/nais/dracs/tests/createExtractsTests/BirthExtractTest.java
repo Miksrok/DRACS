@@ -13,7 +13,7 @@ import ua.gov.nais.dracs.util.PropertiesFileReader;
 import java.io.IOException;
 
 public class BirthExtractTest extends MainTest {
-    /**
+    /*
      * test data for input
      */
     private final String CHILD_ACT_RECORD = PropertiesFileReader.getPropValues("birth-act-record");
@@ -23,7 +23,7 @@ public class BirthExtractTest extends MainTest {
     private final String CHILD_SURNAME = PropertiesFileReader.getPropValues("child-surname");
     private final String CHILD_NAME = PropertiesFileReader.getPropValues("child-name");
     private final String CHILD_FATHER_NAME = PropertiesFileReader.getPropValues("child-father-name");
-    /**
+    /*
      * variables
      */
     private ExtractPage extractPage;

@@ -13,7 +13,9 @@ import ua.gov.nais.dracs.util.PropertiesFileReader;
 import java.io.IOException;
 
 public class MarriageExtractTest extends MainTest {
-
+    /*
+     * test data for input
+     */
     private final String MARRIAGE_ACT_RECORD =  PropertiesFileReader.getPropValues("marriage-act-record");
     private final String EXTRACT_TYPE = PropertiesFileReader.getPropValues("extract-type-marriage");
     private final String ROLE_FIANCE = PropertiesFileReader.getPropValues("fiance");
@@ -21,7 +23,9 @@ public class MarriageExtractTest extends MainTest {
     private final String FIANCE_SURNAME = PropertiesFileReader.getPropValues("fiance-surname");
     private final String FIANCE_NAME = PropertiesFileReader.getPropValues("fiance-name");
     private final String FIANCE_FATHER_NAME = PropertiesFileReader.getPropValues("fiance-father-name");
-
+    /*
+     * variables
+     */
     private ExtractPage extractPage;
     private ExtendSearch search;
     private SearchByPersonRibbon searchByPersonRibbon;
