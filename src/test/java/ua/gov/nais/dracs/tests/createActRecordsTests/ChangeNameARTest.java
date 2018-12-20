@@ -9,12 +9,17 @@ import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePageT
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.nameChangePageTabs.NameChangeTabSubjectTab;
 import ua.gov.nais.dracs.tests.MainTest;
 
+import java.io.IOException;
+
 public class ChangeNameARTest extends MainTest {
 
     private ActRecordsTab actRecordsTab;
     private NameChangePage nameChangePage;
     private NameChangeTabGeneralTab nameChangeGeneralTab;
     private NameChangeTabSubjectTab nameChangeSubjectTab;
+
+    protected ChangeNameARTest() throws IOException {
+    }
 
     @Test
     public void createNameChangeActTest(){

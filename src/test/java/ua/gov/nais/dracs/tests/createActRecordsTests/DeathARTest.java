@@ -9,21 +9,22 @@ import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathP
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabGeneralTab;
 import ua.gov.nais.dracs.tests.MainTest;
 
+import java.io.IOException;
+
 public class DeathARTest extends MainTest {
 
-    //MainPage mainPage;
-    DeathPage deathPage;
-    DeathPageTabDeadTab deadTab;
-    DeathPageTabGeneralTab generalTab;
-    ActRecordsTab actRecordsTab;
+    private DeathPage deathPage;
+    private DeathPageTabDeadTab deadTab;
+    private DeathPageTabGeneralTab generalTab;
+    private ActRecordsTab actRecordsTab;
+
+    protected DeathARTest() throws IOException {
+    }
 
     @Test
     public void createDeathActRecord(){
         ActRecord act = new ActRecord();
         Person person = new Person();
-        //mainPage = new MainPage(driver);
-        System.out.println(driver.toString());
-        System.out.println(mainPage.toString());
         actRecordsTab = mainPage.openActRecordsTab();
         deathPage = actRecordsTab.selectDeath();
         generalTab = deathPage.createNewAct();

@@ -7,6 +7,7 @@ import org.testng.annotations.*;
 import ua.gov.nais.dracs.pages.LoginPage;
 import ua.gov.nais.dracs.pages.MainPage;
 import ua.gov.nais.dracs.util.CustomReporter;
+import ua.gov.nais.dracs.util.PropertiesFileReader;
 
 import java.awt.*;
 import java.io.File;
@@ -15,11 +16,14 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class MainTest {
 
-    private final String CHROME_PATH = "src\\main\\resources\\chromedriver.exe";
-    private final String URL = "https://regdracs.test.nais.gov.ua/";
+    private final String CHROME_PATH = PropertiesFileReader.getPropValues("chrome-driver-path");
+    private final String URL = PropertiesFileReader.getPropValues("url");
     private final String DIR_PATH = "c:\\users\\d.huhushkin\\ideaprojects\\dracstests\\target\\surefire-reports\\extracts\\";
     public static WebDriver driver;
     protected MainPage mainPage;
+
+    protected MainTest() throws IOException {
+    }
 
     @BeforeSuite
     public void prepareDir() {
