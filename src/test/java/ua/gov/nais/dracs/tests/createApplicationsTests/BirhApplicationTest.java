@@ -10,6 +10,8 @@ import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.Moth
 import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.ReasonTab;
 import ua.gov.nais.dracs.tests.MainTest;
 
+import java.io.IOException;
+
 public class BirhApplicationTest extends MainTest {
 
     ApplicationsTab at;
@@ -17,6 +19,9 @@ public class BirhApplicationTest extends MainTest {
     FatherTab father;
     MotherTab mother;
     ReasonTab reason;
+
+    protected BirhApplicationTest() throws IOException {
+    }
 
     @Test
     public void tt(){

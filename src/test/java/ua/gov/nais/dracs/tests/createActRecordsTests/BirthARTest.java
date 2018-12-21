@@ -11,6 +11,8 @@ import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPageTabs.BirthT
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabMotherTab;
 import ua.gov.nais.dracs.tests.MainTest;
 
+import java.io.IOException;
+
 public class BirthARTest extends MainTest {
 
     private ActRecordsTab actRecordsTab;
@@ -19,6 +21,9 @@ public class BirthARTest extends MainTest {
     private BirthTabChildTab childTab;
     private BirthTabFatherTab fatherTab;
     private BirthTabMotherTab motherTab;
+
+    protected BirthARTest() throws IOException {
+    }
 
 
     @Test

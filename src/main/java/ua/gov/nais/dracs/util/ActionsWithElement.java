@@ -28,9 +28,6 @@ public class ActionsWithElement {
         String el = element.getTagName() + " click <br>";
         element.click();
         ScreenShotsMaker.screenShot(driver);
-        Reporter.log(String.format("[%-12s] ACTION: %s",
-                LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME),
-                el));
     }
 
     public void typeText(WebElement element, String text) {
@@ -39,9 +36,6 @@ public class ActionsWithElement {
         element.clear();
         element.sendKeys(Keys.HOME);
         element.sendKeys(text);
-        Reporter.log(String.format("[%-12s] ACTION: %s",
-                LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME),
-                element.getTagName() + " type" + " " + text + "<br>"));
         ScreenShotsMaker.screenShot(driver);
     }
 

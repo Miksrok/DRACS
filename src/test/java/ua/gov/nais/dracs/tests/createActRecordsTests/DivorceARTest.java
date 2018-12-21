@@ -10,6 +10,8 @@ import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs.Di
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabWifeTab;
 import ua.gov.nais.dracs.tests.MainTest;
 
+import java.io.IOException;
+
 public class DivorceARTest extends MainTest {
 
     private ActRecordsTab actRecordsTab;
@@ -17,6 +19,9 @@ public class DivorceARTest extends MainTest {
     private DivorcePageTabGeneralTab divorceGeneralTab;
     private DivorcePageTabHusbandTab divorceHusbandTab;
     private DivorcePageTabWifeTab divorceWifeTab;
+
+    protected DivorceARTest() throws IOException {
+    }
 
     @Test
     public void createDivorceAcrTest(){
