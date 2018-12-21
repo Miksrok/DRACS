@@ -4,8 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.DeathPage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.adoptionPage.AdoptionPage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.parenthoodPage.ParenthoodPage;
 import ua.gov.nais.dracs.pages.extractTab.ExtractPage;
 import ua.gov.nais.dracs.pages.modalWindows.ExtractPrint;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
@@ -15,52 +15,52 @@ import ua.gov.nais.dracs.util.PropertiesFileReader;
 
 import java.io.IOException;
 
-public class DeathExtractFromARTest extends MainTest {
-    /**
+public class AdoptionExtractFromARTest extends MainTest {
+
+    /*
      * test data for input
      */
-    private final String ROLE_DEAD = PropertiesFileReader.getPropValues("dead");
+    private final String ROLE_CHILD = PropertiesFileReader.getPropValues("child-adoption");
 
-    private final String DEAD_SURNAME = PropertiesFileReader.getPropValues("dead-surname");
-    private final String DEAD_NAME = PropertiesFileReader.getPropValues("dead-name");
-    private final String DEAD_FATHER_NAME = PropertiesFileReader.getPropValues("dead-father-name");
-    /**
+    private final String CHILD_SURNAME = PropertiesFileReader.getPropValues("child-ad-surname");
+    private final String CHILD_NAME = PropertiesFileReader.getPropValues("child-ad-name");
+    private final String CHILD_FATHER_NAME = PropertiesFileReader.getPropValues("child-ad-father-name");
+    /*
      * variables
      */
     private ActRecordsTab actRecordsTab;
-    private DeathPage deathPage;
+    private AdoptionPage adoptionPage;
     private ExtendSearch extendSearch;
     private SearchByPersonRibbon searchByPersonRibbon;
     private ExtractPage extractPage;
     private ExtractPrint extractPrint;
 
-    public DeathExtractFromARTest() throws IOException {
+    protected AdoptionExtractFromARTest() throws IOException {
     }
-
     @Test
-    public void deathExtractFromARTest(){
+    public void parenthoodExtractFromARTest(){
         ActRecord act = new ActRecord();
         actRecordsTab = mainPage.openActRecordsTab();
-        deathPage = actRecordsTab.selectDeath();
-        extendSearch = deathPage.openExtendSearchModalWindow();
+        adoptionPage = actRecordsTab.selectAdoption();
+        extendSearch = adoptionPage.openExtendSearchModalWindow();
         searchByPersonRibbon = extendSearch.openPersonRibbon();
-        searchByPersonRibbon.selectPersonRole(ROLE_DEAD);
+        searchByPersonRibbon.selectPersonRole(ROLE_CHILD);
         searchByPersonRibbon.enterPersonInformation(
-                DEAD_SURNAME,
-                DEAD_NAME,
-                DEAD_FATHER_NAME
+                CHILD_SURNAME,
+                CHILD_NAME,
+                CHILD_FATHER_NAME
         );
         extendSearch.clickExtFindButton();
-        deathPage.selectSearchResult(
-                DEAD_SURNAME,
-                DEAD_NAME,
-                DEAD_FATHER_NAME
+        adoptionPage.selectSearchResult(
+                CHILD_SURNAME,
+                CHILD_NAME,
+                CHILD_FATHER_NAME
         );
-        extractPage = deathPage.clickCreateExtract();
+        extractPage = adoptionPage.clickCreateExtract();
         extractPage.typeReason("само вийшло");
         extractPage.generatePreview();
         extractPrint = extractPage.generateExtract();
-        Assert.assertTrue(extractPrint.printExtract("death-from-ar", act.getActNumber()));
+        Assert.assertTrue(extractPrint.printExtract("adoption-from-ar", act.getActNumber()));
     }
 
 }

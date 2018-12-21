@@ -4,11 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.adoptionPage.AdoptionPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.DeathPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.DivorcePage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.MarriagePage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.nameChangePage.NameChangePage;
+import ua.gov.nais.dracs.pages.actRecordsTab.acts.parenthoodPage.ParenthoodPage;
 
 /**
  * class describe act records tab
@@ -67,10 +69,6 @@ public class ActRecordsTab extends AbstractPage {
         return new BirthPage(driver);
     }
 
-    public void selectParenthood() {
-        action.clickOnElement(parenthood);
-    }
-
     /**
      * select death act record
      *
@@ -79,10 +77,6 @@ public class ActRecordsTab extends AbstractPage {
     public DeathPage selectDeath() {
         action.clickOnElement(death);
         return new DeathPage(driver);
-    }
-
-    public void selectAdoption() {
-        action.clickOnElement(adoption);
     }
 
     /**
@@ -103,6 +97,25 @@ public class ActRecordsTab extends AbstractPage {
     public DivorcePage selectDivorce() {
         action.clickOnElement(divorce);
         return new DivorcePage(driver);
+    }
+
+    /**
+     * select parenthood act record
+     * @return - ParenthoodPage.class object
+     */
+    public ParenthoodPage selectParenthood() {
+        action.clickOnElement(parenthood);
+        return new ParenthoodPage(driver);
+    }
+
+    /**
+     * select adoption act record
+     *
+     * @return - AdoptionPage.class object
+     */
+    public AdoptionPage selectAdoption() {
+        action.clickOnElement(adoption);
+        return new AdoptionPage(driver);
     }
 
     /**

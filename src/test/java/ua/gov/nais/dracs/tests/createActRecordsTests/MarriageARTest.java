@@ -10,6 +10,8 @@ import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.marriagePage.marriagePageTabs.MarriagePageTabGeneralTab;
 import ua.gov.nais.dracs.tests.MainTest;
 
+import java.io.IOException;
+
 public class MarriageARTest extends MainTest {
 
     private ActRecordsTab actRecordsTab;
@@ -17,6 +19,9 @@ public class MarriageARTest extends MainTest {
     private MarriagePageTabGeneralTab marriageGeneralTab;
     private MarriagePageTabFianceTab fianceTab;
     private MarriagePageTabFianceeTab fianceeTab;
+
+    protected MarriageARTest() throws IOException {
+    }
 
     @Test
     public void createMarriageAct(){

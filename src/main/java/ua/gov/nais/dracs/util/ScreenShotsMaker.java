@@ -16,7 +16,6 @@ public class ScreenShotsMaker {
         String timeStamp;
         File screenShotName;
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        // The below method will save the screen shot in d drive with name "screenshot.png"
         timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         screenShotName = new File("target\\surefire-reports\\screens\\"+timeStamp+".png");
         try {

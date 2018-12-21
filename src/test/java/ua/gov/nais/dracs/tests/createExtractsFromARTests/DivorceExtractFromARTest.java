@@ -1,6 +1,8 @@
 package ua.gov.nais.dracs.tests.createExtractsFromARTests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.DeathPage;
 import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.DivorcePage;
@@ -9,11 +11,22 @@ import ua.gov.nais.dracs.pages.modalWindows.ExtractPrint;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.extendSearchRibbons.SearchByPersonRibbon;
 import ua.gov.nais.dracs.tests.MainTest;
+import ua.gov.nais.dracs.util.PropertiesFileReader;
+
+import java.io.IOException;
 
 public class DivorceExtractFromARTest extends MainTest {
+    /**
+     * test data for input
+     */
+    private final String ROLE_HUSBAND = PropertiesFileReader.getPropValues("husband");
 
-    private final String ROLE_DIVORCE = "Чоловік";
-
+    private final String HUSBAND_SURNAME = PropertiesFileReader.getPropValues("husband-surname");
+    private final String HUSBAND_NAME = PropertiesFileReader.getPropValues("husband-name");
+    private final String HUSBAND_FATHER_NAME = PropertiesFileReader.getPropValues("husband-father-name");
+    /**
+     * variables
+     */
     private ActRecordsTab actRecordsTab;
     private DivorcePage divorcePage;
     private ExtendSearch extendSearch;
@@ -21,22 +34,33 @@ public class DivorceExtractFromARTest extends MainTest {
     private ExtractPage extractPage;
     private ExtractPrint extractPrint;
 
+    public DivorceExtractFromARTest() throws IOException {
+    }
+
     @Test
-    public void deathExtractFromARTest(){
+    public void divorceExtractFromARTest(){
+        ActRecord act = new ActRecord();
         actRecordsTab = mainPage.openActRecordsTab();
         divorcePage = actRecordsTab.selectDivorce();
         extendSearch = divorcePage.openExtendSearchModalWindow();
         searchByPersonRibbon = extendSearch.openPersonRibbon();
-        searchByPersonRibbon.selectPersonRole(ROLE_DIVORCE);
-        searchByPersonRibbon.enterPersonInformation("Яидлчсвуґеуоі", "РоботЯидлчсвуґеуоі", "Оокщсьїяуптг");
+        searchByPersonRibbon.selectPersonRole(ROLE_HUSBAND);
+        searchByPersonRibbon.enterPersonInformation(
+                HUSBAND_SURNAME,
+                HUSBAND_NAME ,
+                HUSBAND_FATHER_NAME
+        );
         extendSearch.clickExtFindButton();
-        divorcePage.selectSearchResult("Яидлчсвуґеуоі", "РоботЯидлчсвуґеуоі", "Оокщсьїяуптг");
+        divorcePage.selectSearchResult(
+                HUSBAND_SURNAME,
+                HUSBAND_NAME ,
+                HUSBAND_FATHER_NAME
+        );
         extractPage = divorcePage.clickCreateExtract();
         extractPage.typeReason("само вийшло");
         extractPage.generatePreview();
-        extractPage.generateExtract();
-        extractPrint = new ExtractPrint(driver);
-        extractPrint.printExtract("divorcear");
+        extractPrint = extractPage.generateExtract();
+        Assert.assertTrue(extractPrint.printExtract("divorce-from-ar", act.getActNumber()));
     }
 
 }

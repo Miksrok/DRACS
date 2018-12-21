@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.dracs.pages.AbstractPage;
+import ua.gov.nais.dracs.pages.modalWindows.ExtractPrint;
 import ua.gov.nais.dracs.pages.modalWindows.PreviewExtractModal;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 
@@ -73,10 +74,11 @@ public class ExtractPage extends AbstractPage {
         previewExtractModal.closePreviewWindow();
     }
 
-    public void generateExtract() {
+    public ExtractPrint generateExtract() {
         action.clickOnElement(generateExtractButton);
         action.clickOnElement(confirmMessageOkButton);
         action.clickOnElement(okAlertButton);
+        return new ExtractPrint(driver);
     }
 
     public void createNewExtract() {

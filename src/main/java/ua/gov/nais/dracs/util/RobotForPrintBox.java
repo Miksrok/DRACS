@@ -1,5 +1,7 @@
 package ua.gov.nais.dracs.util;
 
+import org.openqa.selenium.WebDriver;
+
 import java.awt.*;
 
 import static java.awt.event.KeyEvent.*;
@@ -134,9 +136,8 @@ public class RobotForPrintBox {
                 robot.keyPress(keyCode);
                 robot.keyRelease(keyCode);
             }
-
-
         }
+
     }
 
 

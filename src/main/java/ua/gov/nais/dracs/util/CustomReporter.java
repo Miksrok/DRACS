@@ -10,7 +10,7 @@ public class CustomReporter {
     public static void log(String text){
         Reporter.log(String.format("[%-12s] ACTION: %s",
                 LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME),
-                text + "<br>"));
+                "<font size='5'><b>"+text + "</b></font><br>"));
     }
 
 }

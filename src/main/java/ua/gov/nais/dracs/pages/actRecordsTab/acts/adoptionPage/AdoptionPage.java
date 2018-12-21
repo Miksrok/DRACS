@@ -1,4 +1,4 @@
-package ua.gov.nais.dracs.pages.actRecordsTab.acts.parenthoodPage;
+package ua.gov.nais.dracs.pages.actRecordsTab.acts.adoptionPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,31 +8,15 @@ import ua.gov.nais.dracs.pages.AbstractPage;
 import ua.gov.nais.dracs.pages.extractTab.ExtractPage;
 import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
 
-public class ParenthoodPage extends AbstractPage {
+public class AdoptionPage extends AbstractPage {
 
-    @FindBy (id = "acRegister")
-    private WebElement creatNewAct;
-    @FindBy (xpath = "//a[@href = '#tmain']")
-    private WebElement generalTab;
-    @FindBy (xpath = "//a[@href = '#tChild']")
-    private WebElement childTab;
-    @FindBy (xpath = "//a[@href = '#tFather']")
-    private WebElement fatherTab;
-    @FindBy ( xpath = "//a[@href = '#tMather']")
-    private WebElement motherTab;
-    private WebElement notesTab;
-    private WebElement certificatesTab;
-    @FindBy (xpath = "//a[@id = 'searchbox-open']")
+    @FindBy(xpath = "//a[@id = 'searchbox-open']")
     private WebElement extendSearchLink;
     @FindBy (xpath = "//a[@id = 'acCreateExt']")
     private WebElement createExtract;
 
-    public ParenthoodPage(WebDriver driver) {
+    public AdoptionPage(WebDriver driver) {
         super(driver);
-    }
-
-    public void creatNewAct(){
-        action.clickOnElement(creatNewAct);
     }
 
     public ExtendSearch openExtendSearchModalWindow(){
@@ -47,6 +31,5 @@ public class ParenthoodPage extends AbstractPage {
         action.clickOnElement(createExtract);
         return new ExtractPage(driver);
     }
-
 
 }

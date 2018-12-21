@@ -12,13 +12,14 @@ import ua.gov.nais.dracs.util.PropertiesFileReader;
 
 import java.io.IOException;
 
-public class NameChangeMissingARTest extends MainTest {
+public class AdoptionMissingARTest extends MainTest {
+
     /*
      * test data for input
      */
-    private final String CHANGE_NAME_ACT_RECORD = PropertiesFileReader.getPropValues("change-name-act-record");
-    private final String EXTRACT_TYPE = PropertiesFileReader.getPropValues("extract-type-name-change");
-    private final String ROLE_SUBJ_AR = PropertiesFileReader.getPropValues("subject");
+    private final String ADOPTION_ACT_RECORD = PropertiesFileReader.getPropValues("adoption-act-record");
+    private final String EXTRACT_TYPE = PropertiesFileReader.getPropValues("extract-type-adoption");
+    private final String ROLE_CHILD = PropertiesFileReader.getPropValues("child-adoption");
 
     private final String UNKNOWN_SURNAME = PropertiesFileReader.getPropValues("unknown-surname");
     private final String UNKNOWN_NAME = PropertiesFileReader.getPropValues("unknown-name");
@@ -31,20 +32,20 @@ public class NameChangeMissingARTest extends MainTest {
     private SearchByPersonRibbon searchByPersonRibbon;
     private ExtractPrint extractPrint;
 
-    public NameChangeMissingARTest() throws IOException {
+    protected AdoptionMissingARTest() throws IOException {
     }
 
     @Test
-    public void changeNameMissingARTest() {
+    public void adoptionMissingARTest(){
         ActRecord act = new ActRecord();
         extractPage = mainPage.openExtractTab();
         extractPage.createNewExtract();
-        extractPage.selectActRecordType(CHANGE_NAME_ACT_RECORD);
+        extractPage.selectActRecordType(ADOPTION_ACT_RECORD);
         extractPage.selectExtractType(EXTRACT_TYPE);
         extractPage.typeReason("випадково вийшло");
         search = extractPage.clickSearchButton();
         searchByPersonRibbon = search.openPersonRibbon();
-        searchByPersonRibbon.selectPersonRole(ROLE_SUBJ_AR);
+        searchByPersonRibbon.selectPersonRole(ROLE_CHILD);
         searchByPersonRibbon.enterPersonInformation(
                 UNKNOWN_SURNAME,
                 UNKNOWN_NAME,
@@ -52,9 +53,10 @@ public class NameChangeMissingARTest extends MainTest {
         );
         search.clickFindButton();
         search.clickNoResultYesButton();
+        extractPage.getExtractTypeName();
         extractPage.generatePreview();
         extractPrint = extractPage.generateExtract();
-        Assert.assertTrue(extractPrint.printExtract("name-miss", act.getActNumber()));
+        Assert.assertTrue(extractPrint.printExtract("adoption-miss", act.getActNumber()));
     }
 
 }
