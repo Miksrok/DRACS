@@ -3,10 +3,10 @@ package ua.gov.nais.dracs.tests.createActRecordsTests;
 import org.testng.annotations.Test;
 import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.models.Person;
-import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.DeathPage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabDeadTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabGeneralTab;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.ActRecordsTab;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.acts.deathPage.DeathPage;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabDeadTab;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.acts.deathPage.deathPageTabs.DeathPageTabGeneralTab;
 import ua.gov.nais.dracs.tests.MainTest;
 
 import java.io.IOException;

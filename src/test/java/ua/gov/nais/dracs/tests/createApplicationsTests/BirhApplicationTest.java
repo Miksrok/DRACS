@@ -3,11 +3,11 @@ package ua.gov.nais.dracs.tests.createApplicationsTests;
 import org.testng.annotations.Test;
 import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.models.Person;
-import ua.gov.nais.dracs.pages.applicationsTab.ApplicationsTab;
-import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.ChildTab;
-import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.FatherTab;
-import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.MotherTab;
-import ua.gov.nais.dracs.pages.applicationsTab.birthRegistrationApplication.ReasonTab;
+import ua.gov.nais.dracs.pages.register.applicationsTab.ApplicationsTab;
+import ua.gov.nais.dracs.pages.register.applicationsTab.birthRegistrationApplication.ChildTab;
+import ua.gov.nais.dracs.pages.register.applicationsTab.birthRegistrationApplication.FatherTab;
+import ua.gov.nais.dracs.pages.register.applicationsTab.birthRegistrationApplication.MotherTab;
+import ua.gov.nais.dracs.pages.register.applicationsTab.birthRegistrationApplication.ReasonTab;
 import ua.gov.nais.dracs.tests.MainTest;
 
 import java.io.IOException;
