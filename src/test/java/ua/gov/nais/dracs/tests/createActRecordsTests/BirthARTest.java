@@ -3,12 +3,12 @@ package ua.gov.nais.dracs.tests.createActRecordsTests;
 import org.testng.annotations.Test;
 import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.models.Person;
-import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabChildTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabFatherTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabGeneralTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabMotherTab;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.ActRecordsTab;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.acts.birthPage.BirthPage;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabChildTab;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabFatherTab;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabGeneralTab;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.acts.birthPage.BirthPageTabs.BirthTabMotherTab;
 import ua.gov.nais.dracs.tests.MainTest;
 
 import java.io.IOException;

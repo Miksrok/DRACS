@@ -4,9 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
-import ua.gov.nais.dracs.pages.LoginPage;
-import ua.gov.nais.dracs.pages.MainPage;
-import ua.gov.nais.dracs.util.CustomReporter;
+import ua.gov.nais.dracs.pages.register.LoginPage;
+import ua.gov.nais.dracs.pages.register.MainPage;
 import ua.gov.nais.dracs.util.PropertiesFileReader;
 
 import java.awt.*;

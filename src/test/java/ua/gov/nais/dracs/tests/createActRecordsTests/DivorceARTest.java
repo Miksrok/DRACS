@@ -3,11 +3,11 @@ package ua.gov.nais.dracs.tests.createActRecordsTests;
 import org.testng.annotations.Test;
 import ua.gov.nais.dracs.models.ActRecord;
 import ua.gov.nais.dracs.models.Person;
-import ua.gov.nais.dracs.pages.actRecordsTab.ActRecordsTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.DivorcePage;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabGeneralTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabHusbandTab;
-import ua.gov.nais.dracs.pages.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabWifeTab;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.ActRecordsTab;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.acts.divorcePage.DivorcePage;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabGeneralTab;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabHusbandTab;
+import ua.gov.nais.dracs.pages.register.actRecordsTab.acts.divorcePage.divorcePageTabs.DivorcePageTabWifeTab;
 import ua.gov.nais.dracs.tests.MainTest;
 
 import java.io.IOException;
