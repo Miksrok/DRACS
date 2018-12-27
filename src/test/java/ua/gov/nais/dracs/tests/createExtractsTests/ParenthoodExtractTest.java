@@ -37,7 +37,7 @@ public class ParenthoodExtractTest extends MainTest {
     }
 
     @Test
-    public void birthExtractTest() {
+    public void parenthoodExtractTest() {
         ActRecord act = new ActRecord();
         extractPage = mainPage.openExtractTab();
         CustomReporter.log("Переход на вкладку Витяги");
@@ -69,7 +69,7 @@ public class ParenthoodExtractTest extends MainTest {
         CustomReporter.log("Сгенероване превью");
         extractPrint = extractPage.generateExtract();
         CustomReporter.log("сгенеровано витяг");
-        Assert.assertTrue(extractPrint.printExtract("adoption", act.getActNumber()));
+        Assert.assertTrue(extractPrint.printExtract("parenthood", act.getActNumber()));
         CustomReporter.log("витяг збережено");
     }
 }

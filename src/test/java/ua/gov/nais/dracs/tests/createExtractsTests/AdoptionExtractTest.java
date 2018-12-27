@@ -37,7 +37,7 @@ public class AdoptionExtractTest extends MainTest {
     }
 
     @Test
-    public void birthExtractTest() {
+    public void adoptionExtractTest() {
         ActRecord act = new ActRecord();
         extractPage = mainPage.openExtractTab();
         CustomReporter.log("Переход на вкладку Витяги");
