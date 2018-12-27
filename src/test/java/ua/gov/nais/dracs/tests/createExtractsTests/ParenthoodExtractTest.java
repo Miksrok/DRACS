@@ -3,10 +3,10 @@ package ua.gov.nais.dracs.tests.createExtractsTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ua.gov.nais.dracs.models.ActRecord;
-import ua.gov.nais.dracs.pages.extractTab.ExtractPage;
-import ua.gov.nais.dracs.pages.modalWindows.ExtractPrint;
-import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.ExtendSearch;
-import ua.gov.nais.dracs.pages.modalWindows.extendSearchActRecords.extendSearchRibbons.SearchByPersonRibbon;
+import ua.gov.nais.dracs.pages.register.extractTab.ExtractPage;
+import ua.gov.nais.dracs.pages.register.modalWindows.ExtractPrint;
+import ua.gov.nais.dracs.pages.register.modalWindows.extendSearchActRecords.ExtendSearch;
+import ua.gov.nais.dracs.pages.register.modalWindows.extendSearchActRecords.extendSearchRibbons.SearchByPersonRibbon;
 import ua.gov.nais.dracs.tests.MainTest;
 import ua.gov.nais.dracs.util.CustomReporter;
 import ua.gov.nais.dracs.util.PropertiesFileReader;
@@ -37,7 +37,7 @@ public class ParenthoodExtractTest extends MainTest {
     }
 
     @Test
-    public void birthExtractTest() {
+    public void parenthoodExtractTest() {
         ActRecord act = new ActRecord();
         extractPage = mainPage.openExtractTab();
         CustomReporter.log("Переход на вкладку Витяги");
@@ -69,7 +69,7 @@ public class ParenthoodExtractTest extends MainTest {
         CustomReporter.log("Сгенероване превью");
         extractPrint = extractPage.generateExtract();
         CustomReporter.log("сгенеровано витяг");
-        Assert.assertTrue(extractPrint.printExtract("adoption", act.getActNumber()));
+        Assert.assertTrue(extractPrint.printExtract("parenthood", act.getActNumber()));
         CustomReporter.log("витяг збережено");
     }
 }
