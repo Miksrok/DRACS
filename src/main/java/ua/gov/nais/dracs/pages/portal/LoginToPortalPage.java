@@ -36,9 +36,10 @@ public class LoginToPortalPage extends AbstractPage {
      * @param login - user login
      * @param password - user password
      */
-    public void loginAction(String login, String password){
+    public PortalMainPage loginAction(String login, String password){
         enterLogin(login);
         enterPassword(password);
         clickEnterButton();
+        return new PortalMainPage(driver);
     }
 }
