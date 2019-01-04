@@ -24,6 +24,12 @@ public class MarriageApplicationStepPage extends AbstractPage {
     private WebElement fianceFatherName;
     @FindBy(xpath = "(//label[text() = 'Дата народження']/following-sibling::div/input)[1]")
     private WebElement fianceBirthDate;
+    @FindBy(xpath = "(//label[text() = 'Серія та №']/following-sibling::input)[1]")
+    private WebElement fiancePassportNumber;
+    @FindBy(xpath = "(//label[text() = 'Дата видачі']/following-sibling::div/div/input)[1]")
+    private WebElement fiancePassportDate;
+    @FindBy(xpath = "(//label[text() = 'Ким виданий']/following-sibling::input)[1]")
+    private WebElement fiancePassportPublisher;
 
     @FindBy(xpath = "(//label[text() = 'Прізвище до реєстрації шлюбу']/following-sibling::input)[2]")
     private WebElement fianceeSurnameBefore;
@@ -35,6 +41,12 @@ public class MarriageApplicationStepPage extends AbstractPage {
     private WebElement fianceeFatherName;
     @FindBy(xpath = "(//label[text() = 'Дата народження']/following-sibling::div/input)[2]")
     private WebElement fianceeBirthDate;
+    @FindBy(xpath = "(//label[text() = 'Серія та №']/following-sibling::input)[2]")
+    private WebElement fianceePassportNumber;
+    @FindBy(xpath = "(//label[text() = 'Дата видачі']/following-sibling::div/div/input)[2]")
+    private WebElement fianceePassportDate;
+    @FindBy(xpath = "(//label[text() = 'Ким виданий']/following-sibling::input)[2]")
+    private WebElement fianceePassportPublisher;
 
     public MarriageApplicationStepPage(WebDriver driver) {
         super(driver);
