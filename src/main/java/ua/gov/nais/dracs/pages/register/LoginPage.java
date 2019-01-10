@@ -64,7 +64,7 @@ public class LoginPage extends AbstractPage {
         action.clickOnElement(deviceNamesList);
         if (login.equals("testreg")) {
             action.selectElementFromListByText(deviceNamesList, I_DEVICE_NAME);
-        } else if (login.equals("testnot")) {
+        } else if (login.equals("ki00p5242")) {
             action.selectElementFromListByText(deviceNamesList, J_DEVICE_NAME);
         }
         action.typeText(keyPasswordField, key);

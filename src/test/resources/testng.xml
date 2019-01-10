@@ -22,7 +22,7 @@
         </classes>
     </test>-->
     <test name="Extracts_Creation_Test">
-     <parameter name="login" value="testnot"/>
+     <parameter name="login" value="ki00p5242"/>
      <parameter name="password" value="123456789"/>
      <parameter name="key" value="KJ146apb"/>
      <classes>
@@ -31,17 +31,17 @@
          <class name="ua.gov.nais.dracs.tests.createExtractsTests.MarriageExtractTest"/>
          <class name="ua.gov.nais.dracs.tests.createExtractsTests.ChangeNameExtractTest"/>
          <class name="ua.gov.nais.dracs.tests.createExtractsTests.DivorceExtractTest"/>
-         <class name="ua.gov.nais.dracs.tests.createExtractsTests.ParenthoodExtractTest"/>
-         <class name="ua.gov.nais.dracs.tests.createExtractsTests.AdoptionExtractTest"/>
+         <!--<class name="ua.gov.nais.dracs.tests.createExtractsTests.ParenthoodExtractTest"/>
+         <class name="ua.gov.nais.dracs.tests.createExtractsTests.AdoptionExtractTest"/>-->
     </classes>
     </test>
     <test name="Extracts_From_Acts_Creation_Test">
-        <parameter name="login" value="testnot"/>
+        <parameter name="login" value="ki00p5242"/>
         <parameter name="password" value="123456789"/>
         <parameter name="key" value="KJ146apb"/>
         <classes>
-            <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.AdoptionExtractFromARTest"/>
-            <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.ParenthoodExtractFromARTest"/>
+            <!--<class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.AdoptionExtractFromARTest"/>
+            <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.ParenthoodExtractFromARTest"/>-->
             <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.BirthExtractFromARTest"/>
             <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.DeathExtractFromARTest"/>
             <class name="ua.gov.nais.dracs.tests.createExtractsFromARTests.DivorceExtractFromARTest"/>
@@ -50,7 +50,7 @@
         </classes>
     </test>
     <test name="Extracts_With_Missing_AR_Creation_Test">
-        <parameter name="login" value="testnot"/>
+        <parameter name="login" value="ki00p5242"/>
         <parameter name="password" value="123456789"/>
         <parameter name="key" value="KJ146apb"/>
         <classes>
