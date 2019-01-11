@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <!--MainTest prop-->
+    <entry key="chrome-driver-path">src/main/resources/chromedriver.exe</entry>
+    <entry key="url">https://regdracs.test.nais.gov.ua/</entry>
+
+    <!--Act records-->
+    <entry key="adoption-act-record">1</entry>
+    <entry key="parenthood-act-record">2</entry>
+    <entry key="birth-act-record">3</entry>
+    <entry key="change-name-act-record">4</entry>
+    <entry key="death-act-record">5</entry>
+    <entry key="divorce-act-record">6</entry>
+    <entry key="marriage-act-record">7</entry>
+    <!--Extract types-->
+    <entry key="extract-type-birth">12</entry>
+    <entry key="extract-type-death">18</entry>
+    <entry key="extract-type-marriage">19</entry>
+    <entry key="extract-type-divorce">20</entry>
+    <entry key="extract-type-name-change">21</entry>
+    <entry key="extract-type-adoption">22</entry>
+    <entry key="extract-type-parenthood">23</entry>
+    <!--Roles-->
+    <entry key="child-adoption">Дитина</entry>
+    <entry key="child-parenthood">Дитина</entry>
+    <entry key="child">Дитина</entry>
+    <entry key="dead">Померлий</entry>
+    <entry key="husband">Чоловік</entry>
+    <entry key="fiance">Наречений</entry>
+    <entry key="subject">Суб'єкт АЗ</entry>
+
+    <!--Person information-->
+
+    <!--child information-->
+    <entry key="child-surname">Яутвюґунячшєє</entry>
+    <entry key="child-name">Робот</entry>
+    <entry key="child-father-name">Пдяєутфиблрг</entry>
+    <!--dead man information-->
+    <entry key="dead-surname">Ядащйьютфпгпґ</entry>
+    <entry key="dead-name">РоботЯдащйьютфпгпґ</entry>
+    <entry key="dead-father-name">Аєдюряжлеоеу</entry>
+    <!--subject information-->
+    <entry key="subject-surname">Ябсєсіашннкео</entry>
+    <entry key="subject-name">Робот</entry>
+    <entry key="subject-father-name">Щющрйфчщбоів</entry>
+    <!--fiance information-->
+    <entry key="fiance-surname">Язазулвґдфкює</entry>
+    <entry key="fiance-name">РоботЯзазулвґдфкює</entry>
+    <entry key="fiance-father-name">Жхшооолтґьюж</entry>
+    <!--husband information-->
+    <entry key="husband-surname">Яащдцзоґзбсюх</entry>
+    <entry key="husband-name">РоботЯащдцзоґзбсюх</entry>
+    <entry key="husband-father-name">Щтюцшчфпкйет</entry>
+    <!--child(adoption)-->
+    <entry key="child-ad-surname">Рябцева</entry>
+    <entry key="child-ad-name">Тетяна</entry>
+    <entry key="child-ad-father-name">Борисівна</entry>
+    <!--child(parenthood)-->
+    <entry key="child-parenthood-surname">Мисливчук</entry>
+    <entry key="child-parenthood-name">Денис</entry>
+    <entry key="child-parenthood-father-name">Андрійович</entry>
+    <!--unknown person-->
+    <entry key="unknown-surname">Немає</entry>
+    <entry key="unknown-name">Такої</entry>
+    <entry key="unknown-father-name">Людини</entry>
+
+</properties>
+
